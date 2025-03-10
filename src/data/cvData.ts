@@ -1,6 +1,7 @@
 
 import { CVData } from '../types/cv';
 import { availableLanguages, cvDataEn, cvDataEs, cvDataFr, cvDataDe } from './sampleCVData';
+import { parseMarkdownCV, loadAllCVs } from '../utils/markdownProcessor';
 
 // Function to get CV data by language code
 export function getCVData(languageCode: string): CVData {

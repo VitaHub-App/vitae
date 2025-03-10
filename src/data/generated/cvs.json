@@ -1,0 +1,327 @@
+
+{
+  "alex-morgan": {
+    "en": {
+      "personalInfo": {
+        "name": "Alex Morgan",
+        "title": "Senior Product Designer",
+        "email": "alex.morgan@example.com",
+        "phone": "+1 (555) 123-4567",
+        "location": "San Francisco, CA",
+        "website": "www.alexmorgan.design",
+        "github": "github.com/alexmorgan",
+        "linkedin": "linkedin.com/in/alexmorgan",
+        "bio": "Product designer with 8+ years of experience creating user-centered digital experiences for tech startups and established companies. Passionate about accessibility and inclusive design."
+      },
+      "experience": [
+        {
+          "title": "Senior Product Designer",
+          "company": "TechCorp Inc.",
+          "location": "San Francisco, CA",
+          "period": "Jan 2020 - Present",
+          "description": [
+            "Lead designer for flagship product serving 2M+ users, increasing engagement by 34%",
+            "Managed team of 4 designers, implementing design system that reduced design inconsistency by 60%",
+            "Collaborated with product and engineering teams to streamline design-to-development handoff, reducing iterations by 40%",
+            "Conducted user research with over 200 participants to identify key pain points and opportunities"
+          ]
+        },
+        {
+          "title": "Product Designer",
+          "company": "InnovateLab",
+          "location": "Oakland, CA",
+          "period": "Mar 2017 - Dec 2019",
+          "description": [
+            "Redesigned core user flows resulting in 27% improvement in conversion rate",
+            "Created responsive designs for web and mobile platforms, supporting devices from 320px to 1440px+",
+            "Built interactive prototypes for user testing and stakeholder presentations",
+            "Established design guidelines and component library for product design consistency"
+          ]
+        },
+        {
+          "title": "UI/UX Designer",
+          "company": "DesignWorks Agency",
+          "location": "Portland, OR",
+          "period": "Sep 2015 - Feb 2017",
+          "description": [
+            "Designed user interfaces for clients across e-commerce, fintech, and healthcare sectors",
+            "Conducted usability testing and created user journey maps for client projects",
+            "Collaborated with development team to ensure design feasibility and quality implementation",
+            "Created wireframes, mockups, and prototypes to communicate design concepts"
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Master of Fine Arts, Interaction Design",
+          "institution": "California College of the Arts",
+          "location": "San Francisco, CA",
+          "period": "2013 - 2015",
+          "description": [
+            "Thesis: \"Designing for Behavioral Change in Digital Health Applications\"",
+            "Recipient of the Design Excellence Scholarship"
+          ]
+        },
+        {
+          "degree": "Bachelor of Arts, Graphic Design",
+          "institution": "University of Oregon",
+          "location": "Eugene, OR",
+          "period": "2009 - 2013",
+          "description": [
+            "Minor in Psychology",
+            "Design lead for student magazine \"Emerge\"",
+            "Dean's List, 8 consecutive semesters"
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "User Experience Design",
+          "level": 5
+        },
+        {
+          "name": "Figma",
+          "level": 5
+        },
+        {
+          "name": "Prototyping",
+          "level": 4
+        },
+        {
+          "name": "User Research",
+          "level": 4
+        },
+        {
+          "name": "Design Systems",
+          "level": 5
+        },
+        {
+          "name": "Adobe Creative Suite",
+          "level": 4
+        },
+        {
+          "name": "HTML/CSS",
+          "level": 3
+        },
+        {
+          "name": "Design Thinking",
+          "level": 5
+        },
+        {
+          "name": "Accessibility",
+          "level": 4
+        },
+        {
+          "name": "Sketch",
+          "level": 4
+        },
+        {
+          "name": "Information Architecture",
+          "level": 4
+        },
+        {
+          "name": "Usability Testing",
+          "level": 4
+        }
+      ],
+      "projects": [
+        {
+          "title": "HealthTrack Mobile App",
+          "period": "2021",
+          "description": "Redesigned health tracking app focusing on accessibility and habit formation.",
+          "technologies": ["Figma", "Prototyping", "User Research"],
+          "link": "www.alexmorgan.design/healthtrack"
+        },
+        {
+          "title": "E-commerce Design System",
+          "period": "2020",
+          "description": "Created comprehensive component library and design guidelines for e-commerce platform.",
+          "technologies": ["Design Systems", "Documentation", "Component Design"],
+          "link": "www.alexmorgan.design/ecommerce"
+        },
+        {
+          "title": "Financial Dashboard",
+          "period": "2019",
+          "description": "Designed data visualization dashboard for personal finance management application.",
+          "technologies": ["Data Visualization", "UX Design", "Figma"],
+          "link": "www.alexmorgan.design/fintech"
+        }
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "proficiency": "Native"
+        },
+        {
+          "name": "Spanish",
+          "proficiency": "Professional working proficiency"
+        },
+        {
+          "name": "French",
+          "proficiency": "Elementary proficiency"
+        }
+      ]
+    },
+    "es": {
+      "personalInfo": {
+        "name": "Alex Morgan",
+        "title": "Diseñador Senior de Productos",
+        "email": "alex.morgan@example.com",
+        "phone": "+1 (555) 123-4567",
+        "location": "San Francisco, CA",
+        "website": "www.alexmorgan.design",
+        "github": "github.com/alexmorgan",
+        "linkedin": "linkedin.com/in/alexmorgan",
+        "bio": "Diseñador de productos con más de 8 años de experiencia creando experiencias digitales centradas en el usuario para startups tecnológicas y empresas establecidas. Apasionado por la accesibilidad y el diseño inclusivo."
+      },
+      "experience": [
+        {
+          "title": "Diseñador Senior de Productos",
+          "company": "TechCorp Inc.",
+          "location": "San Francisco, CA",
+          "period": "Enero 2020 - Presente",
+          "description": [
+            "Diseñador principal para producto insignia con más de 2M de usuarios, aumentando la participación en un 34%",
+            "Gestioné un equipo de 4 diseñadores, implementando un sistema de diseño que redujo la inconsistencia en un 60%",
+            "Colaboré con equipos de producto e ingeniería para optimizar la entrega de diseño a desarrollo, reduciendo las iteraciones en un 40%",
+            "Realicé investigaciones con más de 200 usuarios para identificar puntos críticos y oportunidades"
+          ]
+        },
+        {
+          "title": "Diseñador de Productos",
+          "company": "InnovateLab",
+          "location": "Oakland, CA",
+          "period": "Marzo 2017 - Diciembre 2019",
+          "description": [
+            "Rediseñé flujos de usuario principales resultando en una mejora del 27% en la tasa de conversión",
+            "Creé diseños responsivos para plataformas web y móviles, con soporte para dispositivos desde 320px hasta 1440px+",
+            "Desarrollé prototipos interactivos para pruebas de usuario y presentaciones a interesados",
+            "Establecí pautas de diseño y biblioteca de componentes para la consistencia en el diseño de productos"
+          ]
+        },
+        {
+          "title": "Diseñador UI/UX",
+          "company": "DesignWorks Agency",
+          "location": "Portland, OR",
+          "period": "Septiembre 2015 - Febrero 2017",
+          "description": [
+            "Diseñé interfaces de usuario para clientes en sectores de comercio electrónico, fintech y salud",
+            "Realicé pruebas de usabilidad y creé mapas de viaje del usuario para proyectos de clientes",
+            "Colaboré con el equipo de desarrollo para garantizar la viabilidad del diseño y la implementación de calidad",
+            "Creé wireframes, maquetas y prototipos para comunicar conceptos de diseño"
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Maestría en Bellas Artes, Diseño de Interacción",
+          "institution": "California College of the Arts",
+          "location": "San Francisco, CA",
+          "period": "2013 - 2015",
+          "description": [
+            "Tesis: \"Diseñando para el Cambio de Comportamiento en Aplicaciones Digitales de Salud\"",
+            "Receptor de la Beca de Excelencia en Diseño"
+          ]
+        },
+        {
+          "degree": "Licenciatura en Artes, Diseño Gráfico",
+          "institution": "Universidad de Oregon",
+          "location": "Eugene, OR",
+          "period": "2009 - 2013",
+          "description": [
+            "Especialización en Psicología",
+            "Líder de diseño para la revista estudiantil \"Emerge\"",
+            "Lista del Decano, 8 semestres consecutivos"
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Diseño de Experiencia de Usuario",
+          "level": 5
+        },
+        {
+          "name": "Figma",
+          "level": 5
+        },
+        {
+          "name": "Prototipado",
+          "level": 4
+        },
+        {
+          "name": "Investigación de Usuarios",
+          "level": 4
+        },
+        {
+          "name": "Sistemas de Diseño",
+          "level": 5
+        },
+        {
+          "name": "Adobe Creative Suite",
+          "level": 4
+        },
+        {
+          "name": "HTML/CSS",
+          "level": 3
+        },
+        {
+          "name": "Design Thinking",
+          "level": 5
+        },
+        {
+          "name": "Accesibilidad",
+          "level": 4
+        },
+        {
+          "name": "Sketch",
+          "level": 4
+        },
+        {
+          "name": "Arquitectura de Información",
+          "level": 4
+        },
+        {
+          "name": "Pruebas de Usabilidad",
+          "level": 4
+        }
+      ],
+      "projects": [
+        {
+          "title": "Aplicación Móvil HealthTrack",
+          "period": "2021",
+          "description": "Rediseño de aplicación de seguimiento de salud con enfoque en accesibilidad y formación de hábitos.",
+          "technologies": ["Figma", "Prototipado", "Investigación de Usuarios"],
+          "link": "www.alexmorgan.design/healthtrack"
+        },
+        {
+          "title": "Sistema de Diseño E-commerce",
+          "period": "2020",
+          "description": "Creación de biblioteca de componentes y directrices de diseño para plataforma de comercio electrónico.",
+          "technologies": ["Sistemas de Diseño", "Documentación", "Diseño de Componentes"],
+          "link": "www.alexmorgan.design/ecommerce"
+        },
+        {
+          "title": "Panel de Control Financiero",
+          "period": "2019",
+          "description": "Diseño de panel de visualización de datos para aplicación de gestión de finanzas personales.",
+          "technologies": ["Visualización de Datos", "Diseño UX", "Figma"],
+          "link": "www.alexmorgan.design/fintech"
+        }
+      ],
+      "languages": [
+        {
+          "name": "Inglés",
+          "proficiency": "Nativo"
+        },
+        {
+          "name": "Español",
+          "proficiency": "Nivel profesional"
+        },
+        {
+          "name": "Francés",
+          "proficiency": "Nivel básico"
+        }
+      ]
+    }
+  }
+}

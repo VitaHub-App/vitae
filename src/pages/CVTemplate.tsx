@@ -1,25 +1,67 @@
-
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { BriefcaseBusiness, Building2, ChevronLeft, Code, GraduationCap, Languages, Mail, MapPin, Phone, User2 } from 'lucide-react';
-import { CVData, availableLanguages, getCVData } from '@/data/cvData';
+import { getCVData } from '@/data/cvData';
+import { availableLanguages } from '@/data/sampleCVData';
+import { loadCV, getAvailableLanguagesForCV } from '@/utils/markdownLoader';
 import LanguageSelector from '@/components/cv/LanguageSelector';
 import CVSection from '@/components/cv/CVSection';
-import { cn } from '@/lib/utils';
+import { CVData } from '@/types/cv';
 
 const CVTemplate = () => {
-  const [language, setLanguage] = useState('en');
-  const [cvData, setCvData] = useState<CVData>(getCVData(language));
-  const [expandedSection, setExpandedSection] = useState<string>('personal');
+  const { name } = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const nameFromQuery = searchParams.get('name');
   
-  // Update CV data when language changes
+  const personName = name || nameFromQuery || 'alex-morgan';
+  
+  const [language, setLanguage] = useState('en');
+  const [cvData, setCvData] = useState<CVData | null>(null);
+  const [expandedSection, setExpandedSection] = useState<string>('personal');
+  const [availableLangs, setAvailableLangs] = useState(availableLanguages);
+  
+  // Load CV data when person name or language changes
   useEffect(() => {
-    setCvData(getCVData(language));
-  }, [language]);
+    // In development, we use the sample data
+    // In production, this would load from the build-time generated JSON
+    try {
+      if (process.env.NODE_ENV === 'production') {
+        const data = loadCV(personName, language);
+        if (data) {
+          setCvData(data);
+          
+          // Update available languages
+          const langs = getAvailableLanguagesForCV(personName);
+          if (langs.length > 0) {
+            setAvailableLangs(
+              availableLanguages.filter(lang => langs.includes(lang.code))
+            );
+          }
+        }
+      } else {
+        // Use sample data in development
+        setCvData(getCVData(language));
+      }
+    } catch (error) {
+      console.error('Error loading CV data:', error);
+      // Fallback to sample data
+      setCvData(getCVData(language));
+    }
+  }, [personName, language]);
 
   const handleSectionToggle = (sectionName: string) => {
     setExpandedSection(sectionName === expandedSection ? '' : sectionName);
   };
+
+  // Show loading state if CV data is not loaded yet
+  if (!cvData) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg">Loading CV data...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-accent/10">
@@ -32,7 +74,7 @@ const CVTemplate = () => {
           </Link>
           
           <LanguageSelector 
-            languages={availableLanguages}
+            languages={availableLangs}
             currentLanguage={language}
             onLanguageChange={setLanguage}
           />

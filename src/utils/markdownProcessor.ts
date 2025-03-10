@@ -1,5 +1,5 @@
 
-import { readFile, readdir } from 'fs/promises';
+import { readFile, readdir, writeFile, mkdir } from 'fs/promises';
 import matter from 'gray-matter';
 import path from 'path';
 import { remark } from 'remark';
@@ -253,17 +253,69 @@ export async function loadAllCVs(dirPath: string): Promise<Record<string, CVData
   }
 }
 
-// Example function to be used at build time to generate the CV data from markdown files
-export async function generateCVDataFromMarkdown(): Promise<void> {
+/**
+ * Generate CV data from markdown files and save it to JSON
+ * This is expected to be used at build time
+ */
+export async function generateCVDataFromMarkdown(): Promise<Record<string, Record<string, CVData>>> {
+  const result: Record<string, Record<string, CVData>> = {};
+  
   try {
-    const cvs = await loadAllCVs('./data/cvs');
+    // In a real production environment, you would use a constant for the CV directory
+    // We're using a relative path for this example
+    const cvDir = path.resolve('./examples');
+    const files = await readdir(cvDir);
     
-    // At build time, this data could be written to a JSON file or otherwise made available to the client
-    console.log(`Loaded ${Object.keys(cvs).length} CVs from markdown files`);
+    // Group files by base name (without language suffix)
+    const fileGroups: Record<string, string[]> = {};
     
-    // Example: Write to a JSON file that can be imported by the client
-    // await writeFile('./src/data/generated-cvs.json', JSON.stringify(cvs, null, 2));
+    for (const file of files) {
+      if (!file.endsWith('.md')) continue;
+      
+      // Extract base name and language code
+      const match = file.match(/(.+?)(?:_([a-z]{2}))?\.md$/);
+      if (!match) continue;
+      
+      const [_, baseName, langCode = 'en'] = match;
+      
+      if (!fileGroups[baseName]) {
+        fileGroups[baseName] = [];
+      }
+      
+      fileGroups[baseName].push(file);
+    }
+    
+    // Process each group of files
+    for (const [baseName, files] of Object.entries(fileGroups)) {
+      result[baseName] = {};
+      
+      for (const file of files) {
+        // Extract language code from filename
+        const langMatch = file.match(/(.+?)_([a-z]{2})\.md$/);
+        const langCode = langMatch ? langMatch[2] : 'en';
+        
+        // Parse the markdown file
+        const cvData = await parseMarkdownCV(path.join(cvDir, file));
+        
+        // Merge with default data to ensure all required fields exist
+        result[baseName][langCode] = {
+          ...cvDataEn, // Use English as base template
+          ...cvData,
+        } as CVData;
+      }
+    }
+    
+    // Write the output to a JSON file for client-side consumption
+    const outputDir = path.resolve('./src/data/generated');
+    await mkdir(outputDir, { recursive: true }).catch(() => {});
+    await writeFile(
+      path.join(outputDir, 'cvs.json'),
+      JSON.stringify(result, null, 2)
+    );
+    
+    return result;
   } catch (error) {
     console.error(`Error generating CV data from markdown: ${error}`);
+    return {};
   }
 }
