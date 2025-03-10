@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
-import { Language } from '@/types/cv';
+import { Language } from '@/types/lang';
 import LanguageSelector from './LanguageSelector';
 
 interface CVHeaderProps {

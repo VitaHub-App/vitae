@@ -1,45 +1,59 @@
+import { z } from 'zod';
 
-// CV data structure types
-export interface Experience {
-  title: string;
-  company: string;
-  location: string;
-  period: string;
-  description: string[];
-}
+// Zod schemas for validation
+export const personalInfoSchema = z.object({
+  name: z.string().min(1),
+  title: z.string().min(1),
+  email: z.string().email(),
+  phone: z.string().min(6),
+  location: z.string().min(1),
+  website: z.string().url().optional(),
+  github: z.string().url().optional(),
+  linkedin: z.string().url().optional(),
+  bio: z.string().min(1),
+});
 
-export interface Education {
-  degree: string;
-  institution: string;
-  location: string;
-  period: string;
-  description: string[];
-}
+export const experienceSchema = z.object({
+  title: z.string().min(1),
+  company: z.string().min(1),
+  location: z.string().min(1),
+  period: z.string().min(1),
+  description: z.array(z.string().min(1)),
+});
 
-export interface Skill {
-  name: string;
-  level: number; // 1-5
-}
+export const educationSchema = z.object({
+  degree: z.string().min(1),
+  institution: z.string().min(1),
+  location: z.string().min(1),
+  period: z.string().min(1),
+  description: z.array(z.string().min(1)),
+});
 
-export interface Project {
-  title: string;
-  period: string;
-  description: string;
-  technologies: string[];
-  link?: string;
-}
+export const skillSchema = z.object({
+  name: z.string().min(1),
+  level: z.number().min(1).max(5),
+});
 
-export interface PersonalInfo {
-  name: string;
-  title: string;
-  email: string;
-  phone: string;
-  location: string;
-  website?: string;
-  github?: string;
-  linkedin?: string;
-  bio: string;
-}
+export const projectSchema = z.object({
+  title: z.string().min(1),
+  period: z.string().min(1),
+  description: z.string().min(1),
+  technologies: z.array(z.string().min(1)),
+  link: z.string().url().optional(),
+});
+
+export const languageSchema = z.object({
+  name: z.string().min(1),
+  proficiency: z.string().min(1),
+});
+
+// Add these schemas to your existing types file
+export type PersonalInfo = z.infer<typeof personalInfoSchema>;
+export type Experience = z.infer<typeof experienceSchema>;
+export type Education = z.infer<typeof educationSchema>;
+export type Skill = z.infer<typeof skillSchema>;
+export type Project = z.infer<typeof projectSchema>;
+export type Language = z.infer<typeof languageSchema>;
 
 export interface CVData {
   personalInfo: PersonalInfo;
@@ -47,14 +61,5 @@ export interface CVData {
   education: Education[];
   skills: Skill[];
   projects: Project[];
-  languages: {
-    name: string;
-    proficiency: string;
-  }[];
-}
-
-export interface Language {
-  code: string;
-  name: string;
-  flag: string;
+  languages: Language[];
 }

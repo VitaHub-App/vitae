@@ -4,9 +4,9 @@ title: Diseñador Senior de Productos
 email: alex.morgan@example.com
 phone: +1 (555) 123-4567
 location: San Francisco, CA
-website: www.alexmorgan.design
-github: github.com/alexmorgan
-linkedin: linkedin.com/in/alexmorgan
+website: https://www.alexmorgan.design
+github: https://github.com/alexmorgan
+linkedin: https://linkedin.com/in/alexmorgan
 bio: Diseñador de productos con más de 8 años de experiencia creando experiencias digitales centradas en el usuario para startups tecnológicas y empresas establecidas. Apasionado por la accesibilidad y el diseño inclusivo.
 
 skills:
@@ -90,17 +90,17 @@ Universidad de Oregon | Eugene, OR | 2009 - 2013
 ### Aplicación Móvil HealthTrack (2021)
 Rediseño de aplicación de seguimiento de salud con enfoque en accesibilidad y formación de hábitos.
 
-Technologies: Figma, Prototipado, Investigación de Usuarios
-Link: www.alexmorgan.design/healthtrack
+- Technologies: Figma, Prototipado, Investigación de Usuarios
+- Link: https://www.alexmorgan.design/healthtrack
 
 ### Sistema de Diseño E-commerce (2020)
 Creación de biblioteca de componentes y directrices de diseño para plataforma de comercio electrónico.
 
-Technologies: Sistemas de Diseño, Documentación, Diseño de Componentes
-Link: www.alexmorgan.design/ecommerce
+- Technologies: Sistemas de Diseño, Documentación, Diseño de Componentes
+- Link: https://www.alexmorgan.design/ecommerce
 
 ### Panel de Control Financiero (2019)
 Diseño de panel de visualización de datos para aplicación de gestión de finanzas personales.
 
-Technologies: Visualización de Datos, Diseño UX, Figma
-Link: www.alexmorgan.design/fintech
+- Technologies: Visualización de Datos, Diseño UX, Figma
+- Link: https://www.alexmorgan.design/fintech

@@ -1,5 +1,5 @@
 
-import { CVData, Language } from '../types/cv';
+import { CVData } from '../types/cv';
 
 // English CV data
 export const cvDataEn: CVData = {
