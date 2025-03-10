@@ -10,7 +10,7 @@ interface ShowcaseItemProps {
   index: number;
 }
 
-function ShowcaseItem({ title, role, image, index }: ShowcaseItemProps) {
+function ShowcaseItem({ title, role, image, target, index }: ShowcaseItemProps) {
   return (
     <div 
       className="group relative overflow-hidden rounded-xl border border-border animate-fade-in animate-in"
@@ -27,7 +27,7 @@ function ShowcaseItem({ title, role, image, index }: ShowcaseItemProps) {
         <h3 className="text-xl font-semibold mb-1 text-white">{title}</h3>
         <p className="text-white/80 mb-4">{role}</p>
         <a 
-          href="#" 
+          href={target} 
           className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
         >
           View CV
@@ -43,22 +43,26 @@ export default function ShowcaseSection() {
     {
       title: "Alex Morgan",
       role: "UX Designer",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
+      target: "/cv/alex-morgan",
     },
     {
       title: "Jamie Chen",
       role: "Software Engineer",
-      image: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?q=80&w=1000&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?q=80&w=1000&auto=format&fit=crop",
+      target: "/cv/jamie-chen",
     },
     {
       title: "Taylor Wright",
       role: "Product Manager",
-      image: "https://images.unsplash.com/photo-1562788869-4ed32648eb72?q=80&w=1000&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1562788869-4ed32648eb72?q=80&w=1000&auto=format&fit=crop",
+      target: "/cv/taylor-wright",
     },
     {
       title: "Sam Rivera",
       role: "Marketing Specialist",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
+      target: "/cv/sam-rivera",
     }
   ];
 
@@ -79,6 +83,7 @@ export default function ShowcaseSection() {
               title={item.title}
               role={item.role}
               image={item.image}
+              target={item.target}
               index={index}
             />
           ))}

@@ -13,6 +13,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <span className="text-sm text-muted-foreground">{project.period}</span>
       </div>
       <p className="text-foreground/80 mb-3">{project.description}</p>
+      {project.details && project.details.length > 0 && (
+        <ul className="list-disc pl-5 pb-5 space-y-1 text-foreground/80">
+          {project.details.map((detail, idx) => (
+            <li key={idx}>{detail}</li>
+          ))}
+        </ul>
+      )}
       <div className="mb-2">
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech, idx) => (
@@ -20,18 +27,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {tech}
             </span>
           ))}
+          {project.link && (
+            <a 
+              href={`https://${project.link}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm text-primary pl-10 hover:text-primary/80 transition-colors"
+            >
+              View Project →
+            </a>
+          )}
         </div>
       </div>
-      {project.link && (
-        <a 
-          href={`https://${project.link}`} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-sm text-primary hover:text-primary/80 transition-colors"
-        >
-          View Project →
-        </a>
-      )}
     </div>
   );
 }

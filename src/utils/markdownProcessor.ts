@@ -295,6 +295,13 @@ const parseProjects = createParser<Education>(projectSchema, 'project', (nodes, 
               case 'link':
                 currentProject.link = value;
                 break;
+              default:
+                if (currentProject.details) {
+                  currentProject.details.push(text);
+                } else {
+                  currentProject.details = [text];
+                }
+                break;
             }
           });
           state = 'seek';

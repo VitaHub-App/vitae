@@ -38,6 +38,7 @@ export const projectSchema = z.object({
   title: z.string().min(1),
   period: z.string().min(1),
   description: z.string().min(1),
+  details: z.array(z.string().min(1)).optional(),
   technologies: z.array(z.string().min(1)),
   link: z.string().url().optional(),
 });
