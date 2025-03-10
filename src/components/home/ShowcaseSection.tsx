@@ -38,6 +38,66 @@ function ShowcaseItem({ title, role, image, target, index }: ShowcaseItemProps) 
   );
 }
 
+function CTA() {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <>
+      <div className="mt-12 text-center animate-fade-in" style={{ ['--index' as any]: 4 }}>
+        <button 
+          onClick={() => setShowModal(true)}
+          className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
+        >
+          Create Your CV Now
+          <ArrowRight size={18} className="ml-2" />
+        </button>
+      </div>
+
+      {showModal && <ContributionModal onClose={() => setShowModal(false)} />}
+    </>
+  );
+}
+
+const ContributionModal = ({ onClose }: { onClose: () => void }) => (
+  <div
+    className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+    onClick={onClose}  // Close when clicking outside
+  >
+    <div
+      className="bg-background rounded-lg p-6 max-w-2xl w-full relative z-50"
+      onClick={(e) => e.stopPropagation()}  // Prevent click propagation
+    >
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-semibold">Contribution Guide</h2>
+        <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
+          ×
+        </button>
+      </div>
+      <div className="space-y-4 font-mono text-sm">
+        <p># Fork and clone the repo</p>
+        <p className="bg-accent p-2 rounded">gh repo fork VitaHub-App/vitae --clone && cd vitae</p>
+
+        <p># Create new branch</p>
+        <p className="bg-accent p-2 rounded">git checkout -b feat/add-{`<your-name>`}-cv</p>
+
+        <p># Copy template</p>
+        <p className="bg-accent p-2 rounded">cp ./contents/cvs/alex-morgan.md ./contents/cvs/{`<your-name>`}.md</p>
+
+        <p># Edit your CV (using VSCode example)</p>
+        <p className="bg-accent p-2 rounded">code ./contents/cvs/{`<your-name>`}.md</p>
+
+        <p># Commit and push</p>
+        <p className="bg-accent p-2 rounded">git add . && git commit -m "Add {`<your-name>`} CV"</p>
+        <p className="bg-accent p-2 rounded">git push -u origin HEAD</p>
+
+        <p># Create pull request</p>
+        <p className="bg-accent p-2 rounded">gh pr create --fill</p>
+      </div>
+    </div>
+  </div>
+);
+
+
 export default function ShowcaseSection() {
   const showcaseItems = [
     {
@@ -88,16 +148,9 @@ export default function ShowcaseSection() {
             />
           ))}
         </div>
+
+        <CTA/>
         
-        <div className="mt-12 text-center animate-fade-in" style={{ ['--index' as any]: 4 }}>
-          <a 
-            href="/template" 
-            className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
-          >
-            Create Your CV Now
-            <ArrowRight size={18} className="ml-2" />
-          </a>
-        </div>
       </div>
     </section>
   );
