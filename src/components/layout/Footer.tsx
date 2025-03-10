@@ -69,12 +69,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="https://github.com/VitaHub-App/vitae#readme" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="https://github.com/VitaHub-App/vitae" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
                   GitHub Repository
                 </a>
               </li>
