@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, FileText, ChevronRight } from 'lucide-react';
-import { availableLanguages } from '@/data/cvData';
+import { availableLanguages } from '@/data/languages';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 

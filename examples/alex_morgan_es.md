@@ -1,4 +1,3 @@
-
 ---
 name: Alex Morgan
 title: Diseñador Senior de Productos

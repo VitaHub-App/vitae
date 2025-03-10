@@ -1,14 +1,6 @@
 
 import { CVData, Language } from '../types/cv';
 
-// Language data
-export const availableLanguages: Language[] = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-];
-
 // English CV data
 export const cvDataEn: CVData = {
   personalInfo: {
@@ -480,3 +472,18 @@ export const cvDataDe: CVData = {
     { name: 'Französisch', proficiency: 'Grundkenntnisse' }
   ]
 };
+
+// Function to get CV data by language code
+export function getSampleCVData(languageCode: string): CVData {
+  switch (languageCode) {
+    case 'es':
+      return cvDataEs;
+    case 'fr':
+      return cvDataFr;
+    case 'de':
+      return cvDataDe;
+    case 'en':
+    default:
+      return cvDataEn;
+  }
+}
