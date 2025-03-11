@@ -85,6 +85,8 @@ export default function Footer() {
             © {currentYear} VitaHub. All rights reserved.
           </p>
           <div className="flex space-x-6">
+            <span className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors">
+              hosted by 🛰<a className="underline" target="_blank" href="https://xmit.co">xmit.co</a></span>
             <button 
               onClick={() => setTermsOfServicePopupOpen(true)}
               className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors"
