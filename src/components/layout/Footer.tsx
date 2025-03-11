@@ -1,8 +1,14 @@
-
+import { useState } from 'react';
 import { Github, Linkedin, Twitter } from 'lucide-react';
+import CookiePopup from './CookiePopup';
+import TermsOfServicePopup from './TermsOfServicePopup.tsx';
+import PrivacyPolicyPopup from './PrivacyPolicyPopup.tsx';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [cookiePopupOpen, setCookiePopupOpen] = useState(false);
+  const [termsOfServicePopupOpen, setTermsOfServicePopupOpen] = useState(false);
+  const [privacyPolicyPopupOpen, setPrivacyPolicyPopupOpen] = useState(false);
 
   return (
     <footer className="bg-secondary text-secondary-foreground py-12 px-6">
@@ -19,17 +25,9 @@ export default function Footer() {
               A modern platform for creating and sharing professional CVs. Built with simplicity and elegance in mind.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a href="https://github.com/vitahub-app" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Github size={20} />
                 <span className="sr-only">Github</span>
-              </a>
-              <a href="#" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
-                <Linkedin size={20} />
-                <span className="sr-only">LinkedIn</span>
               </a>
             </div>
           </div>
@@ -78,11 +76,6 @@ export default function Footer() {
                   GitHub Repository
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
             </ul>
           </div>
         </div>
@@ -92,18 +85,31 @@ export default function Footer() {
             © {currentYear} VitaHub. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors">
-              Terms
-            </a>
-            <a href="#" className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors">
+            <button 
+              onClick={() => setTermsOfServicePopupOpen(true)}
+              className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors"
+            >
               Privacy
-            </a>
-            <a href="#" className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors">
+            </button>
+            <button 
+              onClick={() => setCookiePopupOpen(true)}
+              className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors"
+            >
               Cookies
-            </a>
+            </button>
+            <button 
+              onClick={() => setPrivacyPolicyPopupOpen(true)}
+              className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors"
+            >
+              Privacy
+            </button>
           </div>
         </div>
       </div>
+      
+      <CookiePopup open={cookiePopupOpen} onOpenChange={setCookiePopupOpen} />
+      <PrivacyPolicyPopup open={privacyPolicyPopupOpen} onOpenChange={setPrivacyPolicyPopupOpen} />
+      <TermsOfServicePopup open={termsOfServicePopupOpen} onOpenChange={setTermsOfServicePopupOpen} />
     </footer>
   );
 }
