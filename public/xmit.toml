@@ -5,3 +5,8 @@ fallback = "index.html"
 name = "cache-control"
 value = "public, max-age=600"
 on = "^/assets/"
+
+[[forms]]
+from = "/contact"
+to = "support@vitahub.app"
+then = "/ty"

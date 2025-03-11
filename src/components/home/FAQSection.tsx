@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import ContactFormPopup from '../layout/ContactFormPopup.tsx';
 
 interface FAQItemProps {
   question: string;
@@ -10,6 +11,7 @@ interface FAQItemProps {
   onClick: () => void;
   index: number;
 }
+
 
 function FAQItem({ question, answer, isOpen, onClick, index }: FAQItemProps) {
   return (
@@ -44,6 +46,7 @@ function FAQItem({ question, answer, isOpen, onClick, index }: FAQItemProps) {
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   
   const faqs = [
     {
@@ -95,14 +98,15 @@ export default function FAQSection() {
           <p className="text-muted-foreground mb-4">
             Still have questions? We're here to help.
           </p>
-          <a 
-            href="#" 
+          <button 
+            onClick={() => setContactPopupOpen(true)}
             className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
           >
             Contact Support
-          </a>
+          </button>
         </div>
       </div>
+      <ContactFormPopup open={contactPopupOpen} onOpenChange={setContactPopupOpen} />
     </section>
   );
 }
