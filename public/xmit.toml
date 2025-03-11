@@ -1,0 +1,7 @@
+fallback = "index.html"
+404 = "index.html"
+
+[[headers]] # cache assets for 10 mins
+name = "cache-control"
+value = "public, max-age=600"
+on = "^/assets/"
