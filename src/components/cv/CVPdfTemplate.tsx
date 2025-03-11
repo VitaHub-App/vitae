@@ -51,9 +51,9 @@ const CVPdfTemplate = ({ cvData, cvName }: CVPdfTemplateProps) => {
               <h5 className="text-gray-700">{job.company}</h5>
               <span className="text-gray-600">{job.location}</span>
             </div>
-            <ul className="list-disc pl-5">
+            <ul style={{ listStylePosition: 'outside', paddingLeft: '1.5rem', marginTop: '0.5rem' }}>
               {job.description.map((desc, i) => (
-                <li key={i} className="text-sm mb-1">{desc}</li>
+                <li key={i} className="text-sm mb-1" style={{ textAlign: 'left' }}>{desc}</li>
               ))}
             </ul>
           </div>
@@ -74,9 +74,9 @@ const CVPdfTemplate = ({ cvData, cvName }: CVPdfTemplateProps) => {
               <span className="text-gray-600">{edu.location}</span>
             </div>
             {edu.description && edu.description.length > 0 && (
-              <ul className="list-disc pl-5">
+              <ul style={{ listStylePosition: 'outside', paddingLeft: '1.5rem', marginTop: '0.5rem' }}>
                 {edu.description.map((desc, i) => (
-                  <li key={i} className="text-sm mb-1">{desc}</li>
+                  <li key={i} className="text-sm mb-1" style={{ textAlign: 'left' }}>{desc}</li>
                 ))}
               </ul>
             )}
@@ -89,15 +89,19 @@ const CVPdfTemplate = ({ cvData, cvName }: CVPdfTemplateProps) => {
         <h3 className="text-lg font-semibold mb-4 border-b border-gray-300 pb-1">Skills</h3>
         <div className="grid grid-cols-2 gap-4">
           {skills.map((skill, index) => (
-            <div key={index} className="flex items-center">
-              <span className="font-medium">{skill.name}</span>
-              <div className="ml-2 flex">
+            <div key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+              <span className="font-medium" style={{ flexBasis: '50%', textAlign: 'left' }}>{skill.name}</span>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', flexBasis: '50%' }}>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <div 
                     key={i}
-                    className={`w-2 h-2 rounded-full mx-0.5 ${
-                      i < skill.level ? 'bg-gray-800' : 'bg-gray-300'
-                    }`}
+                    style={{
+                      width: '10px',
+                      height: '10px',
+                      borderRadius: '50%',
+                      margin: '0 3px',
+                      backgroundColor: i < skill.level ? '#1f2937' : '#d1d5db'
+                    }}
                   />
                 ))}
               </div>
@@ -118,15 +122,15 @@ const CVPdfTemplate = ({ cvData, cvName }: CVPdfTemplateProps) => {
               </div>
               <p className="mb-2 text-sm">{project.description}</p>
               {project.details && project.details.length > 0 && (
-                <ul className="list-disc pl-5 mb-2">
+                <ul style={{ listStylePosition: 'outside', paddingLeft: '1.5rem', marginTop: '0.5rem' }}>
                   {project.details.map((detail, i) => (
-                    <li key={i} className="text-sm">{detail}</li>
+                    <li key={i} className="text-sm mb-1" style={{ textAlign: 'left' }}>{detail}</li>
                   ))}
                 </ul>
               )}
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, i) => (
-                  <span key={i} className="text-xs bg-gray-200 px-2 py-1 rounded-md">{tech}</span>
+                  <span key={i} className="text-xs font-bold px-2 py-2">{tech}</span>
                 ))}
               </div>
             </div>
@@ -140,7 +144,7 @@ const CVPdfTemplate = ({ cvData, cvName }: CVPdfTemplateProps) => {
           <h3 className="text-lg font-semibold mb-4 border-b border-gray-300 pb-1">Languages</h3>
           <div className="grid grid-cols-2 gap-4">
             {languages.map((lang, index) => (
-              <div key={index} className="flex justify-between">
+              <div key={index} style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span className="font-medium">{lang.name}</span>
                 <span className="text-gray-600">{lang.proficiency}</span>
               </div>

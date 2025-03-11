@@ -1,6 +1,6 @@
 
 import { useState, useRef } from 'react';
-import { Download, Mail, Printer, FileText } from 'lucide-react';
+import { Download, Mail, Printer, FileText, Copy, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { 
@@ -169,8 +169,11 @@ export default function CVActions({ personalInfo, cvName, cvData }: CVActionsPro
           </DialogHeader>
           
           <div className="py-6 space-y-4">
-            <div className="rounded-lg border p-4 bg-muted/30">
-              <h3 className="font-medium mb-2">Plain Text Email</h3>
+            <div className="rounded-lg border p-4 bg-accent/30 hover:bg-accent/50 transition-colors">
+              <h3 className="font-medium mb-2 flex items-center gap-2">
+                <ExternalLink className="h-4 w-4 text-primary" />
+                Plain Text Email
+              </h3>
               <p className="text-sm text-muted-foreground mb-3">
                 Opens your default email client with a simple text-based CV link. 
                 Works with all email clients.
@@ -184,8 +187,11 @@ export default function CVActions({ personalInfo, cvName, cvData }: CVActionsPro
               </Button>
             </div>
             
-            <div className="rounded-lg border p-4 bg-muted/30">
-              <h3 className="font-medium mb-2">HTML Rich Email</h3>
+            <div className="rounded-lg border p-4 bg-accent/30 hover:bg-accent/50 transition-colors">
+              <h3 className="font-medium mb-2 flex items-center gap-2">
+                <Copy className="h-4 w-4 text-primary" />
+                HTML Rich Email
+              </h3>
               <p className="text-sm text-muted-foreground mb-3">
                 Creates a beautifully formatted HTML email. Copy the HTML and paste 
                 it into email clients that support HTML formatting.

@@ -49,7 +49,7 @@ ${personalInfo.email}
 ${personalInfo.phone}
 `;
 
-  // AMP HTML email template
+  // Modern AMP HTML email template
   const ampHtml = `
 <!doctype html>
 <html ⚡4email>
@@ -58,36 +58,61 @@ ${personalInfo.phone}
   <style amp4email-boilerplate>body{visibility:hidden}</style>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <style amp-custom>
-    .email-container { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333; }
-    .header { background-color: #f8f9fa; padding: 20px; border-radius: 8px 8px 0 0; text-align: center; }
-    .content { padding: 20px; background-color: white; border-left: 1px solid #e9ecef; border-right: 1px solid #e9ecef; }
-    .footer { background-color: #f8f9fa; padding: 20px; border-radius: 0 0 8px 8px; font-size: 12px; color: #6c757d; text-align: center; border: 1px solid #e9ecef; }
-    .button { display: inline-block; background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 15px; font-weight: bold; }
-    .contact-info { margin-top: 20px; font-size: 14px; color: #6c757d; }
-    .highlight { color: #007bff; font-weight: bold; }
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f9fafb; }
+    .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+    .header { background-color: #3b82f6; padding: 30px 20px; text-align: center; color: white; }
+    .header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+    .content { padding: 30px 25px; background-color: white; }
+    .section { margin-bottom: 25px; }
+    .section h2 { color: #1f2937; font-size: 18px; margin-top: 0; margin-bottom: 15px; font-weight: 600; }
+    .avatar { width: 80px; height: 80px; border-radius: 50%; background-color: #dbeafe; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 30px; color: #3b82f6; }
+    .profile-name { font-size: 20px; font-weight: 600; margin: 10px 0 5px; color: #111827; }
+    .profile-title { font-size: 16px; color: #6b7280; margin: 0 0 10px; }
+    .profile-bio { font-size: 14px; color: #4b5563; margin-bottom: 20px; line-height: 1.6; }
+    .highlight { color: #3b82f6; font-weight: 600; }
+    .button { display: inline-block; background-color: #3b82f6; color: white; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: 500; margin-top: 10px; text-align: center; }
+    .button:hover { background-color: #2563eb; }
+    .contact-info { margin-top: 25px; background-color: #f3f4f6; padding: 15px; border-radius: 6px; }
+    .contact-item { font-size: 14px; color: #4b5563; margin-bottom: 5px; }
+    .contact-item strong { color: #374151; }
+    .footer { background-color: #f9fafb; padding: 20px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #e5e7eb; }
+    .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+    .social-link { display: inline-block; width: 32px; height: 32px; background-color: #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4b5563; text-decoration: none; }
   </style>
 </head>
 <body>
   <div class="email-container">
     <div class="header">
-      <h1>Professional CV from VitaHub</h1>
+      <h1>${personalInfo.name}'s CV from VitaHub</h1>
     </div>
     <div class="content">
-      <p>Hello,</p>
-      <p>I'm excited to share my professional CV with you. It showcases my experience, skills, and qualifications:</p>
-      <p><span class="highlight">${personalInfo.name}</span> - ${personalInfo.title}</p>
-      <p>${personalInfo.bio}</p>
-      <p>Please click the button below to view my complete CV:</p>
-      <a href="${url}" class="button">View My CV</a>
+      <div class="section" style="text-align: center;">
+        <div class="avatar">${personalInfo.name.charAt(0)}</div>
+        <div class="profile-name">${personalInfo.name}</div>
+        <div class="profile-title">${personalInfo.title}</div>
+      </div>
+      
+      <div class="section">
+        <p>Hello,</p>
+        <p>I'm excited to share my professional CV with you. It provides a comprehensive overview of my skills, experience, and qualifications.</p>
+        <p class="profile-bio">${personalInfo.bio}</p>
+        <p>You can view my complete CV by clicking the button below:</p>
+        <div style="text-align: center;">
+          <a href="${url}" class="button">View My CV</a>
+        </div>
+      </div>
+      
       <div class="contact-info">
-        <p>If you have any questions, feel free to contact me:</p>
-        <p>Email: ${personalInfo.email}</p>
-        <p>Phone: ${personalInfo.phone}</p>
-        <p>Location: ${personalInfo.location}</p>
+        <div class="contact-item"><strong>Email:</strong> ${personalInfo.email}</div>
+        <div class="contact-item"><strong>Phone:</strong> ${personalInfo.phone}</div>
+        <div class="contact-item"><strong>Location:</strong> ${personalInfo.location}</div>
+        ${personalInfo.website ? `<div class="contact-item"><strong>Website:</strong> ${personalInfo.website}</div>` : ''}
       </div>
     </div>
+    
     <div class="footer">
-      <p>This CV was created using VitaHub - The professional CV platform</p>
+      <p>This CV was created using <a href="https://vitahub.app" target="_blank" rel="noopener noreferrer">VitaHub</a></p>
+      <p>The professional CV platform</p>
       <p>© ${new Date().getFullYear()} VitaHub. All rights reserved.</p>
     </div>
   </div>
