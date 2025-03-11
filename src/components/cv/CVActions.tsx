@@ -3,9 +3,22 @@ import { useState, useRef } from 'react';
 import { Download, Mail, Printer, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { generatePDF, createMailtoLink, createAmpEmailBody } from '@/utils/pdfGenerator';
+import { 
+  generatePDF, 
+  createMailtoLink, 
+  createAmpEmailBody 
+} from '@/utils/pdfGenerator';
 import { PersonalInfo } from '@/types/cv';
 import CVPdfTemplate from './CVPdfTemplate';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+  DialogFooter,
+} from '@/components/ui/dialog';
 
 interface CVActionsProps {
   personalInfo: PersonalInfo;
@@ -16,6 +29,7 @@ interface CVActionsProps {
 export default function CVActions({ personalInfo, cvName, cvData }: CVActionsProps) {
   const { toast } = useToast();
   const [isGenerating, setIsGenerating] = useState(false);
+  const [emailDialogOpen, setEmailDialogOpen] = useState(false);
   const pdfTemplateRef = useRef<HTMLDivElement>(null);
   
   const handleDownloadCV = async () => {
@@ -74,49 +88,124 @@ export default function CVActions({ personalInfo, cvName, cvData }: CVActionsPro
     }
   };
   
-  const handleEmailCV = () => {
+  const handlePlainTextEmail = () => {
     const subject = `${personalInfo.name}'s CV from VitaHub`;
     const url = `${window.location.origin}/cv/${cvName}`;
     
-    // Create AMP email with fallback
-    const { plainTextFallback, ampHtml } = createAmpEmailBody(cvName, personalInfo, url);
+    const { plainTextFallback } = createAmpEmailBody(cvName, personalInfo, url);
     
-    // For mailto links, we'll use the plain text fallback as most email clients
-    // don't support setting HTML content via mailto
+    // Create a properly encoded mailto link with plain text
     window.location.href = createMailtoLink('', subject, plainTextFallback);
     
-    // Log the AMP HTML for debugging/copy-paste
-    console.log("AMP HTML email template (copy this to use in email clients that support AMP):", ampHtml);
-    
-    // Show toast with instructions
     toast({
       title: "Email Client Opened",
-      description: "For HTML formatting, check the console for the AMP HTML template you can copy.",
+      description: "Plain text email has been prepared in your email client.",
     });
+    
+    setEmailDialogOpen(false);
+  };
+  
+  const handleHTMLEmail = () => {
+    const subject = `${personalInfo.name}'s CV from VitaHub`;
+    const url = `${window.location.origin}/cv/${cvName}`;
+    
+    const { ampHtml } = createAmpEmailBody(cvName, personalInfo, url);
+    
+    // Copy HTML to clipboard
+    navigator.clipboard.writeText(ampHtml)
+      .then(() => {
+        toast({
+          title: "HTML Copied to Clipboard",
+          description: "Paste the HTML into your email client to send a rich HTML email.",
+        });
+      })
+      .catch(err => {
+        console.error('Failed to copy HTML: ', err);
+        toast({
+          title: "Error",
+          description: "Failed to copy HTML to clipboard. Please try again.",
+          variant: "destructive",
+        });
+      });
+    
+    setEmailDialogOpen(false);
   };
   
   return (
-    <div className="flex flex-wrap gap-3 mt-6 mb-6">
-      <Button
-        variant="outline"
-        size="sm"
-        className="flex items-center gap-2"
-        onClick={handleDownloadCV}
-        disabled={isGenerating}
-      >
-        <FileText size={16} />
-        {isGenerating ? 'Generating...' : 'Download PDF'}
-      </Button>
+    <>
+      <div className="flex flex-wrap gap-3 mt-6 mb-6">
+        <Button
+          variant="outline"
+          size="sm"
+          className="flex items-center gap-2"
+          onClick={handleDownloadCV}
+          disabled={isGenerating}
+        >
+          <FileText size={16} />
+          {isGenerating ? 'Generating...' : 'Download PDF'}
+        </Button>
+        
+        <Button
+          variant="outline"
+          size="sm"
+          className="flex items-center gap-2"
+          onClick={() => setEmailDialogOpen(true)}
+        >
+          <Mail size={16} />
+          Email CV
+        </Button>
+      </div>
       
-      <Button
-        variant="outline"
-        size="sm"
-        className="flex items-center gap-2"
-        onClick={handleEmailCV}
-      >
-        <Mail size={16} />
-        Email CV
-      </Button>
-    </div>
+      <Dialog open={emailDialogOpen} onOpenChange={setEmailDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Mail className="h-5 w-5 text-primary" />
+              <span>Share CV via Email</span>
+            </DialogTitle>
+            <DialogDescription>
+              Choose how you'd like to share this CV
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="py-6 space-y-4">
+            <div className="rounded-lg border p-4 bg-muted/30">
+              <h3 className="font-medium mb-2">Plain Text Email</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Opens your default email client with a simple text-based CV link. 
+                Works with all email clients.
+              </p>
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={handlePlainTextEmail}
+              >
+                Send as Plain Text
+              </Button>
+            </div>
+            
+            <div className="rounded-lg border p-4 bg-muted/30">
+              <h3 className="font-medium mb-2">HTML Rich Email</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Creates a beautifully formatted HTML email. Copy the HTML and paste 
+                it into email clients that support HTML formatting.
+              </p>
+              <Button 
+                className="w-full"
+                onClick={handleHTMLEmail}
+              >
+                Copy HTML to Clipboard
+              </Button>
+            </div>
+          </div>
+          
+          <DialogFooter className="flex justify-end gap-2">
+            <DialogClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }

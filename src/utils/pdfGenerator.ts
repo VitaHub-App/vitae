@@ -25,13 +25,13 @@ export const generatePDF = async (elementId: string, filename: string) => {
   }
 };
 
-// Enhanced email functionality with AMP HTML
+// Enhanced email functionality with AMP HTML and proper URL encoding
 export const createMailtoLink = (email: string, subject: string, body: string) => {
-  const params = new URLSearchParams();
-  params.append('subject', subject);
-  params.append('body', body);
+  // Properly encode parameters for mailto URL
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(body);
   
-  return `mailto:${email}?${params.toString()}`;
+  return `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
 };
 
 // Create an AMP HTML email body with fallback text
