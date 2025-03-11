@@ -39,7 +39,11 @@ const CVTemplate = () => {
       <main className="flex-1 py-10 px-4 sm:px-6">
         <div id="cv-content" className="max-w-4xl mx-auto">
           <PersonalInfoCard personalInfo={cvData.personalInfo} />
-          <CVActions personalInfo={cvData.personalInfo} cvName={personName} />
+          <CVActions 
+            personalInfo={cvData.personalInfo} 
+            cvName={personName} 
+            cvData={cvData}
+          />
           <CVSections cvData={cvData} />
           <CVFooter />
         </div>
