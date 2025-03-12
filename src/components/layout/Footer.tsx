@@ -91,7 +91,7 @@ export default function Footer() {
               onClick={() => setTermsOfServicePopupOpen(true)}
               className="text-sm text-secondary-foreground/60 hover:text-primary-foreground transition-colors"
             >
-              Privacy
+              Terms
             </button>
             <button 
               onClick={() => setCookiePopupOpen(true)}
