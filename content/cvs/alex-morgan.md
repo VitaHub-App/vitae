@@ -45,7 +45,40 @@ languages:
     proficiency: Elementary proficiency
 ---
 
+<!--
+
+Procedural Instructions:
+
+- Go through your life from the moment you graduated from school until now
+- Identify every period in which you dedicated a significant amount of your time to a consistent goal
+- Take these periods and classify them into 'Experience', 'Education' & 'Projects', where:
+  - Experience: if the focus of this period was in **application** of knowledge or skills
+  - Education: if the focus of this period was in **acquisition** of knowledge or skills
+  - Project: if it was  an episode within a larger period dedicated either to **application** or **acquisition** of knowledge or skills; use this for poviding more detailed insights
+- While you go through your vita, note down all skills acquired into the frontmatter, without rating the level just yet
+- After you finished, subjectively rate your skills among each other:
+  - The think you know best is 5 the thing you know least is 1.
+  - Don't aim for an objective criterion, keep it subjective.
+  - Your rating will have to be nordmed by the reader during interviews or via your overall vita.
+
+Technical Instructions:
+
+- Please conform rather strictly to the format, our parser is intricate and depends on the exact formatting.
+- You can try for errors locally with `npm run dev`, otherwise our CI will complain if there's an issue
+- Also check the final rendered CV before submitting the PR; create a GitHub issue, if you encounter any problem.
+
+Localization Insttructions:
+
+- When you finished your main language: copy your CV over with a suffix, e.g. `_fr.md` for french
+- Then translate all items, including frontmatter values, with exception of (hard-coded keywords):
+  - Headers: Experience | Education | Projects
+  - Within Projects: List item prefixes 'Technologies:' & 'Link:' - all other free-form prefixes should be translated
+
+-->
+
 ## Experience
+
+<!-- Experience is a period in your life where the focus was on **application** of knowledge or skills -->
 
 ### Senior Product Designer
 TechCorp Inc. | San Francisco, CA | Jan 2020 - Present
@@ -73,6 +106,8 @@ DesignWorks Agency | Portland, OR | Sep 2015 - Feb 2017
 
 ## Education
 
+<!-- Education is a period in your life where the focus was on **acquisition** of knowledge or skills -->
+
 ### Master of Fine Arts, Interaction Design
 California College of the Arts | San Francisco, CA | 2013 - 2015
 
@@ -87,6 +122,8 @@ University of Oregon | Eugene, OR | 2009 - 2013
 - Dean's List, 8 consecutive semesters
 
 ## Projects
+
+<!-- Projects are episodes during the above periods in your life focusing on both, acquisition and application of knowledge or skills; this can give readers a more detailed insight abouut you on a specific topic of interest -->
 
 ### HealthTrack Mobile App (2021)
 Redesigned health tracking app focusing on accessibility and habit formation.
