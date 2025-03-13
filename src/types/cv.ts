@@ -1,6 +1,9 @@
 
 import { z } from 'zod';
 
+// Define the angle tag schema
+export const angleTagSchema = z.array(z.string()).optional();
+
 // Zod schemas for validation
 export const personalInfoSchema = z.object({
   name: z.string().min(1),
@@ -12,6 +15,7 @@ export const personalInfoSchema = z.object({
   github: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   bio: z.string().min(1),
+  defaultAngle: z.string().optional(), // Default angle to display
 });
 
 export const experienceSchema = z.object({
@@ -20,6 +24,7 @@ export const experienceSchema = z.object({
   location: z.string().min(1),
   period: z.string().min(1),
   description: z.array(z.string().min(1)),
+  angles: angleTagSchema,
 });
 
 export const educationSchema = z.object({
@@ -28,17 +33,20 @@ export const educationSchema = z.object({
   location: z.string().min(1),
   period: z.string().min(1),
   description: z.array(z.string().min(1)),
+  angles: angleTagSchema,
 });
 
 export const skillSchema = z.object({
   name: z.string().min(1),
   level: z.number().min(1).max(5),
+  angles: angleTagSchema,
 });
 
 // New schema for skill groups
 export const skillGroupSchema = z.object({
   name: z.string().min(1),
   skills: z.array(skillSchema),
+  angles: angleTagSchema,
 });
 
 // Union type for either flat skills array or grouped skills
@@ -54,11 +62,13 @@ export const projectSchema = z.object({
   details: z.array(z.string().min(1)).optional(),
   technologies: z.array(z.string().min(1)),
   link: z.string().url().optional(),
+  angles: angleTagSchema,
 });
 
 export const languageSchema = z.object({
   name: z.string().min(1),
   proficiency: z.string().min(1),
+  angles: angleTagSchema,
 });
 
 export const languagesSchema = z.array(languageSchema).optional().default([])

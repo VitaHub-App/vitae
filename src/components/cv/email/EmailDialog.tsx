@@ -2,7 +2,7 @@
 import { Mail, ExternalLink, Copy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { createMailtoLink, createAmpEmailBody } from '@/utils/pdfGenerator';
+import { createMailtoLink, createAmpEmailBody } from '@/utils/emailGenerator';
 import { PersonalInfo } from '@/types/cv';
 import {
   Dialog,

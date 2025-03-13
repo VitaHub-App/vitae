@@ -1,44 +1,88 @@
-
 import React from 'react';
-import { CVData, Skill, SkillGroup, COMPACT_ITEMS_LIMIT } from '@/types/cv';
+import {
+  CVData,
+  PersonalInfo,
+  Skill,
+  SkillGroup,
+  COMPACT_ITEMS_LIMIT,
+} from '@/types/cv';
 
 interface CVPdfTemplateProps {
   cvData: CVData;
+  personalInfo: PersonalInfo;
   cvName: string;
-  isCompact?: boolean;
+  isCompact: boolean;
+  currentAngle?: string;
 }
 
-const CVPdfTemplate = ({ cvData, cvName, isCompact = true }: CVPdfTemplateProps) => {
-  const { personalInfo, experience, education, skills, projects, languages } = cvData;
-  
-  // Filter data based on compact mode
-  const getFilteredData = (data: any[], limitCount = COMPACT_ITEMS_LIMIT) => {
-    if (!isCompact) return data;
-    return data.slice(0, limitCount);
+const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({ 
+  cvData, 
+  personalInfo,
+  cvName,
+  isCompact,
+  currentAngle 
+}) => {
+  const {
+    experience = [],
+    education = [],
+    projects = [],
+    languages = [],
+    skills = []
+  } = cvData || {};
+
+  // Helper function to determine if an item should be visible based on angle
+  const shouldShowItem = (itemAngles?: string[]) => {
+    // If no angle is selected or the item has no angles, show it
+    if (!currentAngle || !itemAngles || itemAngles.length === 0) {
+      return true;
+    }
+    
+    // If an angle is selected, show only items tagged with that angle
+    return itemAngles.includes(currentAngle);
   };
 
-  // Filter data for display in PDF
-  const filteredExperience = getFilteredData(experience);
-  const filteredEducation = getFilteredData(education);
-  const filteredProjects = getFilteredData(projects);
-  const filteredLanguages = getFilteredData(languages);
-  
   // Helper function to determine if skills are grouped
   const hasGroupedSkills = (): boolean => {
-    if (!skills.length) return false;
-    return 'name' in skills[0] && 'skills' in skills[0];
+    if (!cvData.skills.length) return false;
+    return 'name' in cvData.skills[0] && 'skills' in cvData.skills[0];
   };
 
-  // Calculate total and shown skill counts for the title
+  // Filter data based on compact mode and selected angle
+  const getFilteredData = (data: any[], limitCount = COMPACT_ITEMS_LIMIT) => {
+    // First filter by angle
+    const angleFilteredData = data.filter(item => shouldShowItem(item.angles));
+    
+    // Then apply compact mode limiting if needed
+    if (!isCompact) return angleFilteredData;
+    return angleFilteredData.slice(0, limitCount);
+  };
+
+  // Calculate total and shown skill counts
   const calculateSkillCounts = () => {
     if (hasGroupedSkills()) {
-      const groupedSkills = skills as SkillGroup[];
-      const totalSkills = groupedSkills.reduce((total, group) => total + group.skills.length, 0);
+      const groupedSkills = cvData.skills as SkillGroup[];
+      
+      // First filter groups by angle
+      const filteredGroups = groupedSkills.filter(group => shouldShowItem(group.angles));
+      
+      // Then filter skills within each group by angle
+      const filteredGroupsWithFilteredSkills = filteredGroups.map(group => ({
+        ...group,
+        skills: group.skills.filter(skill => shouldShowItem(skill.angles))
+      }));
+      
+      const totalSkills = filteredGroupsWithFilteredSkills.reduce(
+        (total, group) => total + group.skills.length, 0
+      );
+      
       let shownSkills = 0;
       
+      // If compact, calculate the number of shown skills
       if (isCompact) {
-        const limitedGroups = groupedSkills.slice(0, 3);
+        // Take up to 3 groups
+        const limitedGroups = filteredGroupsWithFilteredSkills.slice(0, 3);
         shownSkills = limitedGroups.reduce((total, group) => {
+          // Take up to 3 skills per group
           return total + Math.min(group.skills.length, 3);
         }, 0);
       } else {
@@ -47,18 +91,41 @@ const CVPdfTemplate = ({ cvData, cvName, isCompact = true }: CVPdfTemplateProps)
       
       return { total: totalSkills, shown: shownSkills };
     } else {
-      const flatSkills = skills as Skill[];
-      const totalSkills = flatSkills.length;
-      const shownSkills = isCompact ? Math.min(flatSkills.length, COMPACT_ITEMS_LIMIT) : totalSkills;
+      // First filter flat skills by angle
+      const filteredSkills = (cvData.skills as Skill[]).filter(
+        skill => shouldShowItem(skill.angles)
+      );
+      
+      const totalSkills = filteredSkills.length;
+      const shownSkills = isCompact ? Math.min(filteredSkills.length, COMPACT_ITEMS_LIMIT) : totalSkills;
       
       return { total: totalSkills, shown: shownSkills };
     }
   };
 
+  // Get skill counts for display
   const skillCounts = calculateSkillCounts();
 
+  // Apply angle filtering to all sections
+  const filteredExperience = getFilteredData(experience);
+  const filteredEducation = getFilteredData(education);
+  const filteredProjects = getFilteredData(projects);
+  const filteredLanguages = getFilteredData(languages);
+  const filteredSkills = hasGroupedSkills()
+  ? (getFilteredData(skills) as SkillGroup[]).map(group => ({
+      ...group,
+      skills: getFilteredData(group.skills)
+    }))
+  : getFilteredData(skills as Skill[]);
+
+  // Get total counts after angle filtering
+  const totalExperience = experience.filter(item => shouldShowItem(item.angles)).length;
+  const totalEducation = education.filter(item => shouldShowItem(item.angles)).length;
+  const totalProjects = projects.filter(item => shouldShowItem(item.angles)).length;
+  const totalLanguages = languages.filter(item => shouldShowItem(item.angles)).length;
+  
   // Render a single skill item
-  const renderSkillItem = (skill: Skill, key: string) => (
+  const renderSkillItem = (skill: Skill, key: number) => (
     <div key={key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
       <span style={{ fontWeight: 500, flexBasis: '50%', textAlign: 'left' }}>{skill.name}</span>
       <div style={{ display: 'flex', justifyContent: 'flex-end', flexBasis: '50%' }}>
@@ -77,40 +144,7 @@ const CVPdfTemplate = ({ cvData, cvName, isCompact = true }: CVPdfTemplateProps)
       </div>
     </div>
   );
-  
-  // Render skills section based on structure
-  const renderSkillsSection = () => {
-    if (hasGroupedSkills()) {
-      const groupedSkills = skills as SkillGroup[];
-      const filteredSkillGroups = isCompact 
-        ? groupedSkills.map(group => ({
-            ...group,
-            skills: group.skills.slice(0, 3) // Limit skills in each group
-          })).slice(0, 3) // Limit number of groups
-        : groupedSkills;
 
-      return (
-        <>
-          {filteredSkillGroups.map((group, groupIndex) => (
-            <div key={groupIndex} style={{ marginBottom: '20px' }}>
-              <h4 style={{ marginBottom: '10px', fontSize: '1rem', fontWeight: 'bold' }}>{group.name}</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
-                {group.skills.map((skill, skillIndex) => renderSkillItem(skill, `${groupIndex}-${skillIndex}`))}
-              </div>
-            </div>
-          ))}
-        </>
-      );
-    } else {
-      const filteredSkills = getFilteredData(skills as Skill[]);
-      return (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
-          {filteredSkills.map((skill, index) => renderSkillItem(skill, `skill-${index}`))}
-        </div>
-      );
-    }
-  };
-  
   return (
     <div className="cv-pdf-container bg-white text-black p-10" style={{ fontFamily: 'Arial, sans-serif' }}>
       {/* Header section */}
@@ -142,7 +176,7 @@ const CVPdfTemplate = ({ cvData, cvName, isCompact = true }: CVPdfTemplateProps)
       {/* Experience section */}
       <section style={{ marginBottom: '2rem' }}>
         <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.25rem' }}>
-          Professional Experience {isCompact && experience.length > COMPACT_ITEMS_LIMIT ? `(${filteredExperience.length}/${experience.length})` : ''}
+          Professional Experience {isCompact &&  totalExperience > COMPACT_ITEMS_LIMIT ? ` (${filteredExperience.length}/${totalExperience})` : ''}
         </h3>
         {filteredExperience.map((job, index) => (
           <div key={index} style={{ marginBottom: '1rem' }}>
@@ -166,7 +200,7 @@ const CVPdfTemplate = ({ cvData, cvName, isCompact = true }: CVPdfTemplateProps)
       {/* Education section */}
       <section style={{ marginBottom: '2rem' }}>
         <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.25rem' }}>
-          Education {isCompact && education.length > COMPACT_ITEMS_LIMIT ? `(${filteredEducation.length}/${education.length})` : ''}
+          Education {isCompact &&  totalEducation > COMPACT_ITEMS_LIMIT ? ` (${filteredEducation.length}/${totalEducation})` : ''}
         </h3>
         {filteredEducation.map((edu, index) => (
           <div key={index} style={{ marginBottom: '1rem' }}>
@@ -190,18 +224,35 @@ const CVPdfTemplate = ({ cvData, cvName, isCompact = true }: CVPdfTemplateProps)
       </section>
       
       {/* Skills section */}
-      <section style={{ marginBottom: '2rem' }}>
-        <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.25rem' }}>
-          Skills {isCompact && skillCounts.total > skillCounts.shown ? `(${skillCounts.shown}/${skillCounts.total})` : ''}
-        </h3>
-        {renderSkillsSection()}
-      </section>
+      {skillCounts.total > 0 && (
+        <section style={{ marginBottom: '2rem' }}>
+          <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.25rem' }}>
+            Skills {isCompact && skillCounts.total > skillCounts.shown ? ` (${skillCounts.shown}/${skillCounts.total})` : ''}
+          </h3>
+          <div>
+            {hasGroupedSkills() ? (
+              (filteredSkills as SkillGroup[]).map((group, index) => (
+                <div key={index} className="mb-4">
+                  <h3 className="font-semibold">{group.name}</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {group.skills.map((skill, i) => renderSkillItem(skill, i))}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="grid grid-cols-2 gap-2">
+                {(filteredSkills as Skill[]).map((skill, index) => renderSkillItem(skill, index))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
       
       {/* Projects section */}
       {filteredProjects.length > 0 && (
         <section style={{ marginBottom: '2rem' }}>
           <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.25rem' }}>
-            Projects {isCompact && projects.length > COMPACT_ITEMS_LIMIT ? `(${filteredProjects.length}/${projects.length})` : ''}
+            Projects {isCompact &&  totalProjects > COMPACT_ITEMS_LIMIT ? ` (${filteredProjects.length}/${totalProjects})` : ''}
           </h3>
           {filteredProjects.map((project, index) => (
             <div key={index} style={{ marginBottom: '1rem' }}>
@@ -243,7 +294,7 @@ const CVPdfTemplate = ({ cvData, cvName, isCompact = true }: CVPdfTemplateProps)
       {filteredLanguages.length > 0 && (
         <section>
           <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.25rem' }}>
-            Languages {isCompact && languages.length > COMPACT_ITEMS_LIMIT ? `(${filteredLanguages.length}/${languages.length})` : ''}
+            Languages {isCompact &&  totalLanguages > COMPACT_ITEMS_LIMIT ? ` (${filteredLanguages.length}/${totalLanguages})` : ''}
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
             {filteredLanguages.map((lang, index) => (

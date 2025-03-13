@@ -9,13 +9,29 @@ import ProjectCard from './ProjectCard';
 interface CVSectionsProps {
   cvData: CVData;
   isCompact?: boolean;
+  currentAngle?: string | null;
 }
 
-export default function CVSections({ cvData, isCompact = true }: CVSectionsProps) {
+export default function CVSections({ 
+  cvData, 
+  isCompact = true, 
+  currentAngle = null 
+}: CVSectionsProps) {
   const [expandedSection, setExpandedSection] = useState<string>('personal');
 
   const handleSectionToggle = (sectionName: string) => {
     setExpandedSection(sectionName === expandedSection ? '' : sectionName);
+  };
+
+  // Helper function to determine if an item should be visible based on angle
+  const shouldShowItem = (itemAngles?: string[]) => {
+    // If no angle is selected or the item has no angles, show it
+    if (!currentAngle || !itemAngles || itemAngles.length === 0) {
+      return true;
+    }
+    
+    // If an angle is selected, show only items tagged with that angle
+    return itemAngles.includes(currentAngle);
   };
 
   // Helper function to determine if skills are grouped
@@ -24,23 +40,40 @@ export default function CVSections({ cvData, isCompact = true }: CVSectionsProps
     return 'name' in cvData.skills[0] && 'skills' in cvData.skills[0];
   };
 
-  // Filter data based on compact mode
+  // Filter data based on compact mode and selected angle
   const getFilteredData = (data: any[], limitCount = COMPACT_ITEMS_LIMIT) => {
-    if (!isCompact) return data;
-    return data.slice(0, limitCount);
+    // First filter by angle
+    const angleFilteredData = data.filter(item => shouldShowItem(item.angles));
+    
+    // Then apply compact mode limiting if needed
+    if (!isCompact) return angleFilteredData;
+    return angleFilteredData.slice(0, limitCount);
   };
 
   // Calculate total and shown skill counts
   const calculateSkillCounts = () => {
     if (hasGroupedSkills()) {
       const groupedSkills = cvData.skills as SkillGroup[];
-      const totalSkills = groupedSkills.reduce((total, group) => total + group.skills.length, 0);
+      
+      // First filter groups by angle
+      const filteredGroups = groupedSkills.filter(group => shouldShowItem(group.angles));
+      
+      // Then filter skills within each group by angle
+      const filteredGroupsWithFilteredSkills = filteredGroups.map(group => ({
+        ...group,
+        skills: group.skills.filter(skill => shouldShowItem(skill.angles))
+      }));
+      
+      const totalSkills = filteredGroupsWithFilteredSkills.reduce(
+        (total, group) => total + group.skills.length, 0
+      );
+      
       let shownSkills = 0;
       
       // If compact, calculate the number of shown skills
       if (isCompact) {
         // Take up to 3 groups
-        const limitedGroups = groupedSkills.slice(0, 3);
+        const limitedGroups = filteredGroupsWithFilteredSkills.slice(0, 3);
         shownSkills = limitedGroups.reduce((total, group) => {
           // Take up to 3 skills per group
           return total + Math.min(group.skills.length, 3);
@@ -51,9 +84,13 @@ export default function CVSections({ cvData, isCompact = true }: CVSectionsProps
       
       return { total: totalSkills, shown: shownSkills };
     } else {
-      const flatSkills = cvData.skills as Skill[];
-      const totalSkills = flatSkills.length;
-      const shownSkills = isCompact ? Math.min(flatSkills.length, COMPACT_ITEMS_LIMIT) : totalSkills;
+      // First filter flat skills by angle
+      const filteredSkills = (cvData.skills as Skill[]).filter(
+        skill => shouldShowItem(skill.angles)
+      );
+      
+      const totalSkills = filteredSkills.length;
+      const shownSkills = isCompact ? Math.min(filteredSkills.length, COMPACT_ITEMS_LIMIT) : totalSkills;
       
       return { total: totalSkills, shown: shownSkills };
     }
@@ -82,16 +119,27 @@ export default function CVSections({ cvData, isCompact = true }: CVSectionsProps
     if (hasGroupedSkills()) {
       // For grouped skills
       const groupedSkills = cvData.skills as SkillGroup[];
-      const filteredSkillGroups = isCompact 
-        ? groupedSkills.map(group => ({
+      
+      // Filter groups by angle
+      const filteredGroups = groupedSkills.filter(group => shouldShowItem(group.angles));
+      
+      const filteredSkillGroups = filteredGroups.map(group => ({
+        ...group,
+        // Filter skills within each group by angle
+        skills: group.skills.filter(skill => shouldShowItem(skill.angles))
+      }));
+      
+      // Apply compact mode if needed
+      const limitedSkillGroups = isCompact 
+        ? filteredSkillGroups.map(group => ({
             ...group,
             skills: group.skills.slice(0, 3) // Limit skills in each group
           })).slice(0, 3) // Limit number of groups
-        : groupedSkills;
+        : filteredSkillGroups;
 
       return (
         <div className="space-y-6">
-          {filteredSkillGroups.map((group, groupIndex) => (
+          {limitedSkillGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="space-y-4">
               <h3 className="text-lg font-semibold border-b border-border pb-2">{group.name}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
@@ -103,10 +151,19 @@ export default function CVSections({ cvData, isCompact = true }: CVSectionsProps
       );
     } else {
       // For flat skills structure
-      const filteredSkills = getFilteredData(cvData.skills as Skill[]);
+      const flatSkills = cvData.skills as Skill[];
+      
+      // Filter skills by angle
+      const filteredSkills = flatSkills.filter(skill => shouldShowItem(skill.angles));
+      
+      // Apply compact mode if needed
+      const limitedSkills = isCompact 
+        ? filteredSkills.slice(0, COMPACT_ITEMS_LIMIT)
+        : filteredSkills;
+        
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
-          {filteredSkills.map((skill, index) => renderSkillItem(skill, index))}
+          {limitedSkills.map((skill, index) => renderSkillItem(skill, index))}
         </div>
       );
     }
@@ -115,53 +172,67 @@ export default function CVSections({ cvData, isCompact = true }: CVSectionsProps
   // Get skill counts for display
   const skillCounts = calculateSkillCounts();
 
-  // Filter data for display
+  // Filter data for display based on angle and compact mode
   const filteredExperience = getFilteredData(cvData.experience);
   const filteredEducation = getFilteredData(cvData.education);
   const filteredProjects = getFilteredData(cvData.projects);
   const filteredLanguages = getFilteredData(cvData.languages);
 
+  // Get total counts after angle filtering
+  const totalExperience = cvData.experience.filter(item => shouldShowItem(item.angles)).length;
+  const totalEducation = cvData.education.filter(item => shouldShowItem(item.angles)).length;
+  const totalProjects = cvData.projects.filter(item => shouldShowItem(item.angles)).length;
+  const totalLanguages = cvData.languages.filter(item => shouldShowItem(item.angles)).length;
+
   return (
     <div className="space-y-6 animate-fade-in" style={{ animationDelay: "150ms" }}>
       {/* Experience Section */}
       <CVSection 
-        title={`Experience${isCompact && cvData.experience.length > COMPACT_ITEMS_LIMIT ? ` (${filteredExperience.length}/${cvData.experience.length})` : ''}`}
+        title={`Experience${isCompact && totalExperience > COMPACT_ITEMS_LIMIT ? ` (${filteredExperience.length}/${totalExperience})` : ''}`}
         icon={BriefcaseBusiness}
         isExpanded={expandedSection === 'experience'}
         onToggle={() => handleSectionToggle('experience')}
       >
         <div className="space-y-8">
-          {filteredExperience.map((exp, index) => (
-            <TimelineItem
-              key={index}
-              title={exp.title}
-              organization={exp.company}
-              location={exp.location}
-              period={exp.period}
-              description={exp.description}
-            />
-          ))}
+          {filteredExperience.length > 0 ? (
+            filteredExperience.map((exp, index) => (
+              <TimelineItem
+                key={index}
+                title={exp.title}
+                organization={exp.company}
+                location={exp.location}
+                period={exp.period}
+                description={exp.description}
+              />
+            ))
+          ) : (
+            <p className="text-muted-foreground">No experience data available for the selected filter.</p>
+          )}
         </div>
       </CVSection>
       
       {/* Education Section */}
       <CVSection 
-        title={`Education${isCompact && cvData.education.length > COMPACT_ITEMS_LIMIT ? ` (${filteredEducation.length}/${cvData.education.length})` : ''}`}
+        title={`Education${isCompact && totalEducation > COMPACT_ITEMS_LIMIT ? ` (${filteredEducation.length}/${totalEducation})` : ''}`}
         icon={GraduationCap}
         isExpanded={expandedSection === 'education'}
         onToggle={() => handleSectionToggle('education')}
       >
         <div className="space-y-8">
-          {filteredEducation.map((edu, index) => (
-            <TimelineItem
-              key={index}
-              title={edu.degree}
-              organization={edu.institution}
-              location={edu.location}
-              period={edu.period}
-              description={edu.description}
-            />
-          ))}
+          {filteredEducation.length > 0 ? (
+            filteredEducation.map((edu, index) => (
+              <TimelineItem
+                key={index}
+                title={edu.degree}
+                organization={edu.institution}
+                location={edu.location}
+                period={edu.period}
+                description={edu.description}
+              />
+            ))
+          ) : (
+            <p className="text-muted-foreground">No education data available for the selected filter.</p>
+          )}
         </div>
       </CVSection>
       
@@ -172,38 +243,48 @@ export default function CVSections({ cvData, isCompact = true }: CVSectionsProps
         isExpanded={expandedSection === 'skills'}
         onToggle={() => handleSectionToggle('skills')}
       >
-        {renderSkillsContent()}
+        {skillCounts.total > 0 ? renderSkillsContent() : (
+          <p className="text-muted-foreground">No skills data available for the selected filter.</p>
+        )}
       </CVSection>
       
       {/* Projects Section */}
       <CVSection 
-        title={`Projects${isCompact && cvData.projects.length > COMPACT_ITEMS_LIMIT ? ` (${filteredProjects.length}/${cvData.projects.length})` : ''}`}
+        title={`Projects${isCompact && totalProjects > COMPACT_ITEMS_LIMIT ? ` (${filteredProjects.length}/${totalProjects})` : ''}`}
         icon={Code}
         isExpanded={expandedSection === 'projects'}
         onToggle={() => handleSectionToggle('projects')}
       >
-        <div className="grid grid-cols-1 gap-6">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
+        {filteredProjects.length > 0 ? (
+          <div className="grid grid-cols-1 gap-6">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-muted-foreground">No projects data available for the selected filter.</p>
+        )}
       </CVSection>
       
       {/* Languages Section */}
       <CVSection 
-        title={`Languages${isCompact && cvData.languages.length > COMPACT_ITEMS_LIMIT ? ` (${filteredLanguages.length}/${cvData.languages.length})` : ''}`}
+        title={`Languages${isCompact && totalLanguages > COMPACT_ITEMS_LIMIT ? ` (${filteredLanguages.length}/${totalLanguages})` : ''}`}
         icon={Languages}
         isExpanded={expandedSection === 'languages'}
         onToggle={() => handleSectionToggle('languages')}
       >
-        <ul className="space-y-4">
-          {filteredLanguages.map((lang, index) => (
-            <li key={index} className="flex justify-between items-center border-b border-border pb-3 last:border-0">
-              <span className="font-medium">{lang.name}</span>
-              <span className="text-muted-foreground">{lang.proficiency}</span>
-            </li>
-          ))}
-        </ul>
+        {filteredLanguages.length > 0 ? (
+          <ul className="space-y-4">
+            {filteredLanguages.map((lang, index) => (
+              <li key={index} className="flex justify-between items-center border-b border-border pb-3 last:border-0">
+                <span className="font-medium">{lang.name}</span>
+                <span className="text-muted-foreground">{lang.proficiency}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground">No language data available for the selected filter.</p>
+        )}
       </CVSection>
     </div>
   );
