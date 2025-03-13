@@ -80,3 +80,6 @@ export interface CVData {
   projects: Project[];
   languages: Language[];
 }
+
+// Constants for compact mode display
+export const COMPACT_ITEMS_LIMIT = 3; // Number of items to show in compact mode

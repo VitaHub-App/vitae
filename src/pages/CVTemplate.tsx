@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { useLoadCV } from '@/hooks/useLoadCV';
 import CVHeader from '@/components/cv/CVHeader';
@@ -13,9 +13,23 @@ const CVTemplate = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const nameFromQuery = searchParams.get('name');
+  const compactParam = searchParams.get('compact');
   
   const personName = name || nameFromQuery || 'alex-morgan';
   const [language, setLanguage] = useState('en');
+  const [isCompact, setIsCompact] = useState(compactParam !== 'false');
+  
+  // Update URL when compact mode changes
+  useEffect(() => {
+    const newSearchParams = new URLSearchParams(location.search);
+    newSearchParams.set('compact', isCompact.toString());
+    
+    const newSearch = newSearchParams.toString();
+    const newPath = `${location.pathname}${newSearch ? `?${newSearch}` : ''}`;
+    
+    // Update URL without reloading page
+    window.history.replaceState(null, '', newPath);
+  }, [isCompact, location]);
   
   const { cvData, availableLangs } = useLoadCV(personName, language);
 
@@ -43,8 +57,10 @@ const CVTemplate = () => {
             personalInfo={cvData.personalInfo} 
             cvName={personName} 
             cvData={cvData}
+            isCompact={isCompact}
+            onCompactToggle={() => setIsCompact(!isCompact)}
           />
-          <CVSections cvData={cvData} />
+          <CVSections cvData={cvData} isCompact={isCompact} />
           <CVFooter />
         </div>
       </main>

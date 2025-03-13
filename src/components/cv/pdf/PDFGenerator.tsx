@@ -1,5 +1,5 @@
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -11,9 +11,10 @@ interface PDFGeneratorProps {
   personalInfo: PersonalInfo;
   cvName: string;
   cvData: any;
+  isCompact: boolean;
 }
 
-export default function PDFGenerator({ personalInfo, cvName, cvData }: PDFGeneratorProps) {
+export default function PDFGenerator({ personalInfo, cvName, cvData, isCompact }: PDFGeneratorProps) {
   const { toast } = useToast();
   const [isGenerating, setIsGenerating] = useState(false);
   
@@ -37,13 +38,13 @@ export default function PDFGenerator({ personalInfo, cvName, cvData }: PDFGenera
       // Use React to render our PDF template
       const ReactDOM = await import('react-dom/client');
       const reactRoot = ReactDOM.createRoot(root);
-      reactRoot.render(<CVPdfTemplate cvData={cvData} cvName={cvName} />);
+      reactRoot.render(<CVPdfTemplate cvData={cvData} cvName={cvName} isCompact={isCompact} />);
       
       // Wait a moment for rendering to complete
       await new Promise(resolve => setTimeout(resolve, 500));
       
       // Generate PDF from the template
-      const result = await generatePDF('pdf-template-root', `${personalInfo.name.replace(/\s+/g, '-')}-CV`);
+      const result = await generatePDF('pdf-template-root', `${personalInfo.name.replace(/\s+/g, '-')}-CV${isCompact ? '-Compact' : ''}`);
       
       if (result) {
         toast({
