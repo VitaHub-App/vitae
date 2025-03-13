@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -8,9 +7,10 @@ interface ShowcaseItemProps {
   role: string;
   image: string;
   index: number;
+  target: string;
 }
 
-function ShowcaseItem({ title, role, image, target, index }: ShowcaseItemProps) {
+const ShowcaseItem: React.FC<ShowcaseItemProps> = ({ title, role, image, target, index }) => {
   return (
     <div 
       className="group relative overflow-hidden rounded-xl border border-border animate-fade-in animate-in"
@@ -36,7 +36,7 @@ function ShowcaseItem({ title, role, image, target, index }: ShowcaseItemProps) 
       </div>
     </div>
   );
-}
+};
 
 function CTA() {
   const [showModal, setShowModal] = useState(false);
@@ -61,11 +61,11 @@ function CTA() {
 const ContributionModal = ({ onClose }: { onClose: () => void }) => (
   <div
     className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
-    onClick={onClose}  // Close when clicking outside
+    onClick={onClose}
   >
     <div
       className="bg-background rounded-lg p-6 max-w-2xl w-full relative z-50"
-      onClick={(e) => e.stopPropagation()}  // Prevent click propagation
+      onClick={(e) => e.stopPropagation()}
     >
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Contribution Guide</h2>
@@ -97,8 +97,7 @@ const ContributionModal = ({ onClose }: { onClose: () => void }) => (
   </div>
 );
 
-
-export default function ShowcaseSection() {
+const ShowcaseSection: React.FC = () => {
   const showcaseItems = [
     {
       title: "Alex Morgan",
@@ -127,18 +126,14 @@ export default function ShowcaseSection() {
   ];
 
   return (
-    <section id="showcase" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">CV Showcase</h2>
-          <p className="text-muted-foreground text-lg">
-            Browse examples from professionals across various industries who are using our platform.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="bg-gray-50 py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          CV Showcase - See Examples
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {showcaseItems.map((item, index) => (
-            <ShowcaseItem 
+            <ShowcaseItem
               key={item.title}
               title={item.title}
               role={item.role}
@@ -148,10 +143,9 @@ export default function ShowcaseSection() {
             />
           ))}
         </div>
-
-        <CTA/>
-        
       </div>
     </section>
   );
-}
+};
+
+export default ShowcaseSection;

@@ -34,6 +34,16 @@ const frontmatterSchema = personalInfoSchema.extend({
 // Utility type for section processors
 type SectionProcessor<T> = (nodes: Node[]) => Promise<T[]>;
 
+// Define a simplified logger interface to avoid type errors
+interface SimpleLogger {
+  debug: (message: string) => void;
+  info: (message: string) => void;
+  warn: (message: string) => void;
+  error: (message: string) => void;
+  success: (message: string) => void;
+  fatal: (message: string) => void;
+}
+
 /**
  * Frontmatter validation using Zod
  */
@@ -65,7 +75,8 @@ async function parseMarkdownSections(content: string): Promise<{
     let currentSection: string | null = null;
     // Split AST into section nodes
     for (const node of (tree as Parent).children) {
-      if (node.type === 'heading' && node.depth === 2) {
+      // Check if node is a heading and has depth property
+      if (node.type === 'heading' && 'depth' in node && node.depth === 2) {
         currentSection = extractTextContent(node).trim().toLowerCase();
         rawSections[currentSection] = [];
       } else if (currentSection) {
@@ -134,7 +145,7 @@ const parseExperience = createParser<Experience>(experienceSchema, 'experience',
   const processNode = (node: Node) => {
     switch (node.type) {
       case 'heading':
-        if (node.depth === 3 && state === 'seek') {
+        if ('depth' in node && node.depth === 3 && state === 'seek') {
           if (currentExperience.title) validateAndAdd();
           currentExperience = { title: extractTextContent(node) };
           state = 'company';
@@ -195,7 +206,7 @@ const parseEducation = createParser<Education>(educationSchema, 'education', (no
   const processNode = (node: Node) => {
     switch (node.type) {
       case 'heading':
-        if (node.depth === 3 && state === 'seek') {
+        if ('depth' in node && node.depth === 3 && state === 'seek') {
           if (currentEducation.degree) validateAndAdd();
           currentEducation = { degree: extractTextContent(node) };
           logger.debug(`Processing education entry: ${currentEducation.degree}`);
@@ -239,7 +250,7 @@ const parseEducation = createParser<Education>(educationSchema, 'education', (no
 /**
  * Optimized project parser using pre-parsed AST
  */
-const parseProjects = createParser<Education>(projectSchema, 'project', (nodes, logger) => {
+const parseProjects = createParser<Project>(projectSchema, 'project', (nodes, logger) => {
   const projects: Project[] = [];
   let currentProject: Partial<Project> = {};
   let state: 'seek' | 'description' | 'details' = 'seek';
@@ -256,7 +267,7 @@ const parseProjects = createParser<Education>(projectSchema, 'project', (nodes, 
   const processNode = (node: Node) => {
     switch (node.type) {
       case 'heading':
-        if (node.depth === 3) {
+        if ('depth' in node && node.depth === 3) {
           // Finalize previous project
           if (currentProject.title) validateAndAdd()
           
@@ -314,7 +325,7 @@ const parseProjects = createParser<Education>(projectSchema, 'project', (nodes, 
   nodes.forEach(processNode);
 
   // Add final project
-  if (currentProject.title) validateAndAdd()
+  if (currentProject.title) validateAndAdd();
 
   return projects;
 });
@@ -371,18 +382,15 @@ export async function generateCVDataFromMarkdown(): Promise<object> {
   return output;
 }
 
-// Additional helper functions and schema validators would follow here
- 
 // Generic text content extractor
 function extractTextContent(node: Node): string {
   let text = '';
   
   visit(node, (childNode) => {
-    if (childNode.type === 'text') {
+    if (childNode.type === 'text' && 'value' in childNode) {
       text += childNode.value;
     }
-    // Continue traversing for nested elements
-    return 'next' as const;
+    return true; // Continue traversing
   });
 
   return text.trim();
@@ -406,7 +414,7 @@ async function processSection<T>(
 function createParser<T>(
   schema: z.ZodSchema<T>,
   sectionName: string,
-  stateMachine: (nodes: Node[], logger: Logger) => T[]
+  stateMachine: (nodes: Node[], logger: SimpleLogger) => T[]
 ): SectionProcessor<T> {
   return async (nodes) => {
     try {
