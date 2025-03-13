@@ -1,29 +1,86 @@
 ---
 name: David Arnold
-title: Senior Monkey
+title: Chief Technology Officer
 email: dgx.arnold@gmail.com
 phone: +49 1567 9000 012
 location: Munich, BY
 github: https://github.com/blaggacao
 linkedin: https://www.linkedin.com/in/dgxarnold
-bio: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+bio: Innovative technology leader with extensive experience in ERP implementation, DevOps, and scaling startups. Skilled in bridging business and technology, with a track record of driving digital transformation and operational excellence across diverse industries. Multilingual professional with a global perspective, combining technical expertise with strategic business acumen.
 
 # These are inline frontmatter sections that will be parsed
 skills:
-  - name: Company Bootstrapping
+  # Technical Leadership
+  - name: Technology Strategy & Roadmapping
     level: 5
-  - name: DevOps
+  - name: ERP Systems Implementation (ERPNext/Odoo)
     level: 5
-  - name: Programming Languages
+  - name: Cloud Native Architecture (Kubernetes/NixOS)
+    level: 5
+  - name: DevOps & SRE Practices
+    level: 5
+  - name: Observability & Monitoring (Grafana/Prometheus)
+    level: 5
+  - name: Full Lifecycle Product Development
+    level: 5
+
+  # Software Development
+  - name: Python/Javascript Ecosystem
+    level: 5
+  - name: Systems Programming (Go/Rust)
     level: 4
-  - name: Human Languages
-    level: 4
-  - name: Marketing
+  - name: Functional Programming (Haskell/Nix)
     level: 3
-  - name: Process Analysis & Optimization
+  - name: CI/CD Pipeline Design
     level: 5
-  - name: CAD
-    level: 1
+  - name: API Design & Integration
+    level: 5
+
+  # Business Operations
+  - name: Digital Transformation Leadership
+    level: 5
+  - name: Process Automation & Optimization
+    level: 5
+  - name: Supply Chain Digitization
+    level: 5
+  - name: Lean Manufacturing Implementation
+    level: 4
+  - name: BPO Operations Scaling
+    level: 5
+
+  # Financial Engineering
+  - name: ERP Financial Module Configuration
+    level: 5
+  - name: Regulatory Compliance Systems
+    level: 5
+  - name: Cost Optimization Strategies
+    level: 5
+  - name: Fintech Integrations (Payment Systems)
+    level: 4
+
+  # Leadership & Strategy
+  - name: Board-Level Governance
+    level: 5
+  - name: Technical Team Building
+    level: 5
+  - name: Market Entry Execution
+    level: 5
+  - name: Strategic Partnership Development
+    level: 5
+  - name: M&A Technology Due Diligence
+    level: 4
+
+  # Specialized Domains
+  - name: Industrial Automation Systems
+    level: 4
+  - name: Food Production Technology
+    level: 4
+  - name: Materials Science Applications
+    level: 3
+  - name: CAD/CNC Prototyping
+    level: 2
+  - name: Construction Tech (BIM)
+    level: 2
 
 languages:
   - name: German
@@ -209,20 +266,119 @@ Karlsgymnasium Pasing | Munich, BY | 1997 - 2006
 
 <!-- Projects are episodes during the above periods in your life focusing on both, acquisition and application of knowledge or skills; this can give readers a more detailed insight abouut you on a specific topic of interest -->
 
-### TBD A (2021)
-Redesigned health tracking app focusing on accessibility and habit formation.
+### Substantial Frappe contributions (2024-2025)
+Contributed significant improvements to the Frappe framework, enhancing its capabilities for ERPNext and custom applications.
 
-- Technologies: Figma, Prototyping, User Research
-- Link: https://www.alexmorgan.design/healthtrack
+- Technologies: Python, JavaScript, Frappe Framework
+- Implemented AI-enabled cross-channel marketing automations
+- Developed vehicle routing solver module for internal delivery logistics
+- Created e-invoice module compliant with local regulations
 
-### TBD B (2020)
-Created comprehensive component library and design guidelines for e-commerce platform.
+### Standard DevOps Nix framework (2023-2024)
+Developed a Nix-based DevOps platform framework for company-wide use, streamlining development and deployment processes.
 
-- Technologies: Design Systems, Documentation, Component Design
-- Link: https://www.alexmorgan.design/ecommerce
+- Technologies: Nix, DevOps, CI/CD
+- Link: https://github.com/divnix/std
+- Improved system performance and reliability across the organization
+- Standardized development environments and deployment pipelines
 
-### TBD C (2019)
-Designed data visualization dashboard for personal finance management application.
+### Digga NixOS framework (2022-2023)
+Created an advanced NixOS framework to simplify system configuration and management.
 
-- Technologies: Data Visualization, UX Design, Figma
-- Link: https://www.alexmorgan.design/fintech
+- Technologies: NixOS, Nix, System Configuration
+- Link: https://github.com/divnix/digga
+- &gt; 1k stars on GitHub
+
+### Packaging AEDIR-LDAP in Kubernetes (2021)
+Containerized and deployed AEDIR-LDAP solution in a Kubernetes environment for improved scalability and management.
+
+- Technologies: Kubernetes, Docker, LDAP
+
+### XOE Client Project: Call Center Operations (Bogotá - 2019-2020)
+Implemented and integrated an Asterisk-based Call-Center Solution for a client's customer service operations.
+
+- Technologies: Asterisk, VoIP, ERPNext
+
+### XOE Client Project: Infrastructure (Bogotá - 2019)
+Developed comprehensive infrastructure solutions for large-scale projects, including roads, buildings, internet backbones, and dams.
+
+- Technologies: Civil Engineering, Project Management, Infrastructure Planning
+- Implemented ERPNext modules to streamline project management and resource allocation
+- Coordinated with multiple stakeholders to ensure timely project completion and adherence to quality standards
+
+### XOE Client Project: DevOps Project (Hamburg - 2018)
+Established and implemented DevOps practices for a Hamburg-based Transportation Management System (TMS) company, focusing on Odoo integration.
+
+- Technologies: Odoo, DevOps, GitLab, CI/CD, TMS
+- Streamlined development and deployment processes, improving software delivery efficiency
+- Implemented automated testing and continuous integration pipelines to enhance code quality and reduce time-to-market
+
+### XOE Client Project: Textile Production (Ibagué - 2018)
+Customized ERPNext for a textile manufacturing company, optimizing production processes and inventory management.
+
+- Technologies: ERPNext, Manufacturing Module, Inventory Management
+
+### Development of Payroll Module (2017-2018)
+Established a Business Process Outsourcing division focused on payroll services for SMEs.
+
+- Technologies: Odoo, Payroll Systems, Accounting, Colombian Labor Law
+
+### XOE Client Project: Building (Cartagena - 2017)
+Developed a custom ERPNext solution for a construction company in Cartagena, focusing on project management and resource allocation.
+
+- Technologies: ERPNext, Project Management, Construction Industry, BIM
+
+### XOE Client Project: Chimicos (Medellin - 2016-2017)
+Implemented ERPNext for a chemical products company, with emphasis on sales, inventory control and quality management.
+
+- Technologies: ERPNext, Chemical Industry, Quality Control, Tableaux, Business Intelligence
+
+### XOE Client Project: Plastics (Bogotá - 2016)
+Customized ERPNext for a plastics manufacturing company, focusing on production planning and material requirements planning.
+
+- Technologies: ERPNext, Manufacturing, MRP
+
+### Odoo Tax Preparation (2014)
+Developed a tax preparation module for Odoo ERP, tailored for Colombian tax regulations.
+
+- Technologies: Odoo, Python, Colombian Tax Law
+
+### Depositing Device (2013-2014)
+Engineered an automated depositing device for pretzel production, improving efficiency and consistency.
+
+- Technologies: Mechanical Engineering, Food Processing Equipment
+
+### Conveyor Belt (2013)
+Designed and implemented a custom conveyor belt system for the pretzel production line.
+
+- Technologies: Mechanical Engineering, Electrical Engineering, Industrial Automation
+
+### Production Digitalization (2014)
+Introduced digital tools (tablets and scales) to modernize production processes and improve data collection.
+
+- Technologies: Mobile Apps, IoT, Weight Measurement
+
+### Corporate Design (2013)
+Created the corporate design for El Alemán SAS, including logo, branding, and marketing materials.
+
+- Technologies: Graphic Design, Branding
+
+### Pretzel formula (2013)
+Developed a proprietary formula for pretzel production, optimized for high-altitude baking.
+
+- Technologies: Food Science, Recipe Development
+
+### SHSG Corporate Identity (2008)
+Led the redesign of the corporate identity for the Student Body of the University of St. Gallen.
+
+- Technologies: Graphic Design, Branding
+
+### Jugend Forscht (~2006)
+Earned second prize with a Transrapid 1:200 model built (without levitation) school project which showcased linear motor propulsion in action.
+
+- Technologies: Transformers, Linear Motors, CNC-Laser, Fiber-Reinforced Composite
+
+### Surf Board Build (~2004)
+Designed and built a windsurf board in fiber-reinforced sandwich construction.
+
+- Technologies: Fiber-Reinforced Composite, Sandwich Construction
