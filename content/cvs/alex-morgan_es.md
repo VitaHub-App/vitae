@@ -10,30 +10,38 @@ linkedin: https://linkedin.com/in/alexmorgan
 bio: Diseñador de productos con más de 8 años de experiencia creando experiencias digitales centradas en el usuario para startups tecnológicas y empresas establecidas. Apasionado por la accesibilidad y el diseño inclusivo.
 
 skills:
-  - name: Diseño de Experiencia de Usuario
-    level: 5
-  - name: Figma
-    level: 5
-  - name: Prototipado
-    level: 4
-  - name: Investigación de Usuarios
-    level: 4
-  - name: Sistemas de Diseño
-    level: 5
-  - name: Adobe Creative Suite
-    level: 4
-  - name: HTML/CSS
-    level: 3
-  - name: Design Thinking
-    level: 5
-  - name: Accesibilidad
-    level: 4
-  - name: Sketch
-    level: 4
-  - name: Arquitectura de Información
-    level: 4
-  - name: Pruebas de Usabilidad
-    level: 4
+  - name: Herramientas de Diseño
+    skills:
+      - name: Figma
+        level: 5
+      - name: Adobe Creative Suite
+        level: 4
+      - name: Sketch
+        level: 4
+  - name: Metodologías UX
+    skills:
+      - name: Diseño de Experiencia de Usuario
+        level: 5
+      - name: Investigación de Usuarios
+        level: 4
+      - name: Prototipado
+        level: 4
+      - name: Design Thinking
+        level: 5
+  - name: Habilidades Técnicas
+    skills:
+      - name: HTML/CSS
+        level: 3
+      - name: Sistemas de Diseño
+        level: 5
+  - name: Conocimientos Especializados
+    skills:
+      - name: Accesibilidad
+        level: 4
+      - name: Arquitectura de Información
+        level: 4
+      - name: Pruebas de Usabilidad
+        level: 4
 
 languages:
   - name: Inglés

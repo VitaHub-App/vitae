@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { BriefcaseBusiness, GraduationCap, User2, Code, Languages } from 'lucide-react';
-import { CVData } from '@/types/cv';
+import { CVData, Skill, SkillGroup } from '@/types/cv';
 import CVSection from './CVSection';
 import TimelineItem from './TimelineItem';
 import ProjectCard from './ProjectCard';
@@ -15,6 +15,56 @@ export default function CVSections({ cvData }: CVSectionsProps) {
 
   const handleSectionToggle = (sectionName: string) => {
     setExpandedSection(sectionName === expandedSection ? '' : sectionName);
+  };
+
+  // Helper function to determine if skills are grouped
+  const hasGroupedSkills = (): boolean => {
+    if (!cvData.skills.length) return false;
+    return 'name' in cvData.skills[0] && 'skills' in cvData.skills[0];
+  };
+
+  // Render a single skill item
+  const renderSkillItem = (skill: Skill, index: number) => (
+    <div key={index} className="flex flex-col">
+      <div className="flex justify-between mb-1">
+        <span className="font-medium">{skill.name}</span>
+        <span className="text-muted-foreground text-sm">
+          {skill.level}/5
+        </span>
+      </div>
+      <div className="h-2 w-full bg-accent rounded-full overflow-hidden">
+        <div 
+          className="h-full bg-primary rounded-full"
+          style={{ width: `${(skill.level / 5) * 100}%` }}
+        ></div>
+      </div>
+    </div>
+  );
+
+  // Render skills section content based on structure
+  const renderSkillsContent = () => {
+    if (hasGroupedSkills()) {
+      // For grouped skills
+      return (
+        <div className="space-y-6">
+          {(cvData.skills as SkillGroup[]).map((group, groupIndex) => (
+            <div key={groupIndex} className="space-y-4">
+              <h3 className="text-lg font-semibold border-b border-border pb-2">{group.name}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+                {group.skills.map((skill, skillIndex) => renderSkillItem(skill, skillIndex))}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    } else {
+      // For flat skills structure
+      return (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+          {(cvData.skills as Skill[]).map((skill, index) => renderSkillItem(skill, index))}
+        </div>
+      );
+    }
   };
 
   return (
@@ -68,24 +118,7 @@ export default function CVSections({ cvData }: CVSectionsProps) {
         isExpanded={expandedSection === 'skills'}
         onToggle={() => handleSectionToggle('skills')}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
-          {cvData.skills.map((skill, index) => (
-            <div key={index} className="flex flex-col">
-              <div className="flex justify-between mb-1">
-                <span className="font-medium">{skill.name}</span>
-                <span className="text-muted-foreground text-sm">
-                  {skill.level}/5
-                </span>
-              </div>
-              <div className="h-2 w-full bg-accent rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: `${(skill.level / 5) * 100}%` }}
-                ></div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {renderSkillsContent()}
       </CVSection>
       
       {/* Projects Section */}

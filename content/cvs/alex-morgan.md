@@ -11,30 +11,38 @@ bio: Product designer with 8+ years of experience creating user-centered digital
 
 # These are inline frontmatter sections that will be parsed
 skills:
-  - name: User Experience Design
-    level: 5
-  - name: Figma
-    level: 5
-  - name: Prototyping
-    level: 4
-  - name: User Research
-    level: 4
-  - name: Design Systems
-    level: 5
-  - name: Adobe Creative Suite
-    level: 4
-  - name: HTML/CSS
-    level: 3
-  - name: Design Thinking
-    level: 5
-  - name: Accessibility
-    level: 4
-  - name: Sketch
-    level: 4
-  - name: Information Architecture
-    level: 4
-  - name: Usability Testing
-    level: 4
+  - name: Design Tools
+    skills:
+      - name: Figma
+        level: 5
+      - name: Adobe Creative Suite
+        level: 4
+      - name: Sketch
+        level: 4
+  - name: UX Methodologies
+    skills:
+      - name: User Experience Design
+        level: 5
+      - name: User Research
+        level: 4
+      - name: Prototyping
+        level: 4
+      - name: Design Thinking
+        level: 5
+  - name: Technical Skills
+    skills:
+      - name: HTML/CSS
+        level: 3
+      - name: Design Systems
+        level: 5
+  - name: Specialized Knowledge
+    skills:
+      - name: Accessibility
+        level: 4
+      - name: Information Architecture
+        level: 4
+      - name: Usability Testing
+        level: 4
 
 languages:
   - name: English

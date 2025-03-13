@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CVData } from '@/types/cv';
+import { CVData, Skill, SkillGroup } from '@/types/cv';
 
 interface CVPdfTemplateProps {
   cvData: CVData;
@@ -9,6 +9,57 @@ interface CVPdfTemplateProps {
 
 const CVPdfTemplate = ({ cvData, cvName }: CVPdfTemplateProps) => {
   const { personalInfo, experience, education, skills, projects, languages } = cvData;
+  
+  // Helper function to determine if skills are grouped
+  const hasGroupedSkills = (): boolean => {
+    if (!skills.length) return false;
+    return 'name' in skills[0] && 'skills' in skills[0];
+  };
+
+  // Render a single skill item
+  const renderSkillItem = (skill: Skill, key: string) => (
+    <div key={key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+      <span className="font-medium" style={{ flexBasis: '50%', textAlign: 'left' }}>{skill.name}</span>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', flexBasis: '50%' }}>
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div 
+            key={i}
+            style={{
+              width: '10px',
+              height: '10px',
+              borderRadius: '50%',
+              margin: '0 3px',
+              backgroundColor: i < skill.level ? '#1f2937' : '#d1d5db'
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+  
+  // Render skills section based on structure
+  const renderSkillsSection = () => {
+    if (hasGroupedSkills()) {
+      return (
+        <>
+          {(skills as SkillGroup[]).map((group, groupIndex) => (
+            <div key={groupIndex} style={{ marginBottom: '20px' }}>
+              <h4 style={{ marginBottom: '10px', fontSize: '1rem', fontWeight: 'bold' }}>{group.name}</h4>
+              <div className="grid grid-cols-2 gap-4">
+                {group.skills.map((skill, skillIndex) => renderSkillItem(skill, `${groupIndex}-${skillIndex}`))}
+              </div>
+            </div>
+          ))}
+        </>
+      );
+    } else {
+      return (
+        <div className="grid grid-cols-2 gap-4">
+          {(skills as Skill[]).map((skill, index) => renderSkillItem(skill, `skill-${index}`))}
+        </div>
+      );
+    }
+  };
   
   return (
     <div className="cv-pdf-container bg-white text-black p-10" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -87,27 +138,7 @@ const CVPdfTemplate = ({ cvData, cvName }: CVPdfTemplateProps) => {
       {/* Skills section */}
       <section className="mb-8">
         <h3 className="text-lg font-semibold mb-4 border-b border-gray-300 pb-1">Skills</h3>
-        <div className="grid grid-cols-2 gap-4">
-          {skills.map((skill, index) => (
-            <div key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-              <span className="font-medium" style={{ flexBasis: '50%', textAlign: 'left' }}>{skill.name}</span>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', flexBasis: '50%' }}>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <div 
-                    key={i}
-                    style={{
-                      width: '10px',
-                      height: '10px',
-                      borderRadius: '50%',
-                      margin: '0 3px',
-                      backgroundColor: i < skill.level ? '#1f2937' : '#d1d5db'
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        {renderSkillsSection()}
       </section>
       
       {/* Projects section */}

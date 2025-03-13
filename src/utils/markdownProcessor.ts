@@ -16,8 +16,8 @@ import {
   personalInfoSchema,
   experienceSchema,
   educationSchema,
-  skillSchema,
-  languageSchema,
+  skillsSchema,
+  languagesSchema,
   projectSchema,
 } from '../types/cv';
 
@@ -27,8 +27,8 @@ const DEFAULT_LOCALE = 'en';
 
 // Updated frontmatter schema that includes all sections
 const frontmatterSchema = personalInfoSchema.extend({
-  skills: z.array(skillSchema).optional().default([]),
-  languages: z.array(languageSchema).optional().default([]),
+  skills: skillsSchema,
+  languages: languagesSchema,
 });
 
 // Utility type for section processors

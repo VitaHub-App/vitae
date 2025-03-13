@@ -75,52 +75,72 @@
       ],
       "skills": [
         {
-          "name": "User Experience Design",
-          "level": 5
+          "name": "Design Tools",
+          "skills": [
+            {
+              "name": "Figma",
+              "level": 5
+            },
+            {
+              "name": "Adobe Creative Suite",
+              "level": 4
+            },
+            {
+              "name": "Sketch",
+              "level": 4
+            }
+          ]
         },
         {
-          "name": "Figma",
-          "level": 5
+          "name": "UX Methodologies",
+          "skills": [
+            {
+              "name": "User Experience Design",
+              "level": 5
+            },
+            {
+              "name": "User Research",
+              "level": 4
+            },
+            {
+              "name": "Prototyping",
+              "level": 4
+            },
+            {
+              "name": "Design Thinking",
+              "level": 5
+            }
+          ]
         },
         {
-          "name": "Prototyping",
-          "level": 4
+          "name": "Technical Skills",
+          "skills": [
+            {
+              "name": "HTML/CSS",
+              "level": 3
+            },
+            {
+              "name": "Design Systems",
+              "level": 5
+            }
+          ]
         },
         {
-          "name": "User Research",
-          "level": 4
-        },
-        {
-          "name": "Design Systems",
-          "level": 5
-        },
-        {
-          "name": "Adobe Creative Suite",
-          "level": 4
-        },
-        {
-          "name": "HTML/CSS",
-          "level": 3
-        },
-        {
-          "name": "Design Thinking",
-          "level": 5
-        },
-        {
-          "name": "Accessibility",
-          "level": 4
-        },
-        {
-          "name": "Sketch",
-          "level": 4
-        },
-        {
-          "name": "Information Architecture",
-          "level": 4
-        },
-        {
-          "name": "Usability Testing",
-          "level": 4
+          "name": "Specialized Knowledge",
+          "skills": [
+            {
+              "name": "Accessibility",
+              "level": 4
+            },
+            {
+              "name": "Information Architecture",
+              "level": 4
+            },
+            {
+              "name": "Usability Testing",
+              "level": 4
+            }
+          ]
         }
       ],
       "projects": [
@@ -248,52 +268,72 @@
       ],
       "skills": [
         {
-          "name": "Diseño de Experiencia de Usuario",
-          "level": 5
+          "name": "Herramientas de Diseño",
+          "skills": [
+            {
+              "name": "Figma",
+              "level": 5
+            },
+            {
+              "name": "Adobe Creative Suite",
+              "level": 4
+            },
+            {
+              "name": "Sketch",
+              "level": 4
+            }
+          ]
         },
         {
-          "name": "Figma",
-          "level": 5
+          "name": "Metodologías UX",
+          "skills": [
+            {
+              "name": "Diseño de Experiencia de Usuario",
+              "level": 5
+            },
+            {
+              "name": "Investigación de Usuarios",
+              "level": 4
+            },
+            {
+              "name": "Prototipado",
+              "level": 4
+            },
+            {
+              "name": "Design Thinking",
+              "level": 5
+            }
+          ]
         },
         {
-          "name": "Prototipado",
-          "level": 4
+          "name": "Habilidades Técnicas",
+          "skills": [
+            {
+              "name": "HTML/CSS",
+              "level": 3
+            },
+            {
+              "name": "Sistemas de Diseño",
+              "level": 5
+            }
+          ]
         },
         {
-          "name": "Investigación de Usuarios",
-          "level": 4
-        },
-        {
-          "name": "Sistemas de Diseño",
-          "level": 5
-        },
-        {
-          "name": "Adobe Creative Suite",
-          "level": 4
-        },
-        {
-          "name": "HTML/CSS",
-          "level": 3
-        },
-        {
-          "name": "Design Thinking",
-          "level": 5
-        },
-        {
-          "name": "Accesibilidad",
-          "level": 4
-        },
-        {
-          "name": "Sketch",
-          "level": 4
-        },
-        {
-          "name": "Arquitectura de Información",
-          "level": 4
-        },
-        {
-          "name": "Pruebas de Usabilidad",
-          "level": 4
+          "name": "Conocimientos Especializados",
+          "skills": [
+            {
+              "name": "Accesibilidad",
+              "level": 4
+            },
+            {
+              "name": "Arquitectura de Información",
+              "level": 4
+            },
+            {
+              "name": "Pruebas de Usabilidad",
+              "level": 4
+            }
+          ]
         }
       ],
       "projects": [
