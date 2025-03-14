@@ -1,4 +1,5 @@
-import { readFile, readdir, writeFile, mkdir } from 'fs/promises';
+
+import { readFile, readdir } from 'fs/promises';
 import matter from 'gray-matter';
 import path from 'path';
 import { remark } from 'remark';
@@ -406,7 +407,6 @@ async function processSection<T>(
     return nodes ? await processor(nodes) : [];
   } catch (error) {
     throw error;
-    return [];
   }
 }
 
