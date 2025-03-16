@@ -7,6 +7,13 @@ import PersonalInfoCard from '@/components/cv/PersonalInfoCard';
 import CVSections from '@/components/cv/CVSections';
 import CVFooter from '@/components/cv/CVFooter';
 import CVActions from '@/components/cv/CVActions';
+import { CVData } from '@/types/cv';
+
+interface ModificationData {
+  titles?: Record<string, string>;
+  bios?: Record<string, string>;
+  angle?: string;
+}
 
 const CVTemplate = () => {
   const { name } = useParams();
@@ -15,11 +22,13 @@ const CVTemplate = () => {
   const nameFromQuery = searchParams.get('name');
   const compactParam = searchParams.get('compact');
   const angleParam = searchParams.get('angle');
+  const modParam = searchParams.get('mod');
   
   const personName = name || nameFromQuery || 'alex-morgan';
   const [language, setLanguage] = useState('en');
   const [isCompact, setIsCompact] = useState(compactParam !== 'false');
   const [currentAngle, setCurrentAngle] = useState<string | null>(angleParam);
+  const [modifiedCVData, setModifiedCVData] = useState<CVData | null>(null);
   
   // Update URL when parameters change
   useEffect(() => {
@@ -41,15 +50,56 @@ const CVTemplate = () => {
   
   const { cvData, availableLangs } = useLoadCV(personName, language);
 
+  // Apply modifications from URL if present
+  useEffect(() => {
+    if (!cvData) return;
+    
+    if (modParam) {
+      try {
+        // Parse the encoded modification data
+        const decodedData: ModificationData = JSON.parse(atob(modParam));
+        if (!decodedData) {
+          console.error('Failed to decode mod parameter');
+          setModifiedCVData(cvData);
+          return;
+        }
+        
+        // Create a deep copy of the CV data to avoid mutating the original
+        const modifiedData = JSON.parse(JSON.stringify(cvData)) as CVData;
+        
+        // Apply modifications for the current language
+        if (decodedData.titles && decodedData.titles[language]) {
+          modifiedData.personalInfo.title = decodedData.titles[language];
+        }
+        
+        if (decodedData.bios && decodedData.bios[language]) {
+          modifiedData.personalInfo.bio = decodedData.bios[language];
+        }
+        
+        // If angle is specified in the modifications, use it
+        if (decodedData.angle && !currentAngle) {
+          setCurrentAngle(decodedData.angle);
+        }
+        
+        setModifiedCVData(modifiedData);
+      } catch (error) {
+        console.error('Error applying modifications:', error);
+        setModifiedCVData(cvData);
+      }
+    } else {
+      setModifiedCVData(cvData);
+    }
+  }, [cvData, modParam, language, currentAngle]);
+
   // Set default angle from CV data if available and no angle is specified
   useEffect(() => {
-    if (cvData && !currentAngle && cvData.personalInfo.defaultAngle) {
-      setCurrentAngle(cvData.personalInfo.defaultAngle);
+    if (modifiedCVData && !currentAngle && modifiedCVData.personalInfo.defaultAngle) {
+      setCurrentAngle(modifiedCVData.personalInfo.defaultAngle);
     }
-  }, [cvData, currentAngle]);
+  }, [modifiedCVData, currentAngle]);
 
   // Show loading state if CV data is not loaded yet
-  if (!cvData) {
+  if (!modifiedCVData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-lg">Loading CV data...</p>
@@ -62,22 +112,22 @@ const CVTemplate = () => {
     const angles = new Set<string>();
     
     // Add angles from experience
-    cvData.experience.forEach(exp => {
+    modifiedCVData.experience.forEach(exp => {
       if (exp.angles) exp.angles.forEach(angle => angles.add(angle));
     });
     
     // Add angles from education
-    cvData.education.forEach(edu => {
+    modifiedCVData.education.forEach(edu => {
       if (edu.angles) edu.angles.forEach(angle => angles.add(angle));
     });
     
     // Add angles from projects
-    cvData.projects.forEach(proj => {
+    modifiedCVData.projects.forEach(proj => {
       if (proj.angles) proj.angles.forEach(angle => angles.add(angle));
     });
     
     // Add angles from skills (handle both flat and grouped skills)
-    cvData.skills.forEach(skillItem => {
+    modifiedCVData.skills.forEach(skillItem => {
       if ('skills' in skillItem) {
         // Grouped skills
         if (skillItem.angles) skillItem.angles.forEach(angle => angles.add(angle));
@@ -91,7 +141,7 @@ const CVTemplate = () => {
     });
     
     // Add angles from languages
-    cvData.languages.forEach(lang => {
+    modifiedCVData.languages.forEach(lang => {
       if (lang.angles) lang.angles.forEach(angle => angles.add(angle));
     });
     
@@ -106,17 +156,19 @@ const CVTemplate = () => {
         language={language}
         availableLanguages={availableLangs}
         onLanguageChange={setLanguage}
-        currentAngle={currentAngle}
-        availableAngles={availableAngles}
-        onAngleChange={setCurrentAngle}
       />
       
       <main className="flex-1 py-10 px-4 sm:px-6">
         <div id="cv-content" className="max-w-4xl mx-auto">
-          <PersonalInfoCard personalInfo={cvData.personalInfo} />
+          <PersonalInfoCard 
+            personalInfo={modifiedCVData.personalInfo} 
+            availableLanguages={availableLangs}
+            cvData={modifiedCVData}
+            availableAngles={availableAngles}
+          />
           <CVActions 
             cvName={personName} 
-            cvData={cvData}
+            cvData={modifiedCVData}
             isCompact={isCompact}
             onCompactToggle={() => setIsCompact(!isCompact)}
             currentAngle={currentAngle}
@@ -124,7 +176,7 @@ const CVTemplate = () => {
             onAngleChange={setCurrentAngle}
           />
           <CVSections 
-            cvData={cvData} 
+            cvData={modifiedCVData} 
             isCompact={isCompact} 
             currentAngle={currentAngle}
           />

@@ -1,7 +1,8 @@
+
 import React, { useRef } from 'react';
 import html2pdf from 'html2pdf.js';
 import { Button } from "@/components/ui/button"
-import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
+import { Download } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -18,7 +19,7 @@ interface PDFGeneratorProps {
   cvName: string;
   personalInfo: PersonalInfo;
   isCompact: boolean;
-  currentAngle?: string;
+  currentAngle?: string | null;
 }
 
 export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, personalInfo, isCompact, currentAngle }) => {
@@ -70,7 +71,7 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Button variant="outline" size="sm" className="flex items-center gap-2">
-            <ArrowDownTrayIcon className="h-4 w-4" />
+            <Download className="h-4 w-4" />
             <span>Download PDF</span>
           </Button>
         </DialogTrigger>
