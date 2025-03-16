@@ -148,7 +148,8 @@ const parseExperience = createParser<Experience>(experienceSchema, 'experience',
       case 'heading':
         if ('depth' in node && node.depth === 3 && state === 'seek') {
           if (currentExperience.title) validateAndAdd();
-          currentExperience = { title: extractTextContent(node) };
+          const { content: title, angles } = extractAngleTags(extractTextContent(node));
+          currentExperience = { title, angles };
           state = 'company';
         }
         logger.debug(`Processing experience entry: ${currentExperience.title}`);
@@ -172,9 +173,7 @@ const parseExperience = createParser<Experience>(experienceSchema, 'experience',
 
       case 'list':
         if (state === 'description') {
-          currentExperience.description = node.children.map(item =>
-            extractTextContent(item).replace(/^-\s*/, '')
-          );
+          currentExperience.description = processDescriptionList(node);
           state = 'seek';
         }
         break;
@@ -209,7 +208,8 @@ const parseEducation = createParser<Education>(educationSchema, 'education', (no
       case 'heading':
         if ('depth' in node && node.depth === 3 && state === 'seek') {
           if (currentEducation.degree) validateAndAdd();
-          currentEducation = { degree: extractTextContent(node) };
+          const { content: degree, angles } = extractAngleTags(extractTextContent(node));
+          currentEducation = { degree, angles };
           logger.debug(`Processing education entry: ${currentEducation.degree}`);
           state = 'institution';
         }
@@ -233,9 +233,7 @@ const parseEducation = createParser<Education>(educationSchema, 'education', (no
 
       case 'list':
         if (state === 'description') {
-          currentEducation.description = node.children.map(item =>
-            extractTextContent(item).replace(/^-\s*/, '')
-          );
+          currentEducation.description = processDescriptionList(node);
           state = 'seek';
         }
         break;
@@ -273,11 +271,12 @@ const parseProjects = createParser<Project>(projectSchema, 'project', (nodes, lo
           if (currentProject.title) validateAndAdd()
           
           // Start new project
-          const titleText = extractTextContent(node);
+          const { content: titleText, angles } = extractAngleTags(extractTextContent(node));
           const titleMatch = titleText.match(/^(.*?)\s*\((.*)\)$/);
           currentProject = {
             title: titleMatch?.[1]?.trim() || titleText.trim(),
-            period: titleMatch?.[2]?.trim()
+            period: titleMatch?.[2]?.trim(),
+            angles
           };
           logger.debug(`Processing project entry: ${currentProject.title}`);
           state = 'description';
@@ -293,26 +292,26 @@ const parseProjects = createParser<Project>(projectSchema, 'project', (nodes, lo
 
       case 'list':
         if (state === 'details') {
-          node.children.forEach(listItem => {
-            const text = extractTextContent(listItem);
-            const [key, ...values] = text.split(':').map(s => s.trim());
+          currentProject.details ??= [];
+          currentProject.technologies ??= [];
+          const items = processDescriptionList(node);
+          items.forEach(listItem => {
+            const [key, ...values] = listItem.value.split(':').map(s => s.trim());
             const value = values.join(':').trim();
 
             switch (key.toLowerCase()) {
               case 'technologies':
-                currentProject.technologies = value.split(',')
-                  .map(t => t.trim())
-                  .filter(Boolean);
+                currentProject.technologies.push(
+                 ...listItem.value.split(',')
+                  .map(t => t.trim()).filter(Boolean)
+                  .map(t => ({value: t, angles: listItem.angles}))
+                );
                 break;
               case 'link':
                 currentProject.link = value;
                 break;
               default:
-                if (currentProject.details) {
-                  currentProject.details.push(text);
-                } else {
-                  currentProject.details = [text];
-                }
+                currentProject.details.push({value: listItem.value, angles: listItem.angles});
                 break;
             }
           });
@@ -330,6 +329,19 @@ const parseProjects = createParser<Project>(projectSchema, 'project', (nodes, lo
 
   return projects;
 });
+
+function processDescriptionList(listNode: Node): Array<{ value: string; angles?: string[] }> {
+  if (!listNode || !('children' in listNode)) return [];
+  
+  return listNode.children.map(item => {
+    const { content, angles } = extractAngleTags(extractTextContent(item));
+    return {
+      value: content.replace(/^-\s*/, ''),
+      angles
+    };
+  });
+}
+
 
 /**
  * File processor with proper error handling and concurrency
@@ -396,6 +408,31 @@ function extractTextContent(node: Node): string {
 
   return text.trim();
 }
+
+/**
+ * Extracts angle tags from markdown content
+ * Format: {angle=tag1,tag2,tag3}
+ */
+export function extractAngleTags(text: string): { content: string; angles: string[] | undefined } {
+  const angleTagRegex = /^\s*\{angle=([a-zA-Z0-9,\-_]+)\}\s*(.*)/;
+  const match = text.match(angleTagRegex);
+  
+  if (match) {
+    const angles = match[1].split(',').map(tag => tag.trim());
+    const cleanedText = match[2];
+    
+    return {
+      content: cleanedText,
+      angles: angles.length > 0 ? angles : undefined
+    };
+  }
+  
+  return {
+    content: text,
+    angles: undefined
+  };
+}
+
 
 // Updated section processor helper
 async function processSection<T>(

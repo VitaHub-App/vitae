@@ -1,12 +1,15 @@
 
 import { Building2, MapPin } from 'lucide-react';
 
+import { Description } from '@/types/cv';
+
 interface TimelineItemProps {
   title: string;
   organization: string;
   location: string;
   period: string;
-  description: string[];
+  description: Description;
+  currentAngle?: string | null;
 }
 
 export default function TimelineItem({
@@ -14,8 +17,20 @@ export default function TimelineItem({
   organization,
   location,
   period,
-  description
+  description,
+  currentAngle = null 
 }: TimelineItemProps) {
+  // Helper function to determine if an item should be visible based on angle
+  const shouldShowItem = (itemAngles?: string[]) => {
+    // If no angle is selected or the item has no angles, show it
+    if (!currentAngle || !itemAngles || itemAngles.length === 0) {
+      return true;
+    }
+    
+    // If an angle is selected, show only items tagged with that angle
+    return itemAngles.includes(currentAngle);
+  };
+  const angleFilteredDescription = description.filter(item => shouldShowItem(item.angles));
   return (
     <div className="relative pl-8 border-l-2 border-border">
       <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary/20 border-2 border-primary"></div>
@@ -34,8 +49,8 @@ export default function TimelineItem({
         </div>
       </div>
       <ul className="list-disc pl-5 space-y-1 text-foreground/80">
-        {description.map((desc, idx) => (
-          <li key={idx}>{desc}</li>
+        {angleFilteredDescription.map((desc, idx) => (
+          <li key={idx}>{desc.value}</li>
         ))}
       </ul>
     </div>

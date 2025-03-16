@@ -203,6 +203,7 @@ export default function CVSections({
                 location={exp.location}
                 period={exp.period}
                 description={exp.description}
+                currentAngle={currentAngle}
               />
             ))
           ) : (
@@ -228,6 +229,7 @@ export default function CVSections({
                 location={edu.location}
                 period={edu.period}
                 description={edu.description}
+                currentAngle={currentAngle}
               />
             ))
           ) : (
@@ -258,7 +260,7 @@ export default function CVSections({
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 gap-6">
             {filteredProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+              <ProjectCard key={index} project={project} currentAngle={currentAngle} />
             ))}
           </div>
         ) : (

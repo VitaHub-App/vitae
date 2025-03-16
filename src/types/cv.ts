@@ -4,6 +4,14 @@ import { z } from 'zod';
 // Define the angle tag schema
 export const angleTagSchema = z.array(z.string()).optional();
 
+// Schema for string values with angles
+const stringWithAnglesSchema = z.object({
+  value: z.string().min(1),
+  angles: angleTagSchema,
+});
+
+const descriptionSchema = z.array(stringWithAnglesSchema);
+
 // Zod schemas for validation
 export const personalInfoSchema = z.object({
   name: z.string().min(1),
@@ -23,7 +31,7 @@ export const experienceSchema = z.object({
   company: z.string().min(1),
   location: z.string().min(1),
   period: z.string().min(1),
-  description: z.array(z.string().min(1)),
+  description: descriptionSchema,
   angles: angleTagSchema,
 });
 
@@ -32,7 +40,7 @@ export const educationSchema = z.object({
   institution: z.string().min(1),
   location: z.string().min(1),
   period: z.string().min(1),
-  description: z.array(z.string().min(1)),
+  description: descriptionSchema,
   angles: angleTagSchema,
 });
 
@@ -59,8 +67,8 @@ export const projectSchema = z.object({
   title: z.string().min(1),
   period: z.string().min(1),
   description: z.string().min(1),
-  details: z.array(z.string().min(1)).optional(),
-  technologies: z.array(z.string().min(1)),
+  details: descriptionSchema.optional(),
+  technologies: descriptionSchema,
   link: z.string().url().optional(),
   angles: angleTagSchema,
 });
@@ -81,6 +89,7 @@ export type Skill = z.infer<typeof skillSchema>;
 export type SkillGroup = z.infer<typeof skillGroupSchema>;
 export type Project = z.infer<typeof projectSchema>;
 export type Language = z.infer<typeof languageSchema>;
+export type Description = z.infer<typeof descriptionSchema>;
 
 export interface CVData {
   personalInfo: PersonalInfo;
