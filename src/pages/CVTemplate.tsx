@@ -106,13 +106,15 @@ const CVTemplate = () => {
         language={language}
         availableLanguages={availableLangs}
         onLanguageChange={setLanguage}
+        currentAngle={currentAngle}
+        availableAngles={availableAngles}
+        onAngleChange={setCurrentAngle}
       />
       
       <main className="flex-1 py-10 px-4 sm:px-6">
         <div id="cv-content" className="max-w-4xl mx-auto">
           <PersonalInfoCard personalInfo={cvData.personalInfo} />
           <CVActions 
-            personalInfo={cvData.personalInfo} 
             cvName={personName} 
             cvData={cvData}
             isCompact={isCompact}
@@ -131,6 +133,6 @@ const CVTemplate = () => {
       </main>
     </div>
   );
-};
+}
 
 export default CVTemplate;

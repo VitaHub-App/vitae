@@ -10,7 +10,8 @@
         "website": "https://www.alexmorgan.design",
         "github": "https://github.com/alexmorgan",
         "linkedin": "https://linkedin.com/in/alexmorgan",
-        "bio": "Product designer with 8+ years of experience creating user-centered digital experiences for tech startups and established companies. Passionate about accessibility and inclusive design."
+        "bio": "Product designer with 8+ years of experience creating user-centered digital experiences for tech startups and established companies. Passionate about accessibility and inclusive design.",
+        "defaultAngle": "design"
       },
       "experience": [
         {
@@ -19,22 +20,70 @@
           "location": "San Francisco, CA",
           "period": "Jan 2020 - Present",
           "description": [
-            "Lead designer for flagship product serving 2M+ users, increasing engagement by 34%",
-            "Managed team of 4 designers, implementing design system that reduced design inconsistency by 60%",
-            "Collaborated with product and engineering teams to streamline design-to-development handoff, reducing iterations by 40%",
-            "Conducted user research with over 200 participants to identify key pain points and opportunities"
+            {
+              "value": "Led designer for flagship product serving 2M+ users, increasing engagement by 34%",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Managed team of 4 designers, implementing design system that reduced design inconsistency by 60%",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Collaborated with engineering teams to streamline design-to-development handoff, reducing iterations by 40%",
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "value": "Conducted user research with over 200 participants to identify key pain points",
+              "angles": [
+                "research"
+              ]
+            }
+          ],
+          "angles": [
+            "design",
+            "tech"
           ]
         },
         {
-          "title": "Product Designer",
+          "title": "Product Manager",
           "company": "InnovateLab",
           "location": "Oakland, CA",
           "period": "Mar 2017 - Dec 2019",
           "description": [
-            "Redesigned core user flows resulting in 27% improvement in conversion rate",
-            "Created responsive designs for web and mobile platforms, supporting devices from 320px to 1440px+",
-            "Built interactive prototypes for user testing and stakeholder presentations",
-            "Established design guidelines and component library for product design consistency"
+            {
+              "value": "Redesigned core user flows resulting in 27% improvement in conversion rate",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Created responsive designs supporting devices from 320px to 1440px+",
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "value": "Built interactive prototypes for user testing and presentations",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Established design guidelines and component library",
+              "angles": [
+                "tech"
+              ]
+            }
+          ],
+          "angles": [
+            "design",
+            "tech"
           ]
         },
         {
@@ -43,10 +92,28 @@
           "location": "Portland, OR",
           "period": "Sep 2015 - Feb 2017",
           "description": [
-            "Designed user interfaces for clients across e-commerce, fintech, and healthcare sectors",
-            "Conducted usability testing and created user journey maps for client projects",
-            "Collaborated with development team to ensure design feasibility and quality implementation",
-            "Created wireframes, mockups, and prototypes to communicate design concepts"
+            {
+              "value": "Designed interfaces for e-commerce, fintech, and healthcare clients",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Conducted usability testing and created user journey maps",
+              "angles": [
+                "research"
+              ]
+            },
+            {
+              "value": "Collaborated with development team to ensure quality implementation",
+              "angles": [
+                "tech"
+              ]
+            }
+          ],
+          "angles": [
+            "design",
+            "research"
           ]
         }
       ],
@@ -57,8 +124,19 @@
           "location": "San Francisco, CA",
           "period": "2013 - 2015",
           "description": [
-            "Thesis: \"Designing for Behavioral Change in Digital Health Applications\"",
-            "Recipient of the Design Excellence Scholarship"
+            {
+              "value": "Thesis: \"Designing for Behavioral Change in Digital Health Applications\"",
+              "angles": [
+                "research"
+              ]
+            },
+            {
+              "value": "Recipient of the Design Excellence Scholarship"
+            }
+          ],
+          "angles": [
+            "design",
+            "research"
           ]
         },
         {
@@ -67,9 +145,18 @@
           "location": "Eugene, OR",
           "period": "2009 - 2013",
           "description": [
-            "Minor in Psychology",
-            "Design lead for student magazine \"Emerge\"",
-            "Dean's List, 8 consecutive semesters"
+            {
+              "value": "Minor in Psychology"
+            },
+            {
+              "value": "Design lead for student magazine \"Emerge\""
+            },
+            {
+              "value": "Dean's List, 8 consecutive semesters"
+            }
+          ],
+          "angles": [
+            "design"
           ]
         }
       ],
@@ -79,15 +166,24 @@
           "skills": [
             {
               "name": "Figma",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design"
+              ]
             },
             {
               "name": "Adobe Creative Suite",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design"
+              ]
             },
             {
               "name": "Sketch",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design"
+              ]
             }
           ]
         },
@@ -96,19 +192,33 @@
           "skills": [
             {
               "name": "User Experience Design",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design",
+                "research"
+              ]
             },
             {
               "name": "User Research",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "research"
+              ]
             },
             {
               "name": "Prototyping",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design"
+              ]
             },
             {
               "name": "Design Thinking",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design",
+                "research"
+              ]
             }
           ]
         },
@@ -117,11 +227,19 @@
           "skills": [
             {
               "name": "HTML/CSS",
-              "level": 3
+              "level": 3,
+              "angles": [
+                "design",
+                "tech"
+              ]
             },
             {
               "name": "Design Systems",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design",
+                "tech"
+              ]
             }
           ]
         },
@@ -130,15 +248,27 @@
           "skills": [
             {
               "name": "Accessibility",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design",
+                "tech"
+              ]
             },
             {
               "name": "Information Architecture",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design",
+                "tech"
+              ]
             },
             {
               "name": "Usability Testing",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design",
+                "tech"
+              ]
             }
           ]
         }
@@ -147,35 +277,65 @@
         {
           "title": "HealthTrack Mobile App",
           "period": "2021",
-          "description": "Redesigned health tracking app focusing on accessibility and habit formation.",
+          "description": "Redesigned health tracking app focusing on accessibility and habit formation",
+          "details": [],
           "technologies": [
-            "Figma",
-            "Prototyping",
-            "User Research"
+            {
+              "value": "Technologies: Figma"
+            },
+            {
+              "value": "Prototyping"
+            },
+            {
+              "value": "User Research"
+            }
           ],
-          "link": "https://www.alexmorgan.design/healthtrack"
+          "link": "https://www.alexmorgan.design/healthtrack",
+          "angles": [
+            "design",
+            "research"
+          ]
         },
         {
           "title": "E-commerce Design System",
           "period": "2020",
-          "description": "Created comprehensive component library and design guidelines for e-commerce platform.",
+          "description": "Created comprehensive component library for e-commerce platform",
+          "details": [],
           "technologies": [
-            "Design Systems",
-            "Documentation",
-            "Component Design"
+            {
+              "value": "Technologies: Design Systems"
+            },
+            {
+              "value": "Documentation"
+            }
           ],
-          "link": "https://www.alexmorgan.design/ecommerce"
+          "link": "https://www.alexmorgan.design/ecommerce",
+          "angles": [
+            "tech",
+            "design"
+          ]
         },
         {
           "title": "Financial Dashboard",
           "period": "2019",
-          "description": "Designed data visualization dashboard for personal finance management application.",
+          "description": "Designed data visualization dashboard for finance management",
+          "details": [],
           "technologies": [
-            "Data Visualization",
-            "UX Design",
-            "Figma"
+            {
+              "value": "Technologies: Data Visualization"
+            },
+            {
+              "value": "UX Design"
+            },
+            {
+              "value": "Figma"
+            }
           ],
-          "link": "https://www.alexmorgan.design/fintech"
+          "link": "https://www.alexmorgan.design/fintech",
+          "angles": [
+            "design",
+            "tech"
+          ]
         }
       ],
       "languages": [
@@ -212,10 +372,34 @@
           "location": "San Francisco, CA",
           "period": "Enero 2020 - Presente",
           "description": [
-            "Diseñador principal para producto insignia con más de 2M de usuarios, aumentando la participación en un 34%",
-            "Gestioné un equipo de 4 diseñadores, implementando un sistema de diseño que redujo la inconsistencia en un 60%",
-            "Colaboré con equipos de producto e ingeniería para optimizar la entrega de diseño a desarrollo, reduciendo las iteraciones en un 40%",
-            "Realicé investigaciones con más de 200 usuarios para identificar puntos críticos y oportunidades"
+            {
+              "value": "Lideré el diseño del producto principal utilizado por más de 2M de usuarios, aumentando la participación en un 34%",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Gestioné un equipo de 4 diseñadores implementando un sistema de diseño que redujo inconsistencias en un 60%",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Colaboré con equipos de ingeniería para optimizar la entrega de diseños, reduciendo iteraciones en un 40%",
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "value": "Realicé investigación con más de 200 participantes para identificar puntos críticos",
+              "angles": [
+                "research"
+              ]
+            }
+          ],
+          "angles": [
+            "design",
+            "tech"
           ]
         },
         {
@@ -224,10 +408,34 @@
           "location": "Oakland, CA",
           "period": "Marzo 2017 - Diciembre 2019",
           "description": [
-            "Rediseñé flujos de usuario principales resultando en una mejora del 27% en la tasa de conversión",
-            "Creé diseños responsivos para plataformas web y móviles, con soporte para dispositivos desde 320px hasta 1440px+",
-            "Desarrollé prototipos interactivos para pruebas de usuario y presentaciones a interesados",
-            "Establecí pautas de diseño y biblioteca de componentes para la consistencia en el diseño de productos"
+            {
+              "value": "Rediseñé flujos de usuario clave mejorando la tasa de conversión en un 27%",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Creé diseños responsivos compatibles con dispositivos desde 320px hasta 1440px+",
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "value": "Desarrollé prototipos interactivos para pruebas de usuario y presentaciones",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Establecí guías de diseño y biblioteca de componentes",
+              "angles": [
+                "tech"
+              ]
+            }
+          ],
+          "angles": [
+            "design",
+            "tech"
           ]
         },
         {
@@ -236,10 +444,28 @@
           "location": "Portland, OR",
           "period": "Septiembre 2015 - Febrero 2017",
           "description": [
-            "Diseñé interfaces de usuario para clientes en sectores de comercio electrónico, fintech y salud",
-            "Realicé pruebas de usabilidad y creé mapas de viaje del usuario para proyectos de clientes",
-            "Colaboré con el equipo de desarrollo para garantizar la viabilidad del diseño y la implementación de calidad",
-            "Creé wireframes, maquetas y prototipos para comunicar conceptos de diseño"
+            {
+              "value": "Diseñé interfaces para clientes de comercio electrónico, fintech y salud",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Realicé pruebas de usabilidad y creé mapas de viaje del usuario",
+              "angles": [
+                "research"
+              ]
+            },
+            {
+              "value": "Colaboré con el equipo de desarrollo para garantizar implementación de calidad",
+              "angles": [
+                "tech"
+              ]
+            }
+          ],
+          "angles": [
+            "design",
+            "research"
           ]
         }
       ],
@@ -250,8 +476,19 @@
           "location": "San Francisco, CA",
           "period": "2013 - 2015",
           "description": [
-            "Tesis: \"Diseñando para el Cambio de Comportamiento en Aplicaciones Digitales de Salud\"",
-            "Receptor de la Beca de Excelencia en Diseño"
+            {
+              "value": "Tesis: \"Diseñando para el Cambio de Comportamiento en Aplicaciones Digitales de Salud\"",
+              "angles": [
+                "research"
+              ]
+            },
+            {
+              "value": "Receptor de la Beca de Excelencia en Diseño"
+            }
+          ],
+          "angles": [
+            "design",
+            "research"
           ]
         },
         {
@@ -260,9 +497,21 @@
           "location": "Eugene, OR",
           "period": "2009 - 2013",
           "description": [
-            "Especialización en Psicología",
-            "Líder de diseño para la revista estudiantil \"Emerge\"",
-            "Lista del Decano, 8 semestres consecutivos"
+            {
+              "value": "Especialización en Psicología"
+            },
+            {
+              "value": "Líder de diseño para la revista estudiantil \"Emerge\"",
+              "angles": [
+                "design"
+              ]
+            },
+            {
+              "value": "Lista del Decano, 8 semestres consecutivos"
+            }
+          ],
+          "angles": [
+            "design"
           ]
         }
       ],
@@ -272,15 +521,24 @@
           "skills": [
             {
               "name": "Figma",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design"
+              ]
             },
             {
               "name": "Adobe Creative Suite",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design"
+              ]
             },
             {
               "name": "Sketch",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design"
+              ]
             }
           ]
         },
@@ -289,19 +547,33 @@
           "skills": [
             {
               "name": "Diseño de Experiencia de Usuario",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design",
+                "research"
+              ]
             },
             {
               "name": "Investigación de Usuarios",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "research"
+              ]
             },
             {
               "name": "Prototipado",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design"
+              ]
             },
             {
               "name": "Design Thinking",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design",
+                "research"
+              ]
             }
           ]
         },
@@ -310,11 +582,19 @@
           "skills": [
             {
               "name": "HTML/CSS",
-              "level": 3
+              "level": 3,
+              "angles": [
+                "design",
+                "tech"
+              ]
             },
             {
               "name": "Sistemas de Diseño",
-              "level": 5
+              "level": 5,
+              "angles": [
+                "design",
+                "tech"
+              ]
             }
           ]
         },
@@ -323,15 +603,27 @@
           "skills": [
             {
               "name": "Accesibilidad",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design",
+                "tech"
+              ]
             },
             {
               "name": "Arquitectura de Información",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design",
+                "tech"
+              ]
             },
             {
               "name": "Pruebas de Usabilidad",
-              "level": 4
+              "level": 4,
+              "angles": [
+                "design",
+                "tech"
+              ]
             }
           ]
         }
@@ -341,34 +633,67 @@
           "title": "Aplicación Móvil HealthTrack",
           "period": "2021",
           "description": "Rediseño de aplicación de seguimiento de salud con enfoque en accesibilidad y formación de hábitos.",
+          "details": [],
           "technologies": [
-            "Figma",
-            "Prototipado",
-            "Investigación de Usuarios"
+            {
+              "value": "Technologies: Figma"
+            },
+            {
+              "value": "Prototipado"
+            },
+            {
+              "value": "Investigación de Usuarios"
+            }
           ],
-          "link": "https://www.alexmorgan.design/healthtrack"
+          "link": "https://www.alexmorgan.design/healthtrack",
+          "angles": [
+            "design",
+            "research"
+          ]
         },
         {
           "title": "Sistema de Diseño E-commerce",
           "period": "2020",
           "description": "Creación de biblioteca de componentes y directrices de diseño para plataforma de comercio electrónico.",
+          "details": [],
           "technologies": [
-            "Sistemas de Diseño",
-            "Documentación",
-            "Diseño de Componentes"
+            {
+              "value": "Technologies: Sistemas de Diseño"
+            },
+            {
+              "value": "Documentación"
+            },
+            {
+              "value": "Diseño de Componentes"
+            }
           ],
-          "link": "https://www.alexmorgan.design/ecommerce"
+          "link": "https://www.alexmorgan.design/ecommerce",
+          "angles": [
+            "tech",
+            "design"
+          ]
         },
         {
           "title": "Panel de Control Financiero",
           "period": "2019",
           "description": "Diseño de panel de visualización de datos para aplicación de gestión de finanzas personales.",
+          "details": [],
           "technologies": [
-            "Visualización de Datos",
-            "Diseño UX",
-            "Figma"
+            {
+              "value": "Technologies: Visualización de Datos"
+            },
+            {
+              "value": "Diseño UX"
+            },
+            {
+              "value": "Figma"
+            }
           ],
-          "link": "https://www.alexmorgan.design/fintech"
+          "link": "https://www.alexmorgan.design/fintech",
+          "angles": [
+            "design",
+            "tech"
+          ]
         }
       ],
       "languages": [
@@ -407,10 +732,18 @@
           "location": "New York, NY",
           "period": "Jul 2021 - Present",
           "description": [
-            "Led migration of monolithic architecture to microservices, reducing API latency by 45%",
-            "Designed and implemented real-time analytics dashboard using React and WebSocket, serving 500k+ daily active users",
-            "Optimized database queries reducing page load times by 30% across core product features",
-            "Mentored 3 junior engineers through code reviews and pair programming sessions"
+            {
+              "value": "Led migration of monolithic architecture to microservices, reducing API latency by 45%"
+            },
+            {
+              "value": "Designed and implemented real-time analytics dashboard using React and WebSocket, serving 500k+ daily active users"
+            },
+            {
+              "value": "Optimized database queries reducing page load times by 30% across core product features"
+            },
+            {
+              "value": "Mentored 3 junior engineers through code reviews and pair programming sessions"
+            }
           ]
         },
         {
@@ -419,10 +752,18 @@
           "location": "Boston, MA",
           "period": "Jan 2019 - Jun 2021",
           "description": [
-            "Developed core order management system handling 10k+ transactions daily using Node.js and PostgreSQL",
-            "Built CI/CD pipeline reducing deployment time from 45 minutes to 8 minutes",
-            "Created automated testing framework increasing test coverage from 65% to 92%",
-            "Implemented JWT-based authentication system serving 50k+ users"
+            {
+              "value": "Developed core order management system handling 10k+ transactions daily using Node.js and PostgreSQL"
+            },
+            {
+              "value": "Built CI/CD pipeline reducing deployment time from 45 minutes to 8 minutes"
+            },
+            {
+              "value": "Created automated testing framework increasing test coverage from 65% to 92%"
+            },
+            {
+              "value": "Implemented JWT-based authentication system serving 50k+ users"
+            }
           ]
         },
         {
@@ -431,10 +772,18 @@
           "location": "Chicago, IL",
           "period": "Jun 2017 - Dec 2018",
           "description": [
-            "Contributed to development of SaaS platform using Python/Django stack",
-            "Designed REST APIs for mobile client integration",
-            "Implemented frontend features using React and Redux",
-            "Participated in Agile development cycles with bi-weekly sprints"
+            {
+              "value": "Contributed to development of SaaS platform using Python/Django stack"
+            },
+            {
+              "value": "Designed REST APIs for mobile client integration"
+            },
+            {
+              "value": "Implemented frontend features using React and Redux"
+            },
+            {
+              "value": "Participated in Agile development cycles with bi-weekly sprints"
+            }
           ]
         }
       ],
@@ -445,9 +794,15 @@
           "location": "Cambridge, MA",
           "period": "2013 - 2017",
           "description": [
-            "Concentration in Systems Engineering",
-            "President of MIT Open Source Society",
-            "Finalist in MIT 10K Entrepreneurship Competition"
+            {
+              "value": "Concentration in Systems Engineering"
+            },
+            {
+              "value": "President of MIT Open Source Society"
+            },
+            {
+              "value": "Finalist in MIT 10K Entrepreneurship Competition"
+            }
           ]
         },
         {
@@ -456,8 +811,12 @@
           "location": "New York, NY",
           "period": "2011 - 2013",
           "description": [
-            "Graduated with Honors",
-            "Developed campus food sharing app with 500+ active users"
+            {
+              "value": "Graduated with Honors"
+            },
+            {
+              "value": "Developed campus food sharing app with 500+ active users"
+            }
           ]
         }
       ],
@@ -517,13 +876,23 @@
           "period": "2023",
           "description": "Open-source distributed task queue system inspired by Celery",
           "details": [
-            "GitHub: https://github.com/jamiechen/taskque"
+            {
+              "value": "GitHub: https://github.com/jamiechen/taskque"
+            }
           ],
           "technologies": [
-            "Go",
-            "Redis",
-            "RabbitMQ",
-            "Docker"
+            {
+              "value": "Technologies: Go"
+            },
+            {
+              "value": "Redis"
+            },
+            {
+              "value": "RabbitMQ"
+            },
+            {
+              "value": "Docker"
+            }
           ]
         },
         {
@@ -531,13 +900,23 @@
           "period": "2022",
           "description": "Real-time analytics dashboard for online retailers",
           "details": [
-            "Demo: https://analytics.jamiechen.dev"
+            {
+              "value": "Demo: https://analytics.jamiechen.dev"
+            }
           ],
           "technologies": [
-            "React",
-            "TypeScript",
-            "WebSocket",
-            "AWS Lambda"
+            {
+              "value": "Technologies: React"
+            },
+            {
+              "value": "TypeScript"
+            },
+            {
+              "value": "WebSocket"
+            },
+            {
+              "value": "AWS Lambda"
+            }
           ]
         },
         {
@@ -545,13 +924,23 @@
           "period": "2021",
           "description": "Machine learning workflow management system",
           "details": [
-            "GitHub: https://github.com/jamiechen/ml-pipeline"
+            {
+              "value": "GitHub: https://github.com/jamiechen/ml-pipeline"
+            }
           ],
           "technologies": [
-            "Python",
-            "Airflow",
-            "Kubernetes",
-            "TensorFlow"
+            {
+              "value": "Technologies: Python"
+            },
+            {
+              "value": "Airflow"
+            },
+            {
+              "value": "Kubernetes"
+            },
+            {
+              "value": "TensorFlow"
+            }
           ]
         },
         {
@@ -559,12 +948,20 @@
           "period": "2016",
           "description": "Peer-to-peer carpooling platform for university students",
           "details": [
-            "Case Study: https://www.jamiechen.dev/rideshare"
+            {
+              "value": "Case Study: https://www.jamiechen.dev/rideshare"
+            }
           ],
           "technologies": [
-            "Django",
-            "PostgreSQL",
-            "Leaflet.js"
+            {
+              "value": "Technologies: Django"
+            },
+            {
+              "value": "PostgreSQL"
+            },
+            {
+              "value": "Leaflet.js"
+            }
           ]
         }
       ],
@@ -604,10 +1001,18 @@
           "location": "Los Angeles, CA",
           "period": "Apr 2021 - Present",
           "description": [
-            "Led global campaigns driving 300% YoY lead growth for SaaS platform",
-            "Optimized paid ad spend across Google/Facebook/LinkedIn, reducing CPA by 38% while increasing conversions",
-            "Spearheaded content strategy producing 50+ assets generating 2M+ organic views annually",
-            "Implemented marketing automation flows improving email CTR by 27%"
+            {
+              "value": "Led global campaigns driving 300% YoY lead growth for SaaS platform"
+            },
+            {
+              "value": "Optimized paid ad spend across Google/Facebook/LinkedIn, reducing CPA by 38% while increasing conversions"
+            },
+            {
+              "value": "Spearheaded content strategy producing 50+ assets generating 2M+ organic views annually"
+            },
+            {
+              "value": "Implemented marketing automation flows improving email CTR by 27%"
+            }
           ]
         },
         {
@@ -616,10 +1021,18 @@
           "location": "San Diego, CA",
           "period": "Jan 2019 - Mar 2021",
           "description": [
-            "Managed social media accounts (+230% follower growth in 18 months)",
-            "Coordinated product launch campaigns averaging 145% of sales targets",
-            "Conducted competitive analysis informing rebranding strategy (NPS increase from 45 to 72)",
-            "Developed influencer program securing 120+ partnerships generating $850k+ revenue"
+            {
+              "value": "Managed social media accounts (+230% follower growth in 18 months)"
+            },
+            {
+              "value": "Coordinated product launch campaigns averaging 145% of sales targets"
+            },
+            {
+              "value": "Conducted competitive analysis informing rebranding strategy (NPS increase from 45 to 72)"
+            },
+            {
+              "value": "Developed influencer program securing 120+ partnerships generating $850k+ revenue"
+            }
           ]
         },
         {
@@ -628,10 +1041,18 @@
           "location": "Phoenix, AZ",
           "period": "Jun 2017 - Dec 2018",
           "description": [
-            "Increased client engagement rates by 60% through platform-specific content strategies",
-            "Created performance dashboards reducing reporting time by 50%",
-            "Managed $500k+ annual ad budget across 15+ client accounts",
-            "Produced viral TikTok campaign reaching 8M+ impressions for lifestyle brand"
+            {
+              "value": "Increased client engagement rates by 60% through platform-specific content strategies"
+            },
+            {
+              "value": "Created performance dashboards reducing reporting time by 50%"
+            },
+            {
+              "value": "Managed $500k+ annual ad budget across 15+ client accounts"
+            },
+            {
+              "value": "Produced viral TikTok campaign reaching 8M+ impressions for lifestyle brand"
+            }
           ]
         }
       ],
@@ -642,9 +1063,15 @@
           "location": "Los Angeles, CA",
           "period": "2013 - 2017",
           "description": [
-            "Concentration in Digital Media",
-            "President of American Marketing Association Chapter",
-            "Google Analytics Certified (2016)"
+            {
+              "value": "Concentration in Digital Media"
+            },
+            {
+              "value": "President of American Marketing Association Chapter"
+            },
+            {
+              "value": "Google Analytics Certified (2016)"
+            }
           ]
         },
         {
@@ -653,8 +1080,12 @@
           "location": "Online",
           "period": "2018",
           "description": [
-            "480-hour intensive program",
-            "Capstone: Redesigned customer journey for DTC startup"
+            {
+              "value": "480-hour intensive program"
+            },
+            {
+              "value": "Capstone: Redesigned customer journey for DTC startup"
+            }
           ]
         }
       ],
@@ -714,12 +1145,20 @@
           "period": "2023",
           "description": "Scalable content marketing framework for B2B tech companies",
           "details": [
-            "Results: 150 marketing-qualified leads/month"
+            {
+              "value": "Results: 150 marketing-qualified leads/month"
+            }
           ],
           "technologies": [
-            "SEMrush",
-            "HubSpot",
-            "Canva"
+            {
+              "value": "Technologies: SEMrush"
+            },
+            {
+              "value": "HubSpot"
+            },
+            {
+              "value": "Canva"
+            }
           ],
           "link": "https://samrivera.marketing/saas"
         },
@@ -728,13 +1167,23 @@
           "period": "2021",
           "description": "360° campaign for sustainable skincare line",
           "details": [
-            "Impact: Sold out inventory in 72 hours",
-            "Metrics: 18% conversion rate, $1.2M revenue"
+            {
+              "value": "Impact: Sold out inventory in 72 hours"
+            },
+            {
+              "value": "Metrics: 18% conversion rate, $1.2M revenue"
+            }
           ],
           "technologies": [
-            "Instagram",
-            "Pinterest",
-            "Email"
+            {
+              "value": "Technologies: Instagram"
+            },
+            {
+              "value": "Pinterest"
+            },
+            {
+              "value": "Email"
+            }
           ]
         },
         {
@@ -742,12 +1191,20 @@
           "period": "2019",
           "description": "Google My Business optimization for retail chain",
           "details": [
-            "Outcome: 90% increase in \"near me\" searches",
-            "Rankings: 85% keywords on Page 1"
+            {
+              "value": "Outcome: 90% increase in \"near me\" searches"
+            },
+            {
+              "value": "Rankings: 85% keywords on Page 1"
+            }
           ],
           "technologies": [
-            "Review management",
-            "Schema markup"
+            {
+              "value": "Technologies: Review management"
+            },
+            {
+              "value": "Schema markup"
+            }
           ]
         }
       ],
@@ -787,10 +1244,18 @@
           "location": "Seattle, WA",
           "period": "Mar 2020 - Present",
           "description": [
-            "Led product strategy for AI-powered analytics platform serving 1,500+ enterprise clients, driving 42% YoY revenue growth",
-            "Spearheaded cross-functional team of 15 to launch ML features that increased user retention by 28%",
-            "Implemented customer feedback loop reducing feature development cycle time by 35%",
-            "Optimized pricing strategy through market analysis, increasing average deal size by 19%"
+            {
+              "value": "Led product strategy for AI-powered analytics platform serving 1,500+ enterprise clients, driving 42% YoY revenue growth"
+            },
+            {
+              "value": "Spearheaded cross-functional team of 15 to launch ML features that increased user retention by 28%"
+            },
+            {
+              "value": "Implemented customer feedback loop reducing feature development cycle time by 35%"
+            },
+            {
+              "value": "Optimized pricing strategy through market analysis, increasing average deal size by 19%"
+            }
           ]
         },
         {
@@ -799,10 +1264,18 @@
           "location": "Austin, TX",
           "period": "Jan 2017 - Feb 2020",
           "description": [
-            "Managed full product lifecycle for patient portal used by 2M+ users, improving NPS score from 32 to 58",
-            "Conducted 50+ user interviews to identify workflow pain points, informing roadmap prioritization",
-            "Collaborated with UX team to redesign onboarding flow, reducing drop-off rate by 41%",
-            "Introduced agile ceremonies that improved team velocity by 25%"
+            {
+              "value": "Managed full product lifecycle for patient portal used by 2M+ users, improving NPS score from 32 to 58"
+            },
+            {
+              "value": "Conducted 50+ user interviews to identify workflow pain points, informing roadmap prioritization"
+            },
+            {
+              "value": "Collaborated with UX team to redesign onboarding flow, reducing drop-off rate by 41%"
+            },
+            {
+              "value": "Introduced agile ceremonies that improved team velocity by 25%"
+            }
           ]
         },
         {
@@ -811,10 +1284,18 @@
           "location": "Boston, MA",
           "period": "Jun 2015 - Dec 2016",
           "description": [
-            "Owned development of marketplace features that increased monthly transactions by 300%",
-            "Created product requirements documentation for core platform capabilities",
-            "Analyzed user behavior data to inform feature prioritization and backlog grooming",
-            "Coordinated beta testing program with 500+ early adopters"
+            {
+              "value": "Owned development of marketplace features that increased monthly transactions by 300%"
+            },
+            {
+              "value": "Created product requirements documentation for core platform capabilities"
+            },
+            {
+              "value": "Analyzed user behavior data to inform feature prioritization and backlog grooming"
+            },
+            {
+              "value": "Coordinated beta testing program with 500+ early adopters"
+            }
           ]
         }
       ],
@@ -825,9 +1306,15 @@
           "location": "Seattle, WA",
           "period": "2013 - 2015",
           "description": [
-            "Focus: Technology Product Management",
-            "VP of Product Management Club",
-            "Capstone project: Developed go-to-market strategy for IoT startup"
+            {
+              "value": "Focus: Technology Product Management"
+            },
+            {
+              "value": "VP of Product Management Club"
+            },
+            {
+              "value": "Capstone project: Developed go-to-market strategy for IoT startup"
+            }
           ]
         },
         {
@@ -836,9 +1323,15 @@
           "location": "Austin, TX",
           "period": "2009 - 2013",
           "description": [
-            "Concentration: Management Information Systems",
-            "Dean's List, 6 semesters",
-            "Founder of Entrepreneurial Society"
+            {
+              "value": "Concentration: Management Information Systems"
+            },
+            {
+              "value": "Dean's List, 6 semesters"
+            },
+            {
+              "value": "Founder of Entrepreneurial Society"
+            }
           ]
         }
       ],
@@ -898,12 +1391,20 @@
           "period": "2023",
           "description": "Machine learning-driven dynamic pricing system for e-commerce platforms",
           "details": [
-            "Case Study: https://www.taylorwright.pm/pricing-ai"
+            {
+              "value": "Case Study: https://www.taylorwright.pm/pricing-ai"
+            }
           ],
           "technologies": [
-            "Python",
-            "Tableau",
-            "A/B Testing"
+            {
+              "value": "Technologies: Python"
+            },
+            {
+              "value": "Tableau"
+            },
+            {
+              "value": "A/B Testing"
+            }
           ]
         },
         {
@@ -911,12 +1412,20 @@
           "period": "2019",
           "description": "Unified healthcare communication platform",
           "details": [
-            "Impact: 58% reduction in support tickets"
+            {
+              "value": "Impact: 58% reduction in support tickets"
+            }
           ],
           "technologies": [
-            "User Interviews",
-            "Journey Mapping",
-            "Jira"
+            {
+              "value": "Technologies: User Interviews"
+            },
+            {
+              "value": "Journey Mapping"
+            },
+            {
+              "value": "Jira"
+            }
           ]
         },
         {
@@ -924,12 +1433,20 @@
           "period": "2016",
           "description": "Seller acquisition and retention program",
           "details": [
-            "Results: 3X seller growth in 6 months"
+            {
+              "value": "Results: 3X seller growth in 6 months"
+            }
           ],
           "technologies": [
-            "Mixpanel",
-            "Amplitude",
-            "HubSpot"
+            {
+              "value": "Technologies: Mixpanel"
+            },
+            {
+              "value": "Amplitude"
+            },
+            {
+              "value": "HubSpot"
+            }
           ]
         }
       ],

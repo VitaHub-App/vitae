@@ -69,7 +69,7 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
     <div className="flex flex-col">
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline" size="sm" className="flex items-center gap-1">
+          <Button variant="outline" size="sm" className="flex items-center gap-2">
             <ArrowDownTrayIcon className="h-4 w-4" />
             <span>Download PDF</span>
           </Button>

@@ -20,8 +20,11 @@ export default function ProjectCard({
     // If an angle is selected, show only items tagged with that angle
     return itemAngles.includes(currentAngle);
   };
-  const angleFilteredDetails = project.details.filter(item => shouldShowItem(item.angles));
+  
+  // Filter project details and technologies based on selected angle
+  const angleFilteredDetails = project.details ? project.details.filter(item => shouldShowItem(item.angles)) : [];
   const angleFilteredTechnologies = project.technologies.filter(item => shouldShowItem(item.angles));
+  
   return (
     <div className="border border-border rounded-lg p-5 hover:shadow-sm transition-shadow">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">

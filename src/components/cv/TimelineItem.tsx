@@ -30,7 +30,10 @@ export default function TimelineItem({
     // If an angle is selected, show only items tagged with that angle
     return itemAngles.includes(currentAngle);
   };
+  
+  // Filter description items based on selected angle
   const angleFilteredDescription = description.filter(item => shouldShowItem(item.angles));
+  
   return (
     <div className="relative pl-8 border-l-2 border-border">
       <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary/20 border-2 border-primary"></div>

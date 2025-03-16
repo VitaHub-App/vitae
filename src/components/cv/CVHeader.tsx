@@ -13,7 +13,7 @@ interface CVHeaderProps {
 export default function CVHeader({ 
   language, 
   availableLanguages, 
-  onLanguageChange 
+  onLanguageChange
 }: CVHeaderProps) {
   return (
     <header className="sticky top-0 z-30 glassmorphism py-4 px-6 shadow-sm">
@@ -23,11 +23,13 @@ export default function CVHeader({
           <span className="font-medium">Back to Home</span>
         </Link>
         
-        <LanguageSelector 
-          languages={availableLanguages}
-          currentLanguage={language}
-          onLanguageChange={onLanguageChange}
-        />
+        <div className="flex items-center space-x-3">
+          <LanguageSelector 
+            languages={availableLanguages}
+            currentLanguage={language}
+            onLanguageChange={onLanguageChange}
+          />
+        </div>
       </div>
     </header>
   );

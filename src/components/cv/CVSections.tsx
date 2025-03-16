@@ -50,21 +50,23 @@ export default function CVSections({
     return angleFilteredData.slice(0, limitCount);
   };
 
-  // Calculate total and shown skill counts
-  const calculateSkillCounts = () => {
-    if (hasGroupedSkills()) {
-      const groupedSkills = cvData.skills as SkillGroup[];
-      
-      // First filter groups by angle
-      const filteredGroups = groupedSkills.filter(group => shouldShowItem(group.angles));
-      
-      // Then filter skills within each group by angle
-      const filteredGroupsWithFilteredSkills = filteredGroups.map(group => ({
+  const getFilteredGroupedSkills = (groupedSkills: SkillGroup[]) => {
+            // Then filter skills within each group by angle
+      const filteredSkills = groupedSkills.map(group => ({
         ...group,
         skills: group.skills.filter(skill => shouldShowItem(skill.angles))
       }));
+
+      // First filter groups by angle and skill count
+      return filteredSkills.filter(group => shouldShowItem(group.angles) && group.skills.length > 0);
+  };
+
+  // Calculate total and shown skill counts
+  const calculateSkillCounts = () => {
+    if (hasGroupedSkills()) {
+      const filteredSkills = getFilteredGroupedSkills(cvData.skills);
       
-      const totalSkills = filteredGroupsWithFilteredSkills.reduce(
+      const totalSkills = filteredSkills.reduce(
         (total, group) => total + group.skills.length, 0
       );
       
@@ -73,7 +75,7 @@ export default function CVSections({
       // If compact, calculate the number of shown skills
       if (isCompact) {
         // Take up to 3 groups
-        const limitedGroups = filteredGroupsWithFilteredSkills.slice(0, 3);
+        const limitedGroups = filteredSkills.slice(0, 3);
         shownSkills = limitedGroups.reduce((total, group) => {
           // Take up to 3 skills per group
           return total + Math.min(group.skills.length, 3);
@@ -117,25 +119,15 @@ export default function CVSections({
   // Render skills section content based on structure
   const renderSkillsContent = () => {
     if (hasGroupedSkills()) {
-      // For grouped skills
-      const groupedSkills = cvData.skills as SkillGroup[];
-      
-      // Filter groups by angle
-      const filteredGroups = groupedSkills.filter(group => shouldShowItem(group.angles));
-      
-      const filteredSkillGroups = filteredGroups.map(group => ({
-        ...group,
-        // Filter skills within each group by angle
-        skills: group.skills.filter(skill => shouldShowItem(skill.angles))
-      }));
+      const filteredSkills = getFilteredGroupedSkills(cvData.skills);
       
       // Apply compact mode if needed
       const limitedSkillGroups = isCompact 
-        ? filteredSkillGroups.map(group => ({
+        ? filteredSkills.map(group => ({
             ...group,
             skills: group.skills.slice(0, 3) // Limit skills in each group
           })).slice(0, 3) // Limit number of groups
-        : filteredSkillGroups;
+        : filteredSkills;
 
       return (
         <div className="space-y-6">
