@@ -712,6 +712,1095 @@
       ]
     }
   },
+  "david-arnold": {
+    "en": {
+      "personalInfo": {
+        "name": "David Arnold",
+        "title": "Chief Technology Officer",
+        "email": "dgx.arnold@gmail.com",
+        "phone": "+49 1567 9000 012",
+        "location": "Munich, BY",
+        "github": "https://github.com/blaggacao",
+        "linkedin": "https://www.linkedin.com/in/dgxarnold",
+        "bio": "Innovative technology leader with extensive experience in ERP implementation, DevOps, and scaling startups. Skilled in bridging business and technology, with a track record of driving digital transformation and operational excellence across diverse industries. Multilingual professional with a global perspective, combining technical expertise with strategic business acumen.",
+        "defaultAngle": "tech"
+      },
+      "experience": [
+        {
+          "title": "Chief Technology Officer, Scale Up",
+          "company": "Pristina Company SAS",
+          "location": "Bogotá, CO",
+          "period": "2024 - 2025",
+          "description": [
+            {
+              "value": "Spearheaded the implementation and migration to ERPNext, streamlining all company operations."
+            },
+            {
+              "value": "Engineered AI-enabled cross-channel marketing automations using the Frappe framework, resulting in 30% increase in response time."
+            },
+            {
+              "value": "Integrated and customized CRM, internal chat, workspaces, and business analytics platforms, improving team collaboration and data-driven decision-making."
+            },
+            {
+              "value": "Designed, developed, and deployed a vehicle routing solver module (ERPNext) for internal delivery logistics, optimizing delivery routes and reducing costs."
+            },
+            {
+              "value": "Developed and launched an e-invoice module (ERPNext) to ensure compliance with local regulations."
+            },
+            {
+              "value": "Established end-to-end integrations with payment services and fulfillment partners, facilitating seamless transactions and order processing."
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Board Member, Investor, Scale Up",
+          "company": "Pristina Company SAS",
+          "location": "Bogotá, CO",
+          "period": "2023 - present",
+          "description": [
+            {
+              "value": "Established board and governance best practices, ensuring transparency and accountability."
+            },
+            {
+              "value": "Championed digitalization and operational excellence initiatives, resulting in 40% increase in operating efficiency."
+            },
+            {
+              "value": "Led the implementation of real-time financials and KPIs, providing actionable insights for strategic decision-making."
+            },
+            {
+              "value": "Contributed to the formulation of a new market penetration strategy, expanding the company's reach and market share."
+            },
+            {
+              "value": "Initiated and drove cost reduction measures and lean production principles, optimizing resource allocation."
+            }
+          ],
+          "angles": [
+            "strategy"
+          ]
+        },
+        {
+          "title": "Senior Site Reliability Engineer",
+          "company": "IOHK Ltd.",
+          "location": "Remote, Honk-Kong",
+          "period": "2021 - 2024",
+          "description": [
+            {
+              "value": "Revamped and enhanced the platform technology utilized by the SRE department, improving system performance and reliability."
+            },
+            {
+              "value": "Pioneered a Nix-based DevOps platform framework for IOHK-wide use, streamlining development and deployment processes, cutting technical SDLC setup time by 90%."
+            },
+            {
+              "value": "Interim-led the SRE function across IOHK, ensuring team readiness, best-practice sharing and platform stability in each product tribe."
+            },
+            {
+              "value": "Pioneered and led the company-wide roll-out of the Grafana observability stack, ensuring consistent monitoring and incident response practices."
+            },
+            {
+              "value": "Established and led SRE function for Lace wallet project tribe."
+            }
+          ],
+          "angles": [
+            "tech"
+          ]
+        },
+        {
+          "title": "Chief Technology Officer, Start Up",
+          "company": "PharmaOne",
+          "location": "Bogotá, CO",
+          "period": "2020 - 2021",
+          "description": [
+            {
+              "value": "Established the technological foundation for the business, enabling rapid growth and innovation."
+            },
+            {
+              "value": "Integrated ERPNext, an Asterisk-based Call-Center Solution, and LDAP services, centralizing business operations and improving communication."
+            },
+            {
+              "value": "Cultivated proficiency in Kubernetes and DevOps, enabling efficient containerization and deployment of applications."
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Founder, CEO",
+          "company": "XOE Corp. SAS",
+          "location": "Bogotá, CO",
+          "period": "2016 - 2020",
+          "description": [
+            {
+              "value": "Developed a Colombian localization for Odoo ERP, tailoring the system to meet local business requirements."
+            },
+            {
+              "value": "Deployed Odoo across a diverse range of SMEs, streamlining their business processes and improving efficiency."
+            },
+            {
+              "value": "Scaled the company organically, building a consulting team of 6 and expanding into the BPO market."
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Board Member",
+          "company": "El Alemán SAS",
+          "location": "Bogotá, CO",
+          "period": "2016 - 2018",
+          "description": [
+            {
+              "value": "Advised on strategic direction and provided valuable industry connections."
+            },
+            {
+              "value": "Advocated for the automation and digitalization of business processes, improving efficiency and reducing costs."
+            }
+          ],
+          "angles": [
+            "strategy"
+          ]
+        },
+        {
+          "title": "Founder, CEO",
+          "company": "El Alemán SAS",
+          "location": "Bogotá, CO",
+          "period": "2013 - 2016",
+          "description": [
+            {
+              "value": "Pioneered the prototyping and development of industrial pretzel production at 2600masl, overcoming unique challenges."
+            },
+            {
+              "value": "Established a modern pretzel production facility overseas from the ground up, managing all aspects of the setup."
+            },
+            {
+              "value": "Developed the Bretzelman brand in the capital area, creating a strong brand identity and market presence."
+            },
+            {
+              "value": "Penetrated the market through strategic partnerships and alliances, expanding distribution channels."
+            },
+            {
+              "value": "Scaled production to semi-automated daily output of two hunderedweights of raw material."
+            }
+          ],
+          "angles": [
+            "innovation"
+          ]
+        },
+        {
+          "title": "Project Staff (PMO)",
+          "company": "Lienhardt & Parner Privatbank Zurich",
+          "location": "Zurich, CH",
+          "period": "Mai 2011 - Mai 2012",
+          "description": [
+            {
+              "value": "Orchestrated the migration of the core banking system (FINNVOA) within the bank as part of a Swiss-wide joint rollout."
+            },
+            {
+              "value": "Led multiple subprojects across various departments, ensuring seamless integration and alignment."
+            },
+            {
+              "value": "Validated parametrization, migration, and processes, guaranteeing data integrity and system stability."
+            },
+            {
+              "value": "Designed processes, reporting mechanisms, and general tools based on the new system across the bank, improving efficiency and transparency."
+            }
+          ]
+        },
+        {
+          "title": "Internship",
+          "company": "BASF Admixture Systems",
+          "location": "Zurich, CH",
+          "period": "Aug 2010 - Nov 2010",
+          "description": [
+            {
+              "value": "Gained firsthand experience in a brick and mortar business within the Swiss construction and building materials market."
+            },
+            {
+              "value": "Acquired insights into the R&D processes and B2B sales organization of a leading admixture systems company."
+            },
+            {
+              "value": "Observed the dynamics of the Swiss construction industry, including market trends and customer needs."
+            }
+          ]
+        },
+        {
+          "title": "Gefreiter (Lance Corporal)",
+          "company": "Bundeswehr",
+          "location": "Berchtesgaden, BY",
+          "period": "2006 - 2007",
+          "description": [
+            {
+              "value": "Completed basic military service in the mountain infantry in Berchtesgaden/Strub, demonstrating adaptability and discipline in challenging alpine environments."
+            },
+            {
+              "value": "Earned selection for the elite high mountain special platoon, showcasing exceptional physical fitness and mental resilience."
+            },
+            {
+              "value": "Executed rigorous outdoor training exercises in the high Alps, developing advanced mountaineering and survival skills."
+            }
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Self-Study, Computer Science",
+          "institution": "Open Source Ecosystem",
+          "location": "World",
+          "period": "2016-2025",
+          "description": [
+            {
+              "value": "Phase 1: Python, Javascript, SQL, Git, ..."
+            },
+            {
+              "value": "Phase 2: Go, DevOps, Kubernetes, NixOS, ..."
+            },
+            {
+              "value": "Phase 3: Rust, Nix, Haskell, Functional Programming, ..."
+            }
+          ]
+        },
+        {
+          "degree": "Master of Arts, Exchange Semester",
+          "institution": "University of the Andes",
+          "location": "Bogotá, CO",
+          "period": "2013",
+          "description": [
+            {
+              "value": "Spanish"
+            },
+            {
+              "value": "Entrepreneurship"
+            }
+          ]
+        },
+        {
+          "degree": "Master of Arts, General Management",
+          "institution": "University of St. Gallen",
+          "location": "St.Gallen, CH",
+          "period": "2012 - 2014",
+          "description": [
+            {
+              "value": "Economics"
+            },
+            {
+              "value": "Portuguese"
+            },
+            {
+              "value": "Cultural Exchange & Sports"
+            }
+          ]
+        },
+        {
+          "degree": "Bachelor of Arts, Major in Business Administration",
+          "institution": "University of St. Gallen",
+          "location": "St.Gallen, CH",
+          "period": "2007 - 2010",
+          "description": [
+            {
+              "value": "Minor in Law"
+            },
+            {
+              "value": "Minor in Economics"
+            },
+            {
+              "value": "Minor in Ethics & Philosophy"
+            },
+            {
+              "value": "Student Body Board Member: HR & Marketing"
+            },
+            {
+              "value": "Club Board & Founding Member: Ski & Mountaineering Club"
+            },
+            {
+              "value": "Other Extracurricular Activities:St. Gallen Sailing Club Regatta CrewJazz@Uni Lead OrganizerStudent Big Band (Drums)Student ChoirSt.Gallen Symposium"
+            }
+          ]
+        },
+        {
+          "degree": "High School, Languages & Physics",
+          "institution": "Karlsgymnasium Pasing",
+          "location": "Munich, BY",
+          "period": "1997 - 2006",
+          "description": [
+            {
+              "value": "Focus Subjects: French & Physics (2 of 2)"
+            },
+            {
+              "value": "Electives: Italian (out of Italian | Old Greek)"
+            },
+            {
+              "value": "Institution known for Humanist Mission"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Technical Leadership",
+          "skills": [
+            {
+              "name": "Technology Strategy & Roadmapping",
+              "level": 5,
+              "angles": [
+                "tech",
+                "strategy"
+              ]
+            },
+            {
+              "name": "ERP Systems Implementation (ERPNext/Odoo)",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Cloud Native Architecture (Kubernetes/NixOS)",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "DevOps & SRE Practices",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Observability & Monitoring (Grafana/Prometheus)",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Full Lifecycle Product Development",
+              "level": 5,
+              "angles": [
+                "tech",
+                "strategy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Software Development",
+          "skills": [
+            {
+              "name": "Python/Javascript Ecosystem",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Systems Programming (Go/Rust)",
+              "level": 4,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Functional Programming (Haskell/Nix)",
+              "level": 3,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "CI/CD Pipeline Design",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "API Design & Integration",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Business Operations",
+          "skills": [
+            {
+              "name": "Digital Transformation Leadership",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Process Automation & Optimization",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Supply Chain Digitization",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Lean Manufacturing Implementation",
+              "level": 4,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "BPO Operations Scaling",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Financial Engineering",
+          "skills": [
+            {
+              "name": "ERP Financial Module Configuration",
+              "level": 5,
+              "angles": [
+                "strategy",
+                "tech"
+              ]
+            },
+            {
+              "name": "Regulatory Compliance Systems",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Cost Optimization Strategies",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Fintech Integrations (Payment Systems)",
+              "level": 4,
+              "angles": [
+                "strategy",
+                "tech"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Leadership & Strategy",
+          "skills": [
+            {
+              "name": "Board-Level Governance",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Technical Team Building",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Market Entry Execution",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Strategic Partnership Development",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "M&A Technology Due Diligence",
+              "level": 4,
+              "angles": [
+                "strategy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Specialized Domains",
+          "skills": [
+            {
+              "name": "Industrial Automation Systems",
+              "level": 4,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "Food Production Technology",
+              "level": 4,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "Materials Science Applications",
+              "level": 3,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "CAD/CNC Prototyping",
+              "level": 2,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "Construction Tech (BIM)",
+              "level": 2,
+              "angles": [
+                "tech"
+              ]
+            }
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Substantial Frappe contributions",
+          "period": "2024-2025",
+          "description": "Contributed significant improvements to the Frappe framework, enhancing its capabilities for ERPNext and custom applications.",
+          "details": [
+            {
+              "value": "Implemented AI-enabled cross-channel marketing automations"
+            },
+            {
+              "value": "Developed vehicle routing solver module for internal delivery logistics"
+            },
+            {
+              "value": "Created e-invoice module compliant with local regulations"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Python"
+            },
+            {
+              "value": "JavaScript"
+            },
+            {
+              "value": "Frappe Framework"
+            }
+          ],
+          "link": "https://github.com/pulls?q=is%3Apr+author%3Ablaggacao+archived%3Afalse+org%3Afrappe+is%3Amerged",
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Standard DevOps Nix framework",
+          "period": "2023-2024",
+          "description": "Developed a Nix-based DevOps platform framework for company-wide use, streamlining development and deployment processes.",
+          "details": [
+            {
+              "value": "Improved system performance and reliability across the organization"
+            },
+            {
+              "value": "Standardized development environments and deployment pipelines"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Nix"
+            },
+            {
+              "value": "DevOps"
+            },
+            {
+              "value": "CI/CD"
+            }
+          ],
+          "link": "https://github.com/divnix/std",
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Digga NixOS framework",
+          "period": "2022-2023",
+          "description": "Created an advanced NixOS framework to simplify system configuration and management.",
+          "details": [
+            {
+              "value": "> 1k stars on GitHub"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "NixOS"
+            },
+            {
+              "value": "Nix"
+            },
+            {
+              "value": "System Configuration"
+            }
+          ],
+          "link": "https://github.com/divnix/digga",
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Packaging AEDIR-LDAP in Kubernetes",
+          "period": "2021",
+          "description": "Containerized and deployed AEDIR-LDAP solution in a Kubernetes environment for improved scalability and management.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Kubernetes"
+            },
+            {
+              "value": "Docker"
+            },
+            {
+              "value": "LDAP"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "XOE Client Project: Call Center Operations",
+          "period": "Bogotá - 2019-2020",
+          "description": "Implemented and integrated an Asterisk-based Call-Center Solution for a client's customer service operations.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Asterisk"
+            },
+            {
+              "value": "VoIP"
+            },
+            {
+              "value": "ERPNext"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "XOE Client Project: Infrastructure",
+          "period": "Bogotá - 2019",
+          "description": "Developed comprehensive infrastructure solutions for large-scale projects, including roads, buildings, internet backbones, and dams.",
+          "details": [
+            {
+              "value": "Implemented ERPNext modules to streamline project management and resource allocation"
+            },
+            {
+              "value": "Coordinated with multiple stakeholders to ensure timely project completion and adherence to quality standards"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Civil Engineering"
+            },
+            {
+              "value": "Project Management"
+            },
+            {
+              "value": "Infrastructure Planning"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "XOE Client Project: DevOps Project",
+          "period": "Hamburg - 2018",
+          "description": "Established and implemented DevOps practices for a Hamburg-based Transportation Management System (TMS) company, focusing on Odoo integration.",
+          "details": [
+            {
+              "value": "Streamlined development and deployment processes, improving software delivery efficiency"
+            },
+            {
+              "value": "Implemented automated testing and continuous integration pipelines to enhance code quality and reduce time-to-market"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Odoo"
+            },
+            {
+              "value": "DevOps"
+            },
+            {
+              "value": "GitLab"
+            },
+            {
+              "value": "CI/CD"
+            },
+            {
+              "value": "TMS"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "XOE Client Project: Textile Production",
+          "period": "Ibagué - 2018",
+          "description": "Customized ERPNext for a textile manufacturing company, optimizing production processes and inventory management.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "ERPNext"
+            },
+            {
+              "value": "Manufacturing Module"
+            },
+            {
+              "value": "Inventory Management"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Development of Payroll Module",
+          "period": "2017-2018",
+          "description": "Established a Business Process Outsourcing division focused on payroll services for SMEs.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Odoo"
+            },
+            {
+              "value": "Payroll Systems"
+            },
+            {
+              "value": "Accounting"
+            },
+            {
+              "value": "Colombian Labor Law"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "XOE Client Project: Building",
+          "period": "Cartagena - 2017",
+          "description": "Developed a custom ERPNext solution for a construction company in Cartagena, focusing on project management and resource allocation.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "ERPNext"
+            },
+            {
+              "value": "Project Management"
+            },
+            {
+              "value": "Construction Industry"
+            },
+            {
+              "value": "BIM"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "XOE Client Project: Chimicos",
+          "period": "Medellin - 2016-2017",
+          "description": "Implemented ERPNext for a chemical products company, with emphasis on sales, inventory control and quality management.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "ERPNext"
+            },
+            {
+              "value": "Chemical Industry"
+            },
+            {
+              "value": "Quality Control"
+            },
+            {
+              "value": "Tableaux"
+            },
+            {
+              "value": "Business Intelligence"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "XOE Client Project: Plastics",
+          "period": "Bogotá - 2016",
+          "description": "Customized ERPNext for a plastics manufacturing company, focusing on production planning and material requirements planning.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "ERPNext"
+            },
+            {
+              "value": "Manufacturing"
+            },
+            {
+              "value": "MRP"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Odoo Tax Preparation",
+          "period": "2014",
+          "description": "Developed a tax preparation module for Odoo ERP, tailored for Colombian tax regulations.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Odoo"
+            },
+            {
+              "value": "Python"
+            },
+            {
+              "value": "Colombian Tax Law"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Depositing Device",
+          "period": "2013-2014",
+          "description": "Engineered an automated depositing device for pretzel production, improving efficiency and consistency.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Mechanical Engineering"
+            },
+            {
+              "value": "Food Processing Equipment"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Conveyor Belt",
+          "period": "2013",
+          "description": "Designed and implemented a custom conveyor belt system for the pretzel production line.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Mechanical Engineering"
+            },
+            {
+              "value": "Electrical Engineering"
+            },
+            {
+              "value": "Industrial Automation"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Production Digitalization",
+          "period": "2014",
+          "description": "Introduced digital tools (tablets and scales) to modernize production processes and improve data collection.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Mobile Apps"
+            },
+            {
+              "value": "IoT"
+            },
+            {
+              "value": "Weight Measurement"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Corporate Design",
+          "period": "2013",
+          "description": "Created the corporate design for El Alemán SAS, including logo, branding, and marketing materials.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Graphic Design"
+            },
+            {
+              "value": "Branding"
+            }
+          ],
+          "angles": [
+            "strategy"
+          ]
+        },
+        {
+          "title": "Pretzel formula",
+          "period": "2013",
+          "description": "Developed a proprietary formula for pretzel production, optimized for high-altitude baking.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Food Science"
+            },
+            {
+              "value": "Recipe Development"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "SHSG Corporate Identity",
+          "period": "2008",
+          "description": "Led the redesign of the corporate identity for the Student Body of the University of St. Gallen.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Graphic Design"
+            },
+            {
+              "value": "Branding"
+            }
+          ],
+          "angles": [
+            "strategy"
+          ]
+        },
+        {
+          "title": "Jugend Forscht",
+          "period": "~2006",
+          "description": "Earned second prize with a Transrapid 1:200 model built (without levitation) school project which showcased linear motor propulsion in action.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Transformers"
+            },
+            {
+              "value": "Linear Motors"
+            },
+            {
+              "value": "CNC-Laser"
+            },
+            {
+              "value": "Fiber-Reinforced Composite"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Surf Board Build",
+          "period": "~2004",
+          "description": "Designed and built a windsurf board in fiber-reinforced sandwich construction.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Fiber-Reinforced Composite"
+            },
+            {
+              "value": "Sandwich Construction"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        }
+      ],
+      "languages": [
+        {
+          "name": "German",
+          "proficiency": "Native"
+        },
+        {
+          "name": "English",
+          "proficiency": "Fluent"
+        },
+        {
+          "name": "Spanish",
+          "proficiency": "Fluent"
+        },
+        {
+          "name": "French",
+          "proficiency": "Conversational"
+        },
+        {
+          "name": "Italian",
+          "proficiency": "Conversational"
+        },
+        {
+          "name": "Portuguese",
+          "proficiency": "Basic"
+        }
+      ]
+    }
+  },
   "jamie-chen": {
     "en": {
       "personalInfo": {
