@@ -4,6 +4,10 @@ import {
   PersonalInfo,
   Skill,
   SkillGroup,
+  Language,
+  Experience,
+  Education,
+  Project,
   COMPACT_ITEMS_LIMIT,
 } from '@/types/cv';
 
@@ -41,31 +45,28 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
     return itemAngles.includes(currentAngle);
   };
 
+  // Type guard for SkillGroup
+  const isSkillGroup = (item: Skill | SkillGroup): item is SkillGroup => {
+    return 'skills' in item && 'name' in item;
+  };
   // Helper function to determine if skills are grouped
   const hasGroupedSkills = (): boolean => {
     if (!cvData.skills.length) return false;
-    return 'name' in cvData.skills[0] && 'skills' in cvData.skills[0];
+    return isSkillGroup(cvData.skills[0]);
   };
 
   // Filter data based on compact mode and selected angle
-  const getFilteredData = (data: any[], limitCount = COMPACT_ITEMS_LIMIT) => {
-    // First filter by angle
+  const getFilteredData = <T extends { angles?: string[] }>(data: T[], limitCount = COMPACT_ITEMS_LIMIT): T[] => {
     const angleFilteredData = data.filter(item => shouldShowItem(item.angles));
-    
-    // Then apply compact mode limiting if needed
-    if (!isCompact) return angleFilteredData;
-    return angleFilteredData.slice(0, limitCount);
+    return isCompact ? angleFilteredData.slice(0, limitCount) : angleFilteredData;
   };
 
   // Calculate total and shown skill counts
   const calculateSkillCounts = () => {
     if (hasGroupedSkills()) {
       const groupedSkills = cvData.skills as SkillGroup[];
-      
-      // First filter groups by angle
       const filteredGroups = groupedSkills.filter(group => shouldShowItem(group.angles));
       
-      // Then filter skills within each group by angle
       const filteredGroupsWithFilteredSkills = filteredGroups.map(group => ({
         ...group,
         skills: group.skills.filter(skill => shouldShowItem(skill.angles))
@@ -79,27 +80,21 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
       
       // If compact, calculate the number of shown skills
       if (isCompact) {
-        // Take up to 3 groups
-        const limitedGroups = filteredGroupsWithFilteredSkills.slice(0, 3);
-        shownSkills = limitedGroups.reduce((total, group) => {
-          // Take up to 3 skills per group
-          return total + Math.min(group.skills.length, 3);
-        }, 0);
+        const limitedGroups = filteredGroupsWithFilteredSkills.slice(0, COMPACT_ITEMS_LIMIT);
+        shownSkills = limitedGroups.reduce((total, group) =>
+          total + Math.min(group.skills.length, COMPACT_ITEMS_LIMIT), 0);
       } else {
         shownSkills = totalSkills;
       }
       
       return { total: totalSkills, shown: shownSkills };
     } else {
-      // First filter flat skills by angle
-      const filteredSkills = (cvData.skills as Skill[]).filter(
-        skill => shouldShowItem(skill.angles)
-      );
-      
-      const totalSkills = filteredSkills.length;
-      const shownSkills = isCompact ? Math.min(filteredSkills.length, COMPACT_ITEMS_LIMIT) : totalSkills;
-      
-      return { total: totalSkills, shown: shownSkills };
+      const flatSkills = cvData.skills as Skill[];
+      const filteredSkills = flatSkills.filter(skill => shouldShowItem(skill.angles));
+      return {
+        total: filteredSkills.length,
+        shown: isCompact ? Math.min(filteredSkills.length, COMPACT_ITEMS_LIMIT) : filteredSkills.length
+      };
     }
   };
 
@@ -107,16 +102,17 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
   const skillCounts = calculateSkillCounts();
 
   // Apply angle filtering to all sections
-  const filteredExperience = getFilteredData(experience);
-  const filteredEducation = getFilteredData(education);
-  const filteredProjects = getFilteredData(projects);
-  const filteredLanguages = getFilteredData(languages);
+  const filteredExperience = getFilteredData<Experience>(experience);
+  const filteredEducation = getFilteredData<Education>(education);
+  const filteredProjects = getFilteredData<Project>(projects);
+  const filteredLanguages = getFilteredData<Language>(languages);
+
   const filteredSkills = hasGroupedSkills()
-  ? (getFilteredData(skills) as SkillGroup[]).map(group => ({
+  ? (getFilteredData<SkillGroup>(skills)).map(group => ({
       ...group,
       skills: getFilteredData(group.skills)
     }))
-  : getFilteredData(skills as Skill[]);
+  : getFilteredData<Skill>(skills);
 
   // Get total counts after angle filtering
   const totalExperience = experience.filter(item => shouldShowItem(item.angles)).length;
@@ -190,7 +186,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
             </div>
             <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', marginTop: '0.5rem' }}>
               {job.description.map((desc, i) => (
-                <li key={i} style={{ fontSize: '0.875rem', marginBottom: '0.25rem', textAlign: 'left' }}>{desc}</li>
+                <li key={i} style={{ fontSize: '0.875rem', marginBottom: '0.25rem', textAlign: 'left' }}>{desc.value}</li>
               ))}
             </ul>
           </div>
@@ -215,7 +211,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
             {edu.description && edu.description.length > 0 && (
               <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', marginTop: '0.5rem' }}>
                 {edu.description.map((desc, i) => (
-                  <li key={i} style={{ fontSize: '0.875rem', marginBottom: '0.25rem', textAlign: 'left' }}>{desc}</li>
+                  <li key={i} style={{ fontSize: '0.875rem', marginBottom: '0.25rem', textAlign: 'left' }}>{desc.value}</li>
                 ))}
               </ul>
             )}
@@ -264,7 +260,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
               {project.details && project.details.length > 0 && (
                 <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', marginTop: '0.5rem' }}>
                   {project.details.map((detail, i) => (
-                    <li key={i} style={{ fontSize: '0.875rem', marginBottom: '0.25rem', textAlign: 'left' }}>{detail}</li>
+                    <li key={i} style={{ fontSize: '0.875rem', marginBottom: '0.25rem', textAlign: 'left' }}>{detail.value}</li>
                   ))}
                 </ul>
               )}
@@ -281,7 +277,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
                       display: 'inline-block'
                     }}
                   >
-                    {tech}
+                    {tech.value}
                   </span>
                 ))}
               </div>
