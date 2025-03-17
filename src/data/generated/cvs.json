@@ -281,7 +281,7 @@
           "details": [],
           "technologies": [
             {
-              "value": "Technologies: Figma"
+              "value": "Figma"
             },
             {
               "value": "Prototyping"
@@ -303,7 +303,7 @@
           "details": [],
           "technologies": [
             {
-              "value": "Technologies: Design Systems"
+              "value": "Design Systems"
             },
             {
               "value": "Documentation"
@@ -322,7 +322,7 @@
           "details": [],
           "technologies": [
             {
-              "value": "Technologies: Data Visualization"
+              "value": "Data Visualization"
             },
             {
               "value": "UX Design"
@@ -636,7 +636,7 @@
           "details": [],
           "technologies": [
             {
-              "value": "Technologies: Figma"
+              "value": "Figma"
             },
             {
               "value": "Prototipado"
@@ -658,7 +658,7 @@
           "details": [],
           "technologies": [
             {
-              "value": "Technologies: Sistemas de Diseño"
+              "value": "Sistemas de Diseño"
             },
             {
               "value": "Documentación"
@@ -680,7 +680,7 @@
           "details": [],
           "technologies": [
             {
-              "value": "Technologies: Visualización de Datos"
+              "value": "Visualización de Datos"
             },
             {
               "value": "Diseño UX"
@@ -882,7 +882,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: Go"
+              "value": "Go"
             },
             {
               "value": "Redis"
@@ -906,7 +906,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: React"
+              "value": "React"
             },
             {
               "value": "TypeScript"
@@ -930,7 +930,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: Python"
+              "value": "Python"
             },
             {
               "value": "Airflow"
@@ -954,7 +954,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: Django"
+              "value": "Django"
             },
             {
               "value": "PostgreSQL"
@@ -1151,7 +1151,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: SEMrush"
+              "value": "SEMrush"
             },
             {
               "value": "HubSpot"
@@ -1176,7 +1176,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: Instagram"
+              "value": "Instagram"
             },
             {
               "value": "Pinterest"
@@ -1200,7 +1200,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: Review management"
+              "value": "Review management"
             },
             {
               "value": "Schema markup"
@@ -1397,7 +1397,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: Python"
+              "value": "Python"
             },
             {
               "value": "Tableau"
@@ -1418,7 +1418,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: User Interviews"
+              "value": "User Interviews"
             },
             {
               "value": "Journey Mapping"
@@ -1439,7 +1439,7 @@
           ],
           "technologies": [
             {
-              "value": "Technologies: Mixpanel"
+              "value": "Mixpanel"
             },
             {
               "value": "Amplitude"

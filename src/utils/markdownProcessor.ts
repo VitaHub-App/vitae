@@ -302,7 +302,7 @@ const parseProjects = createParser<Project>(projectSchema, 'project', (nodes, lo
             switch (key.toLowerCase()) {
               case 'technologies':
                 currentProject.technologies.push(
-                 ...listItem.value.split(',')
+                 ...value.split(',')
                   .map(t => t.trim()).filter(Boolean)
                   .map(t => ({value: t, angles: listItem.angles}))
                 );
