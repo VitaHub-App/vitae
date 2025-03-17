@@ -293,7 +293,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           {...field}
                         >
-                          <option value="">Default</option>
+                          <option value="">No filter</option>
                           {availableAngles.map(angle => (
                             <option key={angle} value={angle}>{angle}</option>
                           ))}
@@ -350,7 +350,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                         {Object.entries(parsedGptData)
                           .filter(([langCode]) => languages.some(l => l.code === langCode))
                           .map(([langCode, data]) => {
-                          const langName = languages.find(l => l.code === langCode).name;
+                          const langName = languages.find(l => l.code === langCode)?.name || langCode;
                           return (
                             <div key={langCode} className="p-3 border rounded-md bg-accent/20">
                               <div className="font-medium text-sm">{langName}:</div>

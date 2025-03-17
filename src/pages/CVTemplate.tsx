@@ -21,13 +21,13 @@ const CVTemplate = () => {
   const searchParams = new URLSearchParams(location.search);
   const nameFromQuery = searchParams.get('name');
   const compactParam = searchParams.get('compact');
-  const angleParam = searchParams.get('angle');
+  const angleParam = searchParams.get('angle') === 'null' ? null : searchParams.get('angle') || undefined; // null means no filter
   const modParam = searchParams.get('mod');
   
   const personName = name || nameFromQuery || 'alex-morgan';
   const [language, setLanguage] = useState('en');
   const [isCompact, setIsCompact] = useState(compactParam !== 'false');
-  const [currentAngle, setCurrentAngle] = useState<string | null>(angleParam);
+  const [currentAngle, setCurrentAngle] = useState<string | null | undefined>(angleParam);
   const [modifiedCVData, setModifiedCVData] = useState<CVData | null>(null);
   
   // Update URL when parameters change
@@ -35,7 +35,7 @@ const CVTemplate = () => {
     const newSearchParams = new URLSearchParams(location.search);
     newSearchParams.set('compact', isCompact.toString());
     
-    if (currentAngle) {
+    if (currentAngle !== undefined) {
       newSearchParams.set('angle', currentAngle);
     } else {
       newSearchParams.delete('angle');
@@ -75,12 +75,6 @@ const CVTemplate = () => {
         if (decodedData.bios && decodedData.bios[language]) {
           modifiedData.personalInfo.bio = decodedData.bios[language];
         }
-        
-        // If angle is specified in the modifications, use it
-        if (decodedData.angle && !currentAngle) {
-          setCurrentAngle(decodedData.angle);
-        }
-        
         setModifiedCVData(modifiedData);
       } catch (error) {
         console.error('Error applying modifications:', error);
@@ -91,9 +85,9 @@ const CVTemplate = () => {
     }
   }, [cvData, modParam, language, currentAngle]);
 
-  // Set default angle from CV data if available and no angle is specified
+  // Set default angle from CV data if available and no angle is otherwise specified
   useEffect(() => {
-    if (modifiedCVData && !currentAngle && modifiedCVData.personalInfo.defaultAngle) {
+    if (modifiedCVData && currentAngle === undefined && modifiedCVData.personalInfo.defaultAngle) {
       setCurrentAngle(modifiedCVData.personalInfo.defaultAngle);
     }
   }, [modifiedCVData, currentAngle]);

@@ -45,7 +45,7 @@ export default function AngleSelector({
       >
         <Filter className="h-4 w-4" />
         <span className="text-foreground">
-          {currentAngle || 'default'}
+          {currentAngle ? currentAngle : 'No filter'}
         </span>
         <ChevronDown size={16} className={cn(
           "text-foreground/70 transition-transform",
@@ -58,18 +58,31 @@ export default function AngleSelector({
           <ul role="listbox" className="py-1">
             <li
               role="option"
-              aria-selected={!currentAngle}
               className={cn(
-                "flex items-center px-3 py-2 cursor-pointer text-primary",
+                "flex items-center px-3 py-2 cursor-pointer text-primary text-xs",
                 "hover:bg-accent/50 transition-colors",
-                !currentAngle && "bg-accent text-accent-foreground"
+              )}
+              onClick={() => {
+                onAngleChange(undefined);
+                setIsOpen(false);
+              }}
+            >
+              Default
+            </li>
+            <li
+              role="option"
+              aria-selected={currentAngle === null}
+              className={cn(
+                "flex items-center px-3 py-2 cursor-pointer text-primary text-xs",
+                "hover:bg-accent/50 transition-colors",
+                currentAngle === null && "bg-accent text-accent-foreground"
               )}
               onClick={() => {
                 onAngleChange(null);
                 setIsOpen(false);
               }}
             >
-              default
+              No Filter
             </li>
             {angles.map((angle) => (
               <li
