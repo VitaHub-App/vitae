@@ -27,10 +27,11 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
   const [isOpen, setIsOpen] = React.useState(false);
 
   const options = {
-    margin: 10,
+    margin: 15,
     filename: `${cvName}.pdf`,
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2 },
+    pagebreak: { mode: ['css'] },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
   };
 
