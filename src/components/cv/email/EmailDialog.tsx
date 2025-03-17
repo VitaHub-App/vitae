@@ -19,14 +19,15 @@ interface EmailDialogProps {
   onOpenChange: (open: boolean) => void;
   personalInfo: PersonalInfo;
   cvName: string;
+  customUrl?: string;
 }
 
-export default function EmailDialog({ open, onOpenChange, personalInfo, cvName }: EmailDialogProps) {
+export default function EmailDialog({ open, onOpenChange, personalInfo, cvName, customUrl }: EmailDialogProps) {
   const { toast } = useToast();
   
   const handlePlainTextEmail = () => {
     const subject = `${personalInfo.name}'s CV from VitaHub`;
-    const url = `${window.location.origin}/cv/${cvName}`;
+    const url = customUrl || `${window.location.origin}/cv/${cvName}`;
     
     const { plainTextFallback } = createAmpEmailBody(cvName, personalInfo, url);
     
@@ -43,7 +44,7 @@ export default function EmailDialog({ open, onOpenChange, personalInfo, cvName }
   
   const handleHTMLEmail = () => {
     const subject = `${personalInfo.name}'s CV from VitaHub`;
-    const url = `${window.location.origin}/cv/${cvName}`;
+    const url = customUrl || `${window.location.origin}/cv/${cvName}`;
     
     const { ampHtml } = createAmpEmailBody(cvName, personalInfo, url);
     
