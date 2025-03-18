@@ -143,6 +143,9 @@ const ShowcaseSection: React.FC = () => {
             />
           ))}
         </div>
+
+        <CTA/>
+        
       </div>
     </section>
   );
