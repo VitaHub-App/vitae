@@ -1801,6 +1801,422 @@
       ]
     }
   },
+  "lina-avendano": {
+    "en": {
+      "personalInfo": {
+        "name": "Lina Avendano",
+        "title": "Finance, Accounting, and IT Professional | Experienced in ERP Systems and Business Analytics",
+        "email": "lina8823@gmail.com",
+        "phone": "+49 1515 5458335",
+        "location": "Graefelfing, BY, Deutschland",
+        "github": "https://github.com/lina2358",
+        "linkedin": "https://www.linkedin.com/in/linaavendano/",
+        "bio": "Accomplished finance and business operations professional with over a decade of expertise in accounting, financial management, and ERP software implementation. Demonstrated success in establishing and scaling international operations, providing comprehensive financial oversight, and driving strategic planning initiatives. Skilled in leading end-to-end ERP implementations, optimizing processes, and training cross-functional teams to achieve organizational efficiency. Proficient in German real estate accounting standards and well-versed in programming languages such as Python, CSS, and HTML, with intermediate knowledge in crafting database queries and managing databases.",
+        "defaultAngle": "finance"
+      },
+      "experience": [
+        {
+          "title": "Property Accounting Manager",
+          "company": "Res Familiae Arnold GbR",
+          "location": "Munich",
+          "period": "Aug 2023 - Present",
+          "description": [
+            {
+              "value": "Implemented and maintained a new accounting system, improving data accuracy and streamlining financial processes."
+            },
+            {
+              "value": "Manage property-related accounting in collaboration with the Steuerberater."
+            },
+            {
+              "value": "Prepare financial statements and oversee real estate transactions, ensuring compliance with German accounting standards (HGB)."
+            }
+          ]
+        },
+        {
+          "title": "Finance and Accounting Manager",
+          "company": "Pristina Company SAS",
+          "location": "Remote",
+          "period": "Mar 2023 - Jan 2025",
+          "description": [
+            {
+              "value": "Record daily financial transactions, ensuring accuracy and accountability."
+            },
+            {
+              "value": "Monitor and reconcile bank balances, maintaining proper cash flow management."
+            },
+            {
+              "value": "Prepare, generate, and analyze detailed financial reports in compliance with IFRS."
+            },
+            {
+              "value": "Develop an efficient archiving system, improving document accessibility and regulatory compliance."
+            },
+            {
+              "value": "Generate tax and legal reports, supporting tax and regulatory obligations."
+            },
+            {
+              "value": "Manage payroll processes, ensuring timely and accurate salary disbursement."
+            },
+            {
+              "value": "Led the implementation of the company's first ERP system, transitioning from Excel-based management."
+            },
+            {
+              "value": "Trained employees in ERP usage, ensuring sustainability through ongoing maintenance and support."
+            }
+          ]
+        },
+        {
+          "title": "Restaurant Owner",
+          "company": "Entrepreneurship",
+          "location": "Bogotá DC, Colombia",
+          "period": "Feb 2021 - Jul 2022",
+          "description": [
+            {
+              "value": "Boosted sales by 150% through attractive social media campaigns (+4,000 followers in 3 months), modern refurbishment, improved customer care, and high-quality menu."
+            },
+            {
+              "value": "Decreased costs by implementing stock control, FIFO strategies, and standardization of recipes."
+            },
+            {
+              "value": "Overcame COVID-19 crisis by creating a delivery channel, partnering with local companies, and achieving a 4.5 Google rating."
+            },
+            {
+              "value": "Sold the restaurant with a 120% gain."
+            }
+          ]
+        },
+        {
+          "title": "Head of Branch",
+          "company": "8Bit Group",
+          "location": "Bogotá DC, Colombia",
+          "period": "Sep 2017 – Dec 2019",
+          "description": [
+            {
+              "value": "Established an e-commerce subsidiary from scratch, generating USD 30k daily sales."
+            },
+            {
+              "value": "Managed fulfillment, logistics, and stock control, delivering +1,500 packages daily."
+            },
+            {
+              "value": "Led negotiations with last-mile transport companies for nationwide delivery."
+            },
+            {
+              "value": "Implemented KPIs for all areas, boosting efficiency by 50%."
+            },
+            {
+              "value": "Managed high employee retention through performance and well-being programs."
+            },
+            {
+              "value": "Established and led an organized e-commerce operation with +250 employees, billing over USD 1M yearly."
+            }
+          ]
+        },
+        {
+          "title": "Odoo Expert",
+          "company": "XOE CORP. SAS",
+          "location": "Bogotá DC, Colombia",
+          "period": "Aug 2017 - Mar 2020",
+          "description": [
+            {
+              "value": "Expert in accounting and payroll implementation in Odoo."
+            },
+            {
+              "value": "Provided ERP training and technical support."
+            },
+            {
+              "value": "Led the recruitment process and maintained the BPO division."
+            }
+          ]
+        },
+        {
+          "title": "Executive & Business Manager",
+          "company": "El Aleman SAS",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jan 2016 - Aug 2017",
+          "description": [
+            {
+              "value": "Managed key areas such as Accounting, Sales, HR, Inventories, Manufacturing, and Quality."
+            },
+            {
+              "value": "Responsible for HR management, payroll, and training."
+            },
+            {
+              "value": "Handled supplier negotiations and procurement orders."
+            },
+            {
+              "value": "Opened and managed the first company store."
+            }
+          ]
+        },
+        {
+          "title": "Logistics & Finance Executive",
+          "company": "Aurobindo Pharma",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jun 2014 - Dec 2015",
+          "description": [
+            {
+              "value": "Managed financial reporting and compliance."
+            },
+            {
+              "value": "Controlled invoicing, tender announcements, and international trade operations."
+            },
+            {
+              "value": "Led cost-reduction initiatives, contributing to the company's break-even in the first year."
+            }
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "International Relations BA",
+          "institution": "Universidad Militar Nueva Granada",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jun 2006 - Jun 2012",
+          "description": [
+            {
+              "value": "Developed strong analytical and strategic thinking skills, focusing on international business, economic policies, and global market dynamics. Acquired expertise in cross-border trade regulations, financial diplomacy, and economic development strategies, which provided a solid foundation for financial and business management roles."
+            }
+          ]
+        },
+        {
+          "degree": "Technical Degree in Financial Management & Accounting",
+          "institution": "SENA - Centro de Servicios Financieros",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jan 2005 - Jun 2007",
+          "description": [
+            {
+              "value": "Gained a comprehensive understanding of financial reporting, tax regulations, and accounting principles. Specialized in cost management, payroll administration, and financial analysis, enabling a strong ability to optimize financial structures and ensure compliance with accounting standards."
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Financial Management",
+          "skills": [
+            {
+              "name": "Financial Planning",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Budgeting",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Cash Flow Management",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Investment Analysis",
+              "level": 2,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Cost Optimization",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Profitability Analysis",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "KPI Analysis",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Business Strategy",
+              "level": 4,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Forecasting",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Tax Compliance",
+              "level": 4,
+              "angles": [
+                "finance",
+                "accounting"
+              ]
+            },
+            {
+              "name": "Financial Reporting",
+              "level": 5,
+              "angles": [
+                "finance",
+                "accounting"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Information Technology & ERP",
+          "skills": [
+            {
+              "name": "ERP Implementation",
+              "level": 5,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Software Accounting Consulting",
+              "level": 5,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Odoo ERP Expert",
+              "level": 5,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Database Queries",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Business Process Automation",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Data Management",
+              "level": 4,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Advanced MS Excel & Analytics",
+              "level": 5,
+              "angles": [
+                "it",
+                "finance"
+              ]
+            },
+            {
+              "name": "BI Tools",
+              "level": 2,
+              "angles": [
+                "it",
+                "finance"
+              ]
+            },
+            {
+              "name": "Python",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "HTML & CSS",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Accounting & Compliance",
+          "skills": [
+            {
+              "name": "Real Estate Accounting (HGB)",
+              "level": 3,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Payroll Management",
+              "level": 4,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "IFRS Compliance",
+              "level": 5,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Bookkeeping",
+              "level": 5,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Financial Statements Preparation",
+              "level": 5,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Tax Preparation",
+              "level": 4,
+              "angles": [
+                "accounting",
+                "finance"
+              ]
+            }
+          ]
+        }
+      ],
+      "projects": [],
+      "languages": [
+        {
+          "name": "English",
+          "proficiency": "Professional working proficiency"
+        },
+        {
+          "name": "Spanish",
+          "proficiency": "Native"
+        },
+        {
+          "name": "German",
+          "proficiency": "Elementary proficiency"
+        }
+      ]
+    }
+  },
   "jamie-chen": {
     "en": {
       "personalInfo": {

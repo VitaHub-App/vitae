@@ -143,16 +143,16 @@ Localization Insttructions:
 
 ## Experience
 
-### **Property Accounting Manager**  
-*Res Familiae Arnold GbR, Munich*  
-*Aug 2023 – Present*  
+### Property Accounting Manager
+Res Familiae Arnold GbR | Munich | Aug 2023 - Present 
+
 - Implemented and maintained a new accounting system, improving data accuracy and streamlining financial processes.
 - Manage property-related accounting in collaboration with the Steuerberater.
 - Prepare financial statements and oversee real estate transactions, ensuring compliance with German accounting standards (HGB).
 
-### **Finance and Accounting Manager**  
-*Pristina Company SAS, Remote*  
-*Mar 2023 – Present*  
+### Finance and Accounting Manager
+Pristina Company SAS | Remote | Mar 2023 - Jan 2025
+
 - Record daily financial transactions, ensuring accuracy and accountability.
 - Monitor and reconcile bank balances, maintaining proper cash flow management.
 - Prepare, generate, and analyze detailed financial reports in compliance with IFRS.
@@ -160,22 +160,20 @@ Localization Insttructions:
 - Generate tax and legal reports, supporting tax and regulatory obligations.
 - Manage payroll processes, ensuring timely and accurate salary disbursement.
 
-**Achievements:**
 - Led the implementation of the company's first ERP system, transitioning from Excel-based management.
 - Trained employees in ERP usage, ensuring sustainability through ongoing maintenance and support.
 
-### **Restaurant Owner**  
-*Entrepreneurship, Bogotá DC, Colombia*  
-*Feb 2021 – Jul 2022*  
-**Achievements:**
+### Restaurant Owner
+Entrepreneurship | Bogotá DC, Colombia | Feb 2021 - Jul 2022
+
 - Boosted sales by 150% through attractive social media campaigns (+4,000 followers in 3 months), modern refurbishment, improved customer care, and high-quality menu.
 - Decreased costs by implementing stock control, FIFO strategies, and standardization of recipes.
 - Overcame COVID-19 crisis by creating a delivery channel, partnering with local companies, and achieving a 4.5 Google rating.
 - Sold the restaurant with a 120% gain.
 
 ### **Head of Branch**  
-*8Bit Group, Bogotá DC, Colombia*  
-*Sep 2017 – Dec 2019*  
+8Bit Group | Bogotá DC, Colombia | Sep 2017 – Dec 2019
+
 - Established an e-commerce subsidiary from scratch, generating USD 30k daily sales.
 - Managed fulfillment, logistics, and stock control, delivering +1,500 packages daily.
 - Led negotiations with last-mile transport companies for nationwide delivery.
@@ -183,24 +181,24 @@ Localization Insttructions:
 - Managed high employee retention through performance and well-being programs.
 - Established and led an organized e-commerce operation with +250 employees, billing over USD 1M yearly.
 
-### **Odoo Expert**  
-*XOE CORP. SAS, Bogotá DC, Colombia*  
-*Aug 2017 – Mar 2020*  
+### **Odoo Expert**
+XOE CORP. SAS | Bogotá DC, Colombia | Aug 2017 - Mar 2020
+
 - Expert in accounting and payroll implementation in Odoo.
 - Provided ERP training and technical support.
 - Led the recruitment process and maintained the BPO division.
 
 ### **Executive & Business Manager**  
-*El Aleman SAS, Bogotá DC, Colombia*  
-*Jan 2016 – Aug 2017*  
+El Aleman SAS | Bogotá DC, Colombia | Jan 2016 - Aug 2017
+
 - Managed key areas such as Accounting, Sales, HR, Inventories, Manufacturing, and Quality.
 - Responsible for HR management, payroll, and training.
 - Handled supplier negotiations and procurement orders.
 - Opened and managed the first company store.
 
 ### **Logistics & Finance Executive**  
-*Aurobindo Pharma, Bogotá DC, Colombia*  
-*Jun 2014 – Dec 2015*  
+Aurobindo Pharma | Bogotá DC, Colombia | Jun 2014 - Dec 2015
+
 - Managed financial reporting and compliance.
 - Controlled invoicing, tender announcements, and international trade operations.
 - Led cost-reduction initiatives, contributing to the company's break-even in the first year.
@@ -210,14 +208,17 @@ Localization Insttructions:
 ## **Education**
 
 ### **International Relations BA**  
-*Universidad Militar Nueva Granada, Bogotá DC, Colombia*  
-*Jun 2006 – Jun 2012* (GPA: 4.7)
+Universidad Militar Nueva Granada | Bogotá DC, Colombia | Jun 2006 - Jun 2012 
+
+- Developed strong analytical and strategic thinking skills, focusing on international business, economic policies, and global market dynamics. Acquired expertise in cross-border trade regulations, financial diplomacy, and economic development strategies, which provided a solid foundation for financial and business management roles.
 
 ### **Technical Degree in Financial Management & Accounting**  
-*SENA - Centro de Servicios Financieros, Bogotá DC, Colombia*  
-*Jan 2005 – Jun 2007* (GPA: 5.0)
+SENA - Centro de Servicios Financieros | Bogotá DC, Colombia | Jan 2005 - Jun 2007
+
+- Gained a comprehensive understanding of financial reporting, tax regulations, and accounting principles. Specialized in cost management, payroll administration, and financial analysis, enabling a strong ability to optimize financial structures and ensure compliance with accounting standards.
 
 ## **Data Science Course**
-*Platzi, Online* 
-*May 2022 – Jun 2023*
+Platzi | Online | May 2022 - Jun 2023
+
+- Gained a solid foundation in data analysis, statistical modeling, and business intelligence. Developed skills in handling large datasets, extracting meaningful insights, and applying data-driven decision-making to financial and operational processes. Learned to use Python for data manipulation, visualization, and automation, enhancing efficiency in accounting, financial forecasting, and ERP analytics.
 
