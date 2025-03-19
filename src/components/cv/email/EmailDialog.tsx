@@ -1,8 +1,8 @@
 
-import { Mail, ExternalLink, Copy } from 'lucide-react';
+import { Mail, User, AtSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { createMailtoLink, createAmpEmailBody } from '@/utils/emailGenerator';
+import { createMailtoLink, createEmailBody } from '@/utils/emailGenerator';
 import { PersonalInfo } from '@/types/cv';
 import {
   Dialog,
@@ -13,6 +13,9 @@ import {
   DialogClose,
   DialogFooter,
 } from '@/components/ui/dialog';
+import { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 interface EmailDialogProps {
   open: boolean;
@@ -32,46 +35,22 @@ export default function EmailDialog({
   coverLetter 
 }: EmailDialogProps) {
   const { toast } = useToast();
+  const [recipientEmail, setRecipientEmail] = useState('');
+  const [recipientName, setRecipientName] = useState('');
   
-  const handlePlainTextEmail = () => {
+  const handleSendEmail = () => {
     const subject = `${personalInfo.name}'s CV from VitaHub`;
     const url = customUrl || `${window.location.origin}/cv/${cvName}`;
     
-    const { plainTextFallback } = createAmpEmailBody(cvName, personalInfo, url, coverLetter);
+    const { plainTextBody } = createEmailBody(cvName, personalInfo, url, coverLetter, recipientName);
     
     // Create a properly encoded mailto link with plain text
-    window.location.href = createMailtoLink('', subject, plainTextFallback);
+    window.location.href = createMailtoLink(recipientName, recipientEmail, subject, plainTextBody);
     
     toast({
       title: "Email Client Opened",
-      description: "Plain text email has been prepared in your email client.",
+      description: "Email has been prepared in your email client.",
     });
-    
-    onOpenChange(false);
-  };
-  
-  const handleHTMLEmail = () => {
-    const subject = `${personalInfo.name}'s CV from VitaHub`;
-    const url = customUrl || `${window.location.origin}/cv/${cvName}`;
-    
-    const { ampHtml } = createAmpEmailBody(cvName, personalInfo, url, coverLetter);
-    
-    // Copy HTML to clipboard
-    navigator.clipboard.writeText(ampHtml)
-      .then(() => {
-        toast({
-          title: "HTML Copied to Clipboard",
-          description: "Paste the HTML into your email client to send a rich HTML email.",
-        });
-      })
-      .catch(err => {
-        console.error('Failed to copy HTML: ', err);
-        toast({
-          title: "Error",
-          description: "Failed to copy HTML to clipboard. Please try again.",
-          variant: "destructive",
-        });
-      });
     
     onOpenChange(false);
   };
@@ -85,51 +64,65 @@ export default function EmailDialog({
             <span>Share CV via Email</span>
           </DialogTitle>
           <DialogDescription>
-            Choose how you'd like to share this CV
+            Enter recipient details to share this CV via email
           </DialogDescription>
         </DialogHeader>
         
         <div className="py-6 space-y-4">
-          <div className="rounded-lg border p-4 bg-accent/30 hover:bg-accent/50 transition-colors">
-            <h3 className="font-medium mb-2 flex items-center gap-2">
-              <ExternalLink className="h-4 w-4 text-primary" />
-              Plain Text Email
-            </h3>
-            <p className="text-sm text-muted-foreground mb-3">
-              Opens your default email client with a simple text-based CV link. 
-              Works with all email clients.
-            </p>
-            <Button 
-              variant="outline" 
-              className="w-full"
-              onClick={handlePlainTextEmail}
-            >
-              Send as Plain Text
-            </Button>
+          <div className="space-y-2">
+            <Label htmlFor="recipient-name" className="flex items-center gap-2">
+              <User className="h-4 w-4" />
+              Recipient Name
+            </Label>
+            <Input 
+              id="recipient-name"
+              value={recipientName}
+              onChange={(e) => setRecipientName(e.target.value)}
+              placeholder="John Smith"
+            />
           </div>
           
-          <div className="rounded-lg border p-4 bg-accent/30 hover:bg-accent/50 transition-colors">
-            <h3 className="font-medium mb-2 flex items-center gap-2">
-              <Copy className="h-4 w-4 text-primary" />
-              HTML Rich Email
-            </h3>
-            <p className="text-sm text-muted-foreground mb-3">
-              Creates a beautifully formatted HTML email. Copy the HTML and paste 
-              it into email clients that support HTML formatting.
+          <div className="space-y-2">
+            <Label htmlFor="recipient-email" className="flex items-center gap-2">
+              <AtSign className="h-4 w-4" />
+              Recipient Email
+            </Label>
+            <Input 
+              id="recipient-email"
+              type="email"
+              value={recipientEmail}
+              onChange={(e) => setRecipientEmail(e.target.value)}
+              placeholder="john@example.com"
+              required
+            />
+          </div>
+          
+          <div className="rounded-lg border p-4 bg-accent/30">
+            <h3 className="font-medium mb-2">Email Preview</h3>
+            <p className="text-sm text-muted-foreground mb-1">
+              <strong>To:</strong> {recipientEmail ? `${recipientName} <${recipientEmail}>` : "Enter recipient email"}
             </p>
-            <Button 
-              className="w-full"
-              onClick={handleHTMLEmail}
-            >
-              Copy HTML to Clipboard
-            </Button>
+            <p className="text-sm text-muted-foreground mb-1">
+              <strong>Subject:</strong> {personalInfo.name}'s CV from VitaHub
+            </p>
+            <p className="text-sm text-muted-foreground">
+              <strong>Content:</strong> Plain text email with CV link{coverLetter ? " and cover letter" : ""}
+            </p>
           </div>
         </div>
         
-        <DialogFooter className="flex justify-end gap-2">
+        <DialogFooter className="gap-2">
           <DialogClose asChild>
             <Button variant="outline">Cancel</Button>
           </DialogClose>
+          <Button 
+            onClick={handleSendEmail}
+            disabled={!recipientEmail}
+            className="gap-2"
+          >
+            <Mail className="h-4 w-4" />
+            Send Email
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
