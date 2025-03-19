@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   CVData,
@@ -45,7 +46,7 @@ interface CVPdfTemplateProps {
   personalInfo: PersonalInfo;
   cvName: string;
   isCompact: boolean;
-  currentAngle?: string;
+  currentAngle?: string | null;
 }
 
 const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({ 
@@ -331,13 +332,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
                       marginBottom: '0.5rem',
                       fontSize: '0.95rem',
                       position: 'relative',
-                      paddingLeft: '1rem',
-                      '&:before': {
-                        content: '"•"',
-                        position: 'absolute',
-                        left: 0,
-                        color: colors.accent
-                      }
+                      paddingLeft: '1rem'
                     }}>{desc.value}</li>
                   ))}
                 </ul>
@@ -393,13 +388,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
                         marginBottom: '0.5rem',
                         fontSize: '0.95rem',
                         position: 'relative',
-                        paddingLeft: '1rem',
-                        '&:before': {
-                          content: '"•"',
-                          position: 'absolute',
-                          left: 0,
-                          color: colors.accent
-                        }
+                        paddingLeft: '1rem'
                       }}>{desc.value}</li>
                     ))}
                   </ul>
@@ -433,12 +422,6 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
                       fontSize: '0.95rem'
                     }}>{project.period}</div>
                   </div>
-                  {project.location && (
-                    <span style={{ 
-                      color: colors.lightText,
-                      fontSize: '0.85rem'
-                    }}>{project.location}</span>
-                  )}
                 </div>
       
                 <p style={{ 
@@ -459,13 +442,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
                         marginBottom: '0.5rem',
                         fontSize: '0.95rem',
                         position: 'relative',
-                        paddingLeft: '1rem',
-                        '&:before': {
-                          content: '"•"',
-                          position: 'absolute',
-                          left: 0,
-                          color: colors.accent
-                        }
+                        paddingLeft: '1rem'
                       }}>{detail.value}</li>
                     ))}
                   </ul>
@@ -506,11 +483,7 @@ const CVPdfTemplate: React.FC<CVPdfTemplateProps> = ({
         <div style={{
           fontSize: '0.85rem',
           paddingLeft: '1.5rem',
-          borderLeft: `2px solid ${colors.background}`,
-          '& > *': {
-            transform: 'scale(0.95)',
-            transformOrigin: 'left center'
-          }
+          borderLeft: `2px solid ${colors.background}`
         }}>
           {/* Skills section */}
           {skillCounts.total > 0 && (
@@ -621,15 +594,6 @@ const SectionWrapper: React.FC<{
       marginBottom: '1.5rem',
       position: 'relative',
       paddingBottom: '0.5rem',
-      '&:after': {
-        content: '""',
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        width: '40px',
-        height: '2px',
-        backgroundColor: color
-      }
     }}>
       {title}
       {isCompact && count > COMPACT_ITEMS_LIMIT && (
@@ -644,6 +608,5 @@ const SectionWrapper: React.FC<{
     {children}
   </section>
 );
-
 
 export default CVPdfTemplate;

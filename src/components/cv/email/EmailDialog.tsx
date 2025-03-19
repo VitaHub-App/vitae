@@ -20,16 +20,24 @@ interface EmailDialogProps {
   personalInfo: PersonalInfo;
   cvName: string;
   customUrl?: string;
+  coverLetter?: string;
 }
 
-export default function EmailDialog({ open, onOpenChange, personalInfo, cvName, customUrl }: EmailDialogProps) {
+export default function EmailDialog({ 
+  open, 
+  onOpenChange, 
+  personalInfo, 
+  cvName, 
+  customUrl,
+  coverLetter 
+}: EmailDialogProps) {
   const { toast } = useToast();
   
   const handlePlainTextEmail = () => {
     const subject = `${personalInfo.name}'s CV from VitaHub`;
     const url = customUrl || `${window.location.origin}/cv/${cvName}`;
     
-    const { plainTextFallback } = createAmpEmailBody(cvName, personalInfo, url);
+    const { plainTextFallback } = createAmpEmailBody(cvName, personalInfo, url, coverLetter);
     
     // Create a properly encoded mailto link with plain text
     window.location.href = createMailtoLink('', subject, plainTextFallback);
@@ -46,7 +54,7 @@ export default function EmailDialog({ open, onOpenChange, personalInfo, cvName, 
     const subject = `${personalInfo.name}'s CV from VitaHub`;
     const url = customUrl || `${window.location.origin}/cv/${cvName}`;
     
-    const { ampHtml } = createAmpEmailBody(cvName, personalInfo, url);
+    const { ampHtml } = createAmpEmailBody(cvName, personalInfo, url, coverLetter);
     
     // Copy HTML to clipboard
     navigator.clipboard.writeText(ampHtml)

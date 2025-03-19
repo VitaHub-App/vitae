@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Language } from "@/types/lang";
-import { Copy, Link, FileWarning, Check, X, Share2, Mail } from "lucide-react";
+import { Copy, Link, FileWarning, Check, X, Share2, Mail, FileText } from "lucide-react";
 import { PersonalInfo, CVData } from "@/types/cv";
 import { z } from "zod";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 import EmailDialog from "./email/EmailDialog";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface SecretTitleDialogProps {
   isOpen: boolean;
@@ -26,7 +27,8 @@ interface SecretTitleDialogProps {
 
 const formSchema = z.object({
   jobDescription: z.string().min(1, "Please provide a job description"),
-  additionalInstructions: z.string().optional(),
+  includeCoverLetter: z.boolean().default(false),
+  coverLetterInstructions: z.string().optional(),
   gptResponse: z.string()
     .refine(
       value => {
@@ -55,20 +57,25 @@ export default function SecretTitleDialog({
 }: SecretTitleDialogProps) {
   const { toast } = useToast();
   const [jsonValidationStatus, setJsonValidationStatus] = useState<'idle' | 'valid' | 'invalid'>('idle');
-  const [parsedGptData, setParsedGptData] = useState<Record<string, { title: string, bio: string }> | null>(null);
+  const [parsedGptData, setParsedGptData] = useState<Record<string, { title: string, bio: string, coverLetter?: string }> | null>(null);
   const [showEmailDialog, setShowEmailDialog] = useState(false);
   const [modifiedUrl, setModifiedUrl] = useState<string | null>(null);
   const [modifiedPersonalInfo, setModifiedPersonalInfo] = useState<PersonalInfo | null>(null);
+  const [selectedCoverLetter, setSelectedCoverLetter] = useState<string | undefined>(undefined);
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       jobDescription: "",
-      additionalInstructions: "",
+      includeCoverLetter: false,
+      coverLetterInstructions: "",
       gptResponse: "",
       selectedAngle: availableAngles.length > 0 ? availableAngles[0] : undefined,
     },
   });
+
+  // Watch the includeCoverLetter field to toggle additional fields
+  const includeCoverLetter = form.watch("includeCoverLetter");
 
   const validateJsonResponse = (jsonString: string) => {
     try {
@@ -122,6 +129,23 @@ export default function SecretTitleDialog({
         });
       }
       
+      // Only check for cover letter if it's requested
+      if (includeCoverLetter) {
+        const missingCoverLetters = languages
+          .map(lang => lang.code)
+          .filter(langCode => {
+            const entry = data[langCode];
+            return !entry || !entry.coverLetter;
+          });
+        
+        if (missingCoverLetters.length > 0) {
+          toast({
+            title: "Missing cover letters",
+            description: `The following languages are missing cover letters: ${missingCoverLetters.join(', ')}`,
+          });
+        }
+      }
+      
       // All validations passed
       setParsedGptData(data);
       setJsonValidationStatus('valid');
@@ -138,7 +162,7 @@ export default function SecretTitleDialog({
   };
 
   const generateGptPrompt = () => {
-    const { jobDescription, additionalInstructions } = form.getValues();
+    const { jobDescription, coverLetterInstructions, includeCoverLetter } = form.getValues();
     
     const systemPrompt = `You are a professional CV writer who specializes in creating job titles and short bios that highlight a person's skills and experience in relation to specific job opportunities. Your task is to:
 
@@ -154,13 +178,21 @@ export default function SecretTitleDialog({
    - Uses active, engaging language
    - Focuses on achievements and impact
    - Appears natural and not artificially generated
+${includeCoverLetter ? `5. Write a concise cover letter (200-300 words) that:
+   - Introduces the person by highlighting their key qualifications
+   - Explains why the person is interested in the position
+   - Highlights relevant experience, education, and qualifications
+   - Matches the skills and requirements mentioned in the job description
+   - Includes a call to action
+   - Maintains a professional tone
+   - Does NOT contain ano salutation` : ''}
 
 Do not hallucinate or invent details not present in the CV. Your output should be STRICT JSON format with this structure:
-${languages.map(l => `"${l.code}": { "title": "...", "bio": "..." }`).join(', ')}
+${languages.map(l => `"${l.code}": { "title": "...", "bio": "..."${includeCoverLetter ? ', "coverLetter": "..."' : ''} }`).join(', ')}
 
 The entire response must be valid JSON that can be parsed with JSON.parse().`;
 
-    const prompt = `${jobDescription}\n\n${additionalInstructions ? "Additional instructions: " + additionalInstructions + "\n\n" : ""}CV data:\n${JSON.stringify(cvData, null, 2)}`;
+    const prompt = `${jobDescription}\n\n${includeCoverLetter && coverLetterInstructions ? "Additional instructions for cover letter: " + coverLetterInstructions + "\n\n" : ""}CV data:\n${JSON.stringify(cvData, null, 2)}`;
 
     return `${systemPrompt}\n\n${prompt}`;
   };
@@ -279,6 +311,14 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     const updatedPersonalInfo = createModifiedPersonalInfo();
     setModifiedPersonalInfo(updatedPersonalInfo);
     
+    // Set the cover letter if available
+    if (parsedGptData && includeCoverLetter) {
+      const defaultLanguage = languages.length > 0 ? languages[0].code : 'en';
+      setSelectedCoverLetter(parsedGptData[defaultLanguage]?.coverLetter);
+    } else {
+      setSelectedCoverLetter(undefined);
+    }
+    
     // Open the email dialog
     setShowEmailDialog(true);
   };
@@ -326,20 +366,46 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                 
                 <FormField
                   control={form.control}
-                  name="additionalInstructions"
+                  name="includeCoverLetter"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Additional Instructions (optional)</FormLabel>
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                       <FormControl>
-                        <Textarea 
-                          placeholder="Enter any additional instructions for GPT..." 
-                          className="min-h-[100px]" 
-                          {...field}
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
                         />
                       </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel className="flex items-center gap-2">
+                          <FileText className="h-4 w-4" />
+                          Include Cover Letter
+                        </FormLabel>
+                        <FormDescription>
+                          Generate a matching cover letter along with title and bio
+                        </FormDescription>
+                      </div>
                     </FormItem>
                   )}
                 />
+                
+                {includeCoverLetter && (
+                  <FormField
+                    control={form.control}
+                    name="coverLetterInstructions"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Cover Letter Instructions (optional)</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Enter any additional instructions for the cover letter..." 
+                            className="min-h-[100px]" 
+                            {...field}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                )}
                 
                 <Button 
                   type="button"
@@ -394,7 +460,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                         </FormLabel>
                         <FormControl>
                           <Textarea 
-                            placeholder={`Paste the GPT response JSON here...\nExample: {\n  "en": {\n    "title": "Senior Product Designer",\n    "bio": "Experienced designer with 8+ years..."\n  },\n  "es": {\n    "title": "Diseñador Senior de Productos",\n    "bio": "Diseñador con 8+ años de experiencia..."\n  }\n}`}
+                            placeholder={`Paste the GPT response JSON here...\nExample: {\n  "en": {\n    "title": "Senior Product Designer",\n    "bio": "Experienced designer with 8+ years..."${includeCoverLetter ? ',\n    "coverLetter": "Dear Hiring Manager,\\n\\nI am writing to..."' : ''}\n  },\n  "es": {\n    "title": "Diseñador Senior de Productos",\n    "bio": "Diseñador con 8+ años de experiencia..."${includeCoverLetter ? ',\n    "coverLetter": "Estimado Gerente de Contratación,\\n\\nLe escribo para..."' : ''}\n  }\n}`}
                             className={cn(
                               "min-h-[240px] font-mono text-sm",
                               jsonValidationStatus === 'valid' && "border-green-500 focus-visible:ring-green-500",
@@ -428,6 +494,18 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                                   <div className="text-sm text-muted-foreground mt-1">
                                     "{data.bio}" ({data.bio.split(/\s+/).length} words)
                                   </div>
+                                  {includeCoverLetter && data.coverLetter && (
+                                    <div className="mt-2 pt-2 border-t">
+                                      <div className="font-medium text-sm flex items-center gap-1">
+                                        <FileText className="h-3 w-3" /> Cover Letter:
+                                      </div>
+                                      <div className="text-xs text-muted-foreground mt-1 max-h-40 overflow-y-auto bg-background/50 p-2 rounded">
+                                        {data.coverLetter.split('\n').map((paragraph, i) => (
+                                          <p key={i} className="mb-1">{paragraph}</p>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
                                 </div>
                               );
                             })}
@@ -472,6 +550,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
           personalInfo={modifiedPersonalInfo || personalInfo}
           cvName={cvName}
           customUrl={modifiedUrl || undefined}
+          coverLetter={selectedCoverLetter}
         />
       )}
     </>

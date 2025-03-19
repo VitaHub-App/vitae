@@ -1,3 +1,4 @@
+
 // Enhanced email functionality with AMP HTML and proper URL encoding
 export const createMailtoLink = (email: string, subject: string, body: string) => {
   // Properly encode parameters for mailto URL
@@ -8,10 +9,15 @@ export const createMailtoLink = (email: string, subject: string, body: string) =
 };
 
 // Create an AMP HTML email body with fallback text
-export const createAmpEmailBody = (cvName: string, personalInfo: any, url: string) => {
+export const createAmpEmailBody = (cvName: string, personalInfo: any, url: string, coverLetter?: string) => {
   // Plain text fallback for email clients that don't support HTML
   const plainTextFallback = `
 Hello,
+
+${coverLetter ? `
+${coverLetter}
+
+` : ''}
 
 Please find my CV from VitaHub below:
 ${url}
@@ -51,6 +57,8 @@ ${personalInfo.phone}
     .footer { background-color: #f9fafb; padding: 20px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #e5e7eb; }
     .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
     .social-link { display: inline-block; width: 32px; height: 32px; background-color: #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4b5563; text-decoration: none; }
+    .cover-letter { margin-top: 25px; padding: 20px; background-color: #f9fafb; border-radius: 6px; font-size: 14px; line-height: 1.6; color: #4b5563; }
+    .cover-letter h2 { color: #1f2937; font-size: 18px; margin-top: 0; margin-bottom: 15px; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -74,6 +82,13 @@ ${personalInfo.phone}
           <a href="${url}" class="button">View My CV</a>
         </div>
       </div>
+      
+      ${coverLetter ? `
+      <div class="cover-letter">
+        <h2>Cover Letter</h2>
+        ${coverLetter.split('\n').map(para => `<p>${para}</p>`).join('')}
+      </div>
+      ` : ''}
       
       <div class="contact-info">
         <div class="contact-item"><strong>Email:</strong> ${personalInfo.email}</div>
