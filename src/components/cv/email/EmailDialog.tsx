@@ -1,5 +1,5 @@
 
-import { Mail, User, AtSign } from 'lucide-react';
+import { Mail, User, AtSign, Briefcase, ExternalLinkIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { createMailtoLink, createEmailBody } from '@/utils/emailGenerator';
@@ -37,15 +37,22 @@ export default function EmailDialog({
   const { toast } = useToast();
   const [recipientEmail, setRecipientEmail] = useState('');
   const [recipientName, setRecipientName] = useState('');
+  const [jobTitle, setJobTitle] = useState('');
   
   const handleSendEmail = () => {
-    const subject = `${personalInfo.name}'s CV from VitaHub`;
+    const subject = jobTitle 
+      ? `Application for ${jobTitle} - ${personalInfo.name}'s CV from VitaHub` 
+      : `${personalInfo.name}'s CV from VitaHub`;
+      
     const url = customUrl || `${window.location.origin}/cv/${cvName}`;
     
     const { plainTextBody } = createEmailBody(cvName, personalInfo, url, coverLetter, recipientName);
     
     // Create a properly encoded mailto link with plain text
-    window.location.href = createMailtoLink(recipientName, recipientEmail, subject, plainTextBody);
+    window.open(
+      createMailtoLink(recipientName, recipientEmail, subject, plainTextBody),
+      "_blank"
+    )
     
     toast({
       title: "Email Client Opened",
@@ -97,13 +104,28 @@ export default function EmailDialog({
             />
           </div>
           
+          <div className="space-y-2">
+            <Label htmlFor="job-title" className="flex items-center gap-2">
+              <Briefcase className="h-4 w-4" />
+              Job Title (optional)
+            </Label>
+            <Input 
+              id="job-title"
+              value={jobTitle}
+              onChange={(e) => setJobTitle(e.target.value)}
+              placeholder="Senior Developer"
+            />
+          </div>
+          
           <div className="rounded-lg border p-4 bg-accent/30">
             <h3 className="font-medium mb-2">Email Preview</h3>
             <p className="text-sm text-muted-foreground mb-1">
               <strong>To:</strong> {recipientEmail ? `${recipientName} <${recipientEmail}>` : "Enter recipient email"}
             </p>
             <p className="text-sm text-muted-foreground mb-1">
-              <strong>Subject:</strong> {personalInfo.name}'s CV from VitaHub
+              <strong>Subject:</strong> {jobTitle 
+                ? `Application for ${jobTitle} - ${personalInfo.name}'s CV from VitaHub` 
+                : `${personalInfo.name}'s CV from VitaHub`}
             </p>
             <p className="text-sm text-muted-foreground">
               <strong>Content:</strong> Plain text email with CV link{coverLetter ? " and cover letter" : ""}
@@ -120,8 +142,8 @@ export default function EmailDialog({
             disabled={!recipientEmail}
             className="gap-2"
           >
-            <Mail className="h-4 w-4" />
-            Send Email
+            Continue to write
+            <ExternalLinkIcon className="h-4 w-4" />
           </Button>
         </DialogFooter>
       </DialogContent>
