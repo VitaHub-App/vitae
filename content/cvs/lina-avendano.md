@@ -6,7 +6,7 @@ phone: +49 1515 5458335
 location: Graefelfing, BY, Deutschland
 github: https://github.com/lina2358
 linkedin: https://www.linkedin.com/in/linaavendano/
-bio: Results-oriented finance and business operations professional with 10+ years of experience in **accounting (Buchhaltung)**, **financial reporting**, and **ERP implementations** in several industries. Skilled in **HGB**, US-GAAP, COL-GAAP and **IFRS-compliant reporting**, **payroll accounting (Lohnbuchhaltung)**, and **tax compliance** including **VAT (Umsatzsteuer)** and **corporate tax (Körperschaftsteuer)**. Proven track record leading **software transitions** from manual/Excel and basic accounting softwares to ERP-based environments, improving transparency, compliance, and operational efficiency. Strong background in **financial analysis**, budget planning, and international business structuring.
+bio: Results-oriented finance and business operations professional with 10+ years of experience in accounting (Buchhaltung), financial reporting, and ERP implementations in several industries. Skilled in HGB, US-GAAP, COL-GAAP and IFRS-compliant reporting, payroll accounting (Lohnbuchhaltung), and tax compliance including VAT (Umsatzsteuer) and corporate tax (Körperschaftsteuer). Proven track record leading software transitions from manual/Excel and basic accounting softwares to ERP-based environments, improving transparency, compliance, and operational efficiency. Strong background in financial analysis, budget planning, and international business structuring.
 defaultAngle: finance
 
 # These are inline frontmatter sections that will be parsed
