@@ -1801,422 +1801,6 @@
       ]
     }
   },
-  "lina-avendano": {
-    "en": {
-      "personalInfo": {
-        "name": "Lina Avendano",
-        "title": "Finance, Accounting, and IT Professional | Experienced in ERP Systems and Business Analytics",
-        "email": "lina8823@gmail.com",
-        "phone": "+49 1515 5458335",
-        "location": "Graefelfing, BY, Deutschland",
-        "github": "https://github.com/lina2358",
-        "linkedin": "https://www.linkedin.com/in/linaavendano/",
-        "bio": "Accomplished finance and business operations professional with over a decade of expertise in accounting, financial management, and ERP software implementation. Demonstrated success in establishing and scaling international operations, providing comprehensive financial oversight, and driving strategic planning initiatives. Skilled in leading end-to-end ERP implementations, optimizing processes, and training cross-functional teams to achieve organizational efficiency. Proficient in German real estate accounting standards and well-versed in programming languages such as Python, CSS, and HTML, with intermediate knowledge in crafting database queries and managing databases.",
-        "defaultAngle": "finance"
-      },
-      "experience": [
-        {
-          "title": "Property Accounting Manager",
-          "company": "Res Familiae Arnold GbR",
-          "location": "Munich",
-          "period": "Aug 2023 - Present",
-          "description": [
-            {
-              "value": "Implemented and maintained a new accounting system, improving data accuracy and streamlining financial processes."
-            },
-            {
-              "value": "Manage property-related accounting in collaboration with the Steuerberater."
-            },
-            {
-              "value": "Prepare financial statements and oversee real estate transactions, ensuring compliance with German accounting standards (HGB)."
-            }
-          ]
-        },
-        {
-          "title": "Finance and Accounting Manager",
-          "company": "Pristina Company SAS",
-          "location": "Remote",
-          "period": "Mar 2023 - Jan 2025",
-          "description": [
-            {
-              "value": "Record daily financial transactions, ensuring accuracy and accountability."
-            },
-            {
-              "value": "Monitor and reconcile bank balances, maintaining proper cash flow management."
-            },
-            {
-              "value": "Prepare, generate, and analyze detailed financial reports in compliance with IFRS."
-            },
-            {
-              "value": "Develop an efficient archiving system, improving document accessibility and regulatory compliance."
-            },
-            {
-              "value": "Generate tax and legal reports, supporting tax and regulatory obligations."
-            },
-            {
-              "value": "Manage payroll processes, ensuring timely and accurate salary disbursement."
-            },
-            {
-              "value": "Led the implementation of the company's first ERP system, transitioning from Excel-based management."
-            },
-            {
-              "value": "Trained employees in ERP usage, ensuring sustainability through ongoing maintenance and support."
-            }
-          ]
-        },
-        {
-          "title": "Restaurant Owner",
-          "company": "Entrepreneurship",
-          "location": "Bogotá DC, Colombia",
-          "period": "Feb 2021 - Jul 2022",
-          "description": [
-            {
-              "value": "Boosted sales by 150% through attractive social media campaigns (+4,000 followers in 3 months), modern refurbishment, improved customer care, and high-quality menu."
-            },
-            {
-              "value": "Decreased costs by implementing stock control, FIFO strategies, and standardization of recipes."
-            },
-            {
-              "value": "Overcame COVID-19 crisis by creating a delivery channel, partnering with local companies, and achieving a 4.5 Google rating."
-            },
-            {
-              "value": "Sold the restaurant with a 120% gain."
-            }
-          ]
-        },
-        {
-          "title": "Head of Branch",
-          "company": "8Bit Group",
-          "location": "Bogotá DC, Colombia",
-          "period": "Sep 2017 – Dec 2019",
-          "description": [
-            {
-              "value": "Established an e-commerce subsidiary from scratch, generating USD 30k daily sales."
-            },
-            {
-              "value": "Managed fulfillment, logistics, and stock control, delivering +1,500 packages daily."
-            },
-            {
-              "value": "Led negotiations with last-mile transport companies for nationwide delivery."
-            },
-            {
-              "value": "Implemented KPIs for all areas, boosting efficiency by 50%."
-            },
-            {
-              "value": "Managed high employee retention through performance and well-being programs."
-            },
-            {
-              "value": "Established and led an organized e-commerce operation with +250 employees, billing over USD 1M yearly."
-            }
-          ]
-        },
-        {
-          "title": "Odoo Expert",
-          "company": "XOE CORP. SAS",
-          "location": "Bogotá DC, Colombia",
-          "period": "Aug 2017 - Mar 2020",
-          "description": [
-            {
-              "value": "Expert in accounting and payroll implementation in Odoo."
-            },
-            {
-              "value": "Provided ERP training and technical support."
-            },
-            {
-              "value": "Led the recruitment process and maintained the BPO division."
-            }
-          ]
-        },
-        {
-          "title": "Executive & Business Manager",
-          "company": "El Aleman SAS",
-          "location": "Bogotá DC, Colombia",
-          "period": "Jan 2016 - Aug 2017",
-          "description": [
-            {
-              "value": "Managed key areas such as Accounting, Sales, HR, Inventories, Manufacturing, and Quality."
-            },
-            {
-              "value": "Responsible for HR management, payroll, and training."
-            },
-            {
-              "value": "Handled supplier negotiations and procurement orders."
-            },
-            {
-              "value": "Opened and managed the first company store."
-            }
-          ]
-        },
-        {
-          "title": "Logistics & Finance Executive",
-          "company": "Aurobindo Pharma",
-          "location": "Bogotá DC, Colombia",
-          "period": "Jun 2014 - Dec 2015",
-          "description": [
-            {
-              "value": "Managed financial reporting and compliance."
-            },
-            {
-              "value": "Controlled invoicing, tender announcements, and international trade operations."
-            },
-            {
-              "value": "Led cost-reduction initiatives, contributing to the company's break-even in the first year."
-            }
-          ]
-        }
-      ],
-      "education": [
-        {
-          "degree": "International Relations BA",
-          "institution": "Universidad Militar Nueva Granada",
-          "location": "Bogotá DC, Colombia",
-          "period": "Jun 2006 - Jun 2012",
-          "description": [
-            {
-              "value": "Developed strong analytical and strategic thinking skills, focusing on international business, economic policies, and global market dynamics. Acquired expertise in cross-border trade regulations, financial diplomacy, and economic development strategies, which provided a solid foundation for financial and business management roles."
-            }
-          ]
-        },
-        {
-          "degree": "Technical Degree in Financial Management & Accounting",
-          "institution": "SENA - Centro de Servicios Financieros",
-          "location": "Bogotá DC, Colombia",
-          "period": "Jan 2005 - Jun 2007",
-          "description": [
-            {
-              "value": "Gained a comprehensive understanding of financial reporting, tax regulations, and accounting principles. Specialized in cost management, payroll administration, and financial analysis, enabling a strong ability to optimize financial structures and ensure compliance with accounting standards."
-            }
-          ]
-        }
-      ],
-      "skills": [
-        {
-          "name": "Financial Management",
-          "skills": [
-            {
-              "name": "Financial Planning",
-              "level": 5,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Budgeting",
-              "level": 5,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Cash Flow Management",
-              "level": 5,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Investment Analysis",
-              "level": 2,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Cost Optimization",
-              "level": 5,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Profitability Analysis",
-              "level": 5,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "KPI Analysis",
-              "level": 5,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Business Strategy",
-              "level": 4,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Forecasting",
-              "level": 5,
-              "angles": [
-                "finance"
-              ]
-            },
-            {
-              "name": "Tax Compliance",
-              "level": 4,
-              "angles": [
-                "finance",
-                "accounting"
-              ]
-            },
-            {
-              "name": "Financial Reporting",
-              "level": 5,
-              "angles": [
-                "finance",
-                "accounting"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Information Technology & ERP",
-          "skills": [
-            {
-              "name": "ERP Implementation",
-              "level": 5,
-              "angles": [
-                "it"
-              ]
-            },
-            {
-              "name": "Software Accounting Consulting",
-              "level": 5,
-              "angles": [
-                "it"
-              ]
-            },
-            {
-              "name": "Odoo ERP Expert",
-              "level": 5,
-              "angles": [
-                "it"
-              ]
-            },
-            {
-              "name": "Database Queries",
-              "level": 3,
-              "angles": [
-                "it"
-              ]
-            },
-            {
-              "name": "Business Process Automation",
-              "level": 3,
-              "angles": [
-                "it"
-              ]
-            },
-            {
-              "name": "Data Management",
-              "level": 4,
-              "angles": [
-                "it"
-              ]
-            },
-            {
-              "name": "Advanced MS Excel & Analytics",
-              "level": 5,
-              "angles": [
-                "it",
-                "finance"
-              ]
-            },
-            {
-              "name": "BI Tools",
-              "level": 2,
-              "angles": [
-                "it",
-                "finance"
-              ]
-            },
-            {
-              "name": "Python",
-              "level": 3,
-              "angles": [
-                "it"
-              ]
-            },
-            {
-              "name": "HTML & CSS",
-              "level": 3,
-              "angles": [
-                "it"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Accounting & Compliance",
-          "skills": [
-            {
-              "name": "Real Estate Accounting (HGB)",
-              "level": 3,
-              "angles": [
-                "accounting"
-              ]
-            },
-            {
-              "name": "Payroll Management",
-              "level": 4,
-              "angles": [
-                "accounting"
-              ]
-            },
-            {
-              "name": "IFRS Compliance",
-              "level": 5,
-              "angles": [
-                "accounting"
-              ]
-            },
-            {
-              "name": "Bookkeeping",
-              "level": 5,
-              "angles": [
-                "accounting"
-              ]
-            },
-            {
-              "name": "Financial Statements Preparation",
-              "level": 5,
-              "angles": [
-                "accounting"
-              ]
-            },
-            {
-              "name": "Tax Preparation",
-              "level": 4,
-              "angles": [
-                "accounting",
-                "finance"
-              ]
-            }
-          ]
-        }
-      ],
-      "projects": [],
-      "languages": [
-        {
-          "name": "English",
-          "proficiency": "Professional working proficiency"
-        },
-        {
-          "name": "Spanish",
-          "proficiency": "Native"
-        },
-        {
-          "name": "German",
-          "proficiency": "Elementary proficiency"
-        }
-      ]
-    }
-  },
   "jamie-chen": {
     "en": {
       "personalInfo": {
@@ -2486,244 +2070,438 @@
       ]
     }
   },
-  "sam-rivera": {
+  "lina-avendano": {
     "en": {
       "personalInfo": {
-        "name": "Sam Rivera",
-        "title": "Marketing Specialist",
-        "email": "sam.rivera@example.com",
-        "phone": "+1 (555) 369-2468",
-        "location": "Los Angeles, CA",
-        "website": "https://www.samrivera.marketing",
-        "github": "https://github.com/samrivera",
-        "linkedin": "https://linkedin.com/in/samrivera",
-        "bio": "Data-driven marketing professional with 5+ years of experience crafting omnichannel campaigns for Fortune 500 companies and high-growth startups. Adept at turning analytics into actionable strategies."
+        "name": "Lina Avendano",
+        "title": "Finance, Accounting, and IT Professional | Experienced in ERP Systems and Business Analytics",
+        "email": "lina8823@gmail.com",
+        "phone": "+49 1515 5458335",
+        "location": "Graefelfing, BY, Deutschland",
+        "github": "https://github.com/lina2358",
+        "linkedin": "https://www.linkedin.com/in/linaavendano/",
+        "bio": "Results-oriented finance and business operations professional with 10+ years of experience in **accounting (Buchhaltung)**, **financial reporting**, and **ERP implementations** in several industries. Skilled in **HGB**, US-GAAP, COL-GAAP and **IFRS-compliant reporting**, **payroll accounting (Lohnbuchhaltung)**, and **tax compliance** including **VAT (Umsatzsteuer)** and **corporate tax (Körperschaftsteuer)**. Proven track record leading **software transitions** from manual/Excel and basic accounting softwares to ERP-based environments, improving transparency, compliance, and operational efficiency. Strong background in **financial analysis**, budget planning, and international business structuring.",
+        "defaultAngle": "finance"
       },
       "experience": [
         {
-          "title": "Digital Marketing Manager",
-          "company": "TechNova Solutions",
-          "location": "Los Angeles, CA",
-          "period": "Apr 2021 - Present",
+          "title": "Senior Real-Estate Accountant",
+          "company": "Res Familiae Arnold GbR",
+          "location": "Munich",
+          "period": "Aug 2023 - Present",
           "description": [
             {
-              "value": "Led global campaigns driving 300% YoY lead growth for SaaS platform"
+              "value": "Manage end-to-end property accounting (Immobilienbuchhaltung) for multiple assets in collaboration with tax advisors (Steuerberater)."
             },
             {
-              "value": "Optimized paid ad spend across Google/Facebook/LinkedIn, reducing CPA by 38% while increasing conversions"
+              "value": "Prepare monthly and annual financial statements (Jahresabschluss) in accordance with HGB and finance KPIs."
             },
             {
-              "value": "Spearheaded content strategy producing 50+ assets generating 2M+ organic views annually"
-            },
-            {
-              "value": "Implemented marketing automation flows improving email CTR by 27%"
+              "value": "Supervise real estate transaction booking, rental income tracking, and operational cost allocations (Betriebskostenabrechnung)."
             }
           ]
         },
         {
-          "title": "Marketing Coordinator",
-          "company": "UrbanBloom Cosmetics",
-          "location": "San Diego, CA",
-          "period": "Jan 2019 - Mar 2021",
+          "title": "Finance and Accounting Manager (IFRS)",
+          "company": "Pristina Company SAS",
+          "location": "Remote",
+          "period": "Mar 2023 - Jan 2025",
           "description": [
             {
-              "value": "Managed social media accounts (+230% follower growth in 18 months)"
+              "value": "Maintain general ledger integrity and ensure accurate daily bookings (Buchungen)."
             },
             {
-              "value": "Coordinated product launch campaigns averaging 145% of sales targets"
+              "value": "Oversee bank reconciliation, cash flow monitoring, and accounts payable/receivable (Kreditoren/Debitoren)."
             },
             {
-              "value": "Conducted competitive analysis informing rebranding strategy (NPS increase from 45 to 72)"
+              "value": "Prepare financial reports, profit & loss statements, and balance sheets under IFRS for management decision-making."
             },
             {
-              "value": "Developed influencer program securing 120+ partnerships generating $850k+ revenue"
+              "value": "Handle payroll processing (Lohnbuchhaltung) and statutory filings."
+            },
+            {
+              "value": "Generate tax reports, including VAT (Umsatzsteuer), withholding tax (Quellensteuer), and others."
             }
           ]
         },
         {
-          "title": "Social Media Specialist",
-          "company": "NextWave Agency",
-          "location": "Phoenix, AZ",
-          "period": "Jun 2017 - Dec 2018",
+          "title": "Founder – Finance & Operations Lead",
+          "company": "Restaurant Business",
+          "location": "Bogotá DC, Colombia",
+          "period": "Feb 2021 - Jul 2022",
           "description": [
             {
-              "value": "Increased client engagement rates by 60% through platform-specific content strategies"
+              "value": "Handled complete financial management, including bookkeeping, inventory costing, and cash flow control."
             },
             {
-              "value": "Created performance dashboards reducing reporting time by 50%"
+              "value": "Set up cost control systems (e.g. FIFO), resulting in 25%+ expense reduction."
             },
             {
-              "value": "Managed $500k+ annual ad budget across 15+ client accounts"
+              "value": "Developed pricing models based on break-even analysis and demand forecasting."
             },
             {
-              "value": "Produced viral TikTok campaign reaching 8M+ impressions for lifestyle brand"
+              "value": "Managed payroll and tax payments, and coordinated with local tax advisors for proper filings."
+            }
+          ]
+        },
+        {
+          "title": "CFO - Colombia Branch",
+          "company": "8Bit Group",
+          "location": "Bogotá DC, Colombia",
+          "period": "Sep 2017 – Dec 2019",
+          "description": [
+            {
+              "value": "Established the local subsidiary’s finance, accounting (Buchhaltung), and HR infrastructure."
+            },
+            {
+              "value": "Directed daily financial operations, including payroll, supplier payments, and tax filings."
+            },
+            {
+              "value": "Led weekly financial analysis for HQ, focusing on cash flow, profitability, and sales KPIs."
+            },
+            {
+              "value": "Ensured regulatory compliance with Colombian and international tax obligations."
+            },
+            {
+              "value": "Supported ERP usage and reporting structures, scaling operations to over 250 employees and $1M+ annual sales."
+            }
+          ]
+        },
+        {
+          "title": "Accounting & Payroll Consultant (ERP - Odoo)",
+          "company": "XOE CORP. SAS",
+          "location": "Bogotá DC, Colombia",
+          "period": "Aug 2017 - Mar 2020",
+          "description": [
+            {
+              "value": "Acted as Odoo accounting and payroll specialist, implementing customized setups for various clients."
+            },
+            {
+              "value": "Managed outsourced bookkeeping (BPO), including tax declarations (Steuererklärungen) and payroll processing."
+            },
+            {
+              "value": "Provided training in ERP usage and accounting best practices, aligning systems with IFRS and local GAAP."
+            },
+            {
+              "value": "Oversaw financial reporting and budgeting for internal operations."
+            }
+          ]
+        },
+        {
+          "title": "Finance & Operations Manager",
+          "company": "El Aleman SAS",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jan 2016 - Aug 2017",
+          "description": [
+            {
+              "value": "Led accounting, HR, sales, and inventory areas with a strong focus on financial analysis and reporting."
+            },
+            {
+              "value": "Managed payroll, employee records, and statutory submissions."
+            },
+            {
+              "value": "Created and presented monthly financial reports for stakeholders."
+            },
+            {
+              "value": "Supervised inventory controls, procurement planning, and manufacturing costs for import-export operations."
+            }
+          ]
+        },
+        {
+          "title": "Finance & Accounting Executive",
+          "company": "Aurobindo Pharma",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jun 2014 - Dec 2015",
+          "description": [
+            {
+              "value": "Managed all daily accounting operations, preparing financial statements for monthly, quarterly, and annual close."
+            },
+            {
+              "value": "Handled invoicing, debit/credit notes, loan reconciliations, and payroll."
+            },
+            {
+              "value": "Oversaw tax obligations including VAT (Umsatzsteuer), withholding tax, and statutory reports."
+            },
+            {
+              "value": "Coordinated international trade finance, import/export compliance, and warehouse controls."
+            },
+            {
+              "value": "Played a key role in the first-stage implementation of IFRS standards and documented internal controls."
             }
           ]
         }
       ],
       "education": [
         {
-          "degree": "Bachelor of Arts, Marketing Communications",
-          "institution": "University of Southern California",
-          "location": "Los Angeles, CA",
-          "period": "2013 - 2017",
+          "degree": "Technical Degree in Financial Management & Accounting",
+          "institution": "SENA - Centro de Servicios Financieros",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jan 2005 - Jun 2007",
           "description": [
             {
-              "value": "Concentration in Digital Media"
-            },
-            {
-              "value": "President of American Marketing Association Chapter"
-            },
-            {
-              "value": "Google Analytics Certified (2016)"
+              "value": "Gained a comprehensive understanding of financial reporting, tax regulations, and accounting principles. Specialized in cost management, payroll administration, and financial analysis, enabling a strong ability to optimize financial structures and ensure compliance with accounting standards."
             }
           ]
         },
         {
-          "degree": "Digital Marketing Certification",
-          "institution": "General Assembly",
-          "location": "Online",
-          "period": "2018",
+          "degree": "International Relations BA",
+          "institution": "Universidad Militar Nueva Granada",
+          "location": "Bogotá DC, Colombia",
+          "period": "Jun 2006 - Jun 2012",
           "description": [
             {
-              "value": "480-hour intensive program"
-            },
-            {
-              "value": "Capstone: Redesigned customer journey for DTC startup"
+              "value": "Developed strong analytical and strategic thinking skills, focusing on international business, economic policies, and global market dynamics. Acquired expertise in cross-border trade regulations, financial diplomacy, and economic development strategies, which provided a solid foundation for financial and business management roles."
             }
           ]
         }
       ],
       "skills": [
         {
-          "name": "Digital Marketing",
-          "level": 5
+          "name": "Financial Management",
+          "skills": [
+            {
+              "name": "Financial Planning",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Budgeting",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Cash Flow Management",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Investment Analysis",
+              "level": 2,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Cost Optimization",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Profitability Analysis",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "KPI Analysis",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Business Strategy",
+              "level": 4,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Forecasting",
+              "level": 5,
+              "angles": [
+                "finance"
+              ]
+            },
+            {
+              "name": "Tax Compliance",
+              "level": 4,
+              "angles": [
+                "finance",
+                "accounting"
+              ]
+            },
+            {
+              "name": "Financial Reporting",
+              "level": 5,
+              "angles": [
+                "finance",
+                "accounting"
+              ]
+            }
+          ]
         },
         {
-          "name": "SEO/SEM",
-          "level": 5
+          "name": "Information Technology & ERP",
+          "skills": [
+            {
+              "name": "ERP Implementation",
+              "level": 5,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Software Accounting Consulting",
+              "level": 5,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Odoo ERP Expert",
+              "level": 5,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Database Queries",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Business Process Automation",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Data Management",
+              "level": 4,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "Advanced MS Excel & Analytics",
+              "level": 5,
+              "angles": [
+                "it",
+                "finance"
+              ]
+            },
+            {
+              "name": "BI Tools",
+              "level": 2,
+              "angles": [
+                "it",
+                "finance"
+              ]
+            },
+            {
+              "name": "Python",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            },
+            {
+              "name": "HTML & CSS",
+              "level": 3,
+              "angles": [
+                "it"
+              ]
+            }
+          ]
         },
         {
-          "name": "Social Media Strategy",
-          "level": 5
-        },
-        {
-          "name": "Google Analytics",
-          "level": 4
-        },
-        {
-          "name": "Email Marketing",
-          "level": 4
-        },
-        {
-          "name": "HubSpot CRM",
-          "level": 4
-        },
-        {
-          "name": "Content Creation",
-          "level": 5
-        },
-        {
-          "name": "Paid Advertising",
-          "level": 4
-        },
-        {
-          "name": "Market Research",
-          "level": 4
-        },
-        {
-          "name": "A/B Testing",
-          "level": 4
-        },
-        {
-          "name": "Brand Strategy",
-          "level": 4
-        },
-        {
-          "name": "Adobe Creative Suite",
-          "level": 3
+          "name": "Accounting & Compliance",
+          "skills": [
+            {
+              "name": "Real Estate Accounting (HGB)",
+              "level": 3,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Payroll Management",
+              "level": 4,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "IFRS Compliance",
+              "level": 5,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Bookkeeping",
+              "level": 5,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Financial Statements Preparation",
+              "level": 5,
+              "angles": [
+                "accounting"
+              ]
+            },
+            {
+              "name": "Tax Preparation",
+              "level": 4,
+              "angles": [
+                "accounting",
+                "finance"
+              ]
+            }
+          ]
         }
       ],
       "projects": [
         {
-          "title": "SaaS Content Engine",
-          "period": "2023",
-          "description": "Scalable content marketing framework for B2B tech companies",
+          "title": "Real Estate Accounting Software Implementation",
+          "period": "2024-2025",
+          "description": "Implemented and customized an open-source accounting software to manage the accounting and reporting needs of a real estate company in Germany. Leveraging my knowledge of Python and evolving capabilities with AI tools, I tailored the system to comply with German accounting standards (HGB) and enable property-level bookkeeping (Immobilienbuchhaltung).",
           "details": [
             {
-              "value": "Results: 150 marketing-qualified leads/month"
+              "value": "Developed logic to manage and track accounting per property, allowing for individual financial reports and performance analysis at the unit level."
+            },
+            {
+              "value": "Enabled consolidated reporting with a single command, automating the aggregation of financial data across all entities."
+            },
+            {
+              "value": "Customized reporting templates and automated queries to deliver insightful dashboards and on-demand financial statements (Jahresabschluss, Gewinn- und Verlustrechnung)."
+            },
+            {
+              "value": "Built and refined data transformation pipelines, expanding my expertise in SQL-style queries, Python scripting, and structured data modeling."
+            },
+            {
+              "value": "Supported Betriebskostenabrechnung processes through clean data structure and cost allocation mechanisms."
             }
           ],
-          "technologies": [
-            {
-              "value": "SEMrush"
-            },
-            {
-              "value": "HubSpot"
-            },
-            {
-              "value": "Canva"
-            }
-          ],
-          "link": "https://samrivera.marketing/saas"
-        },
-        {
-          "title": "Eco-Friendly Product Launch",
-          "period": "2021",
-          "description": "360° campaign for sustainable skincare line",
-          "details": [
-            {
-              "value": "Impact: Sold out inventory in 72 hours"
-            },
-            {
-              "value": "Metrics: 18% conversion rate, $1.2M revenue"
-            }
-          ],
-          "technologies": [
-            {
-              "value": "Instagram"
-            },
-            {
-              "value": "Pinterest"
-            },
-            {
-              "value": "Email"
-            }
-          ]
-        },
-        {
-          "title": "Local SEO Overhaul",
-          "period": "2019",
-          "description": "Google My Business optimization for retail chain",
-          "details": [
-            {
-              "value": "Outcome: 90% increase in \"near me\" searches"
-            },
-            {
-              "value": "Rankings: 85% keywords on Page 1"
-            }
-          ],
-          "technologies": [
-            {
-              "value": "Review management"
-            },
-            {
-              "value": "Schema markup"
-            }
-          ]
+          "technologies": []
         }
       ],
       "languages": [
         {
           "name": "English",
-          "proficiency": "Native"
+          "proficiency": "Professional working proficiency"
         },
         {
           "name": "Spanish",
-          "proficiency": "Professional proficiency"
+          "proficiency": "Native"
         },
         {
-          "name": "French",
+          "name": "German",
           "proficiency": "Elementary proficiency"
         }
       ]
@@ -2963,6 +2741,249 @@
         {
           "name": "Spanish",
           "proficiency": "Professional working proficiency"
+        },
+        {
+          "name": "French",
+          "proficiency": "Elementary proficiency"
+        }
+      ]
+    }
+  },
+  "sam-rivera": {
+    "en": {
+      "personalInfo": {
+        "name": "Sam Rivera",
+        "title": "Marketing Specialist",
+        "email": "sam.rivera@example.com",
+        "phone": "+1 (555) 369-2468",
+        "location": "Los Angeles, CA",
+        "website": "https://www.samrivera.marketing",
+        "github": "https://github.com/samrivera",
+        "linkedin": "https://linkedin.com/in/samrivera",
+        "bio": "Data-driven marketing professional with 5+ years of experience crafting omnichannel campaigns for Fortune 500 companies and high-growth startups. Adept at turning analytics into actionable strategies."
+      },
+      "experience": [
+        {
+          "title": "Digital Marketing Manager",
+          "company": "TechNova Solutions",
+          "location": "Los Angeles, CA",
+          "period": "Apr 2021 - Present",
+          "description": [
+            {
+              "value": "Led global campaigns driving 300% YoY lead growth for SaaS platform"
+            },
+            {
+              "value": "Optimized paid ad spend across Google/Facebook/LinkedIn, reducing CPA by 38% while increasing conversions"
+            },
+            {
+              "value": "Spearheaded content strategy producing 50+ assets generating 2M+ organic views annually"
+            },
+            {
+              "value": "Implemented marketing automation flows improving email CTR by 27%"
+            }
+          ]
+        },
+        {
+          "title": "Marketing Coordinator",
+          "company": "UrbanBloom Cosmetics",
+          "location": "San Diego, CA",
+          "period": "Jan 2019 - Mar 2021",
+          "description": [
+            {
+              "value": "Managed social media accounts (+230% follower growth in 18 months)"
+            },
+            {
+              "value": "Coordinated product launch campaigns averaging 145% of sales targets"
+            },
+            {
+              "value": "Conducted competitive analysis informing rebranding strategy (NPS increase from 45 to 72)"
+            },
+            {
+              "value": "Developed influencer program securing 120+ partnerships generating $850k+ revenue"
+            }
+          ]
+        },
+        {
+          "title": "Social Media Specialist",
+          "company": "NextWave Agency",
+          "location": "Phoenix, AZ",
+          "period": "Jun 2017 - Dec 2018",
+          "description": [
+            {
+              "value": "Increased client engagement rates by 60% through platform-specific content strategies"
+            },
+            {
+              "value": "Created performance dashboards reducing reporting time by 50%"
+            },
+            {
+              "value": "Managed $500k+ annual ad budget across 15+ client accounts"
+            },
+            {
+              "value": "Produced viral TikTok campaign reaching 8M+ impressions for lifestyle brand"
+            }
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Bachelor of Arts, Marketing Communications",
+          "institution": "University of Southern California",
+          "location": "Los Angeles, CA",
+          "period": "2013 - 2017",
+          "description": [
+            {
+              "value": "Concentration in Digital Media"
+            },
+            {
+              "value": "President of American Marketing Association Chapter"
+            },
+            {
+              "value": "Google Analytics Certified (2016)"
+            }
+          ]
+        },
+        {
+          "degree": "Digital Marketing Certification",
+          "institution": "General Assembly",
+          "location": "Online",
+          "period": "2018",
+          "description": [
+            {
+              "value": "480-hour intensive program"
+            },
+            {
+              "value": "Capstone: Redesigned customer journey for DTC startup"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Digital Marketing",
+          "level": 5
+        },
+        {
+          "name": "SEO/SEM",
+          "level": 5
+        },
+        {
+          "name": "Social Media Strategy",
+          "level": 5
+        },
+        {
+          "name": "Google Analytics",
+          "level": 4
+        },
+        {
+          "name": "Email Marketing",
+          "level": 4
+        },
+        {
+          "name": "HubSpot CRM",
+          "level": 4
+        },
+        {
+          "name": "Content Creation",
+          "level": 5
+        },
+        {
+          "name": "Paid Advertising",
+          "level": 4
+        },
+        {
+          "name": "Market Research",
+          "level": 4
+        },
+        {
+          "name": "A/B Testing",
+          "level": 4
+        },
+        {
+          "name": "Brand Strategy",
+          "level": 4
+        },
+        {
+          "name": "Adobe Creative Suite",
+          "level": 3
+        }
+      ],
+      "projects": [
+        {
+          "title": "SaaS Content Engine",
+          "period": "2023",
+          "description": "Scalable content marketing framework for B2B tech companies",
+          "details": [
+            {
+              "value": "Results: 150 marketing-qualified leads/month"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "SEMrush"
+            },
+            {
+              "value": "HubSpot"
+            },
+            {
+              "value": "Canva"
+            }
+          ],
+          "link": "https://samrivera.marketing/saas"
+        },
+        {
+          "title": "Eco-Friendly Product Launch",
+          "period": "2021",
+          "description": "360° campaign for sustainable skincare line",
+          "details": [
+            {
+              "value": "Impact: Sold out inventory in 72 hours"
+            },
+            {
+              "value": "Metrics: 18% conversion rate, $1.2M revenue"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Instagram"
+            },
+            {
+              "value": "Pinterest"
+            },
+            {
+              "value": "Email"
+            }
+          ]
+        },
+        {
+          "title": "Local SEO Overhaul",
+          "period": "2019",
+          "description": "Google My Business optimization for retail chain",
+          "details": [
+            {
+              "value": "Outcome: 90% increase in \"near me\" searches"
+            },
+            {
+              "value": "Rankings: 85% keywords on Page 1"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Review management"
+            },
+            {
+              "value": "Schema markup"
+            }
+          ]
+        }
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "proficiency": "Native"
+        },
+        {
+          "name": "Spanish",
+          "proficiency": "Professional proficiency"
         },
         {
           "name": "French",

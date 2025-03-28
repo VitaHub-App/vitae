@@ -6,7 +6,7 @@ phone: +49 1515 5458335
 location: Graefelfing, BY, Deutschland
 github: https://github.com/lina2358
 linkedin: https://www.linkedin.com/in/linaavendano/
-bio: Accomplished finance and business operations professional with over a decade of expertise in accounting, financial management, and ERP software implementation. Demonstrated success in establishing and scaling international operations, providing comprehensive financial oversight, and driving strategic planning initiatives. Skilled in leading end-to-end ERP implementations, optimizing processes, and training cross-functional teams to achieve organizational efficiency. Proficient in German real estate accounting standards and well-versed in programming languages such as Python, CSS, and HTML, with intermediate knowledge in crafting database queries and managing databases.
+bio: Results-oriented finance and business operations professional with 10+ years of experience in accounting (Buchhaltung), financial reporting, and ERP implementations in several industries. Skilled in HGB, US-GAAP, COL-GAAP and IFRS-compliant reporting, payroll accounting (Lohnbuchhaltung), and tax compliance including VAT (Umsatzsteuer) and corporate tax (Körperschaftsteuer). Proven track record leading software transitions from manual/Excel and basic accounting softwares to ERP-based environments, improving transparency, compliance, and operational efficiency. Strong background in financial analysis, budget planning, and international business structuring.
 defaultAngle: finance
 
 # These are inline frontmatter sections that will be parsed
@@ -143,82 +143,108 @@ Localization Insttructions:
 
 ## Experience
 
-### Property Accounting Manager
+### Senior Real-Estate Accountant
 Res Familiae Arnold GbR | Munich | Aug 2023 - Present 
 
-- Implemented and maintained a new accounting system, improving data accuracy and streamlining financial processes.
-- Manage property-related accounting in collaboration with the Steuerberater.
-- Prepare financial statements and oversee real estate transactions, ensuring compliance with German accounting standards (HGB).
+- Manage end-to-end **property accounting** (Immobilienbuchhaltung) for multiple assets in collaboration with tax advisors (Steuerberater).
+- Prepare monthly and annual **financial statements (Jahresabschluss)** in accordance with **HGB** and finance **KPIs**.
+- Supervise **real estate transaction booking**, rental income tracking, and **operational cost allocations (Betriebskostenabrechnung)**.
 
-### Finance and Accounting Manager
+---
+
+- Introduced a **new accounting system**, self-developed and self-maintained, improving data accuracy and audit readiness.
+- Manage data with **SQL** and **python**.
+
+---
+
+### Finance and Accounting Manager (IFRS)
 Pristina Company SAS | Remote | Mar 2023 - Jan 2025
 
-- Record daily financial transactions, ensuring accuracy and accountability.
-- Monitor and reconcile bank balances, maintaining proper cash flow management.
-- Prepare, generate, and analyze detailed financial reports in compliance with IFRS.
-- Develop an efficient archiving system, improving document accessibility and regulatory compliance.
-- Generate tax and legal reports, supporting tax and regulatory obligations.
-- Manage payroll processes, ensuring timely and accurate salary disbursement.
+- Maintain general ledger integrity and ensure accurate **daily bookings (Buchungen)**.
+- Oversee **bank reconciliation**, cash flow monitoring, and **accounts payable/receivable (Kreditoren/Debitoren)**.
+- Prepare **financial reports**, **profit & loss statements**, and **balance sheets** under **IFRS** for management decision-making.
+- Handle **payroll processing (Lohnbuchhaltung)** and statutory filings.
+- Generate **tax reports**, including **VAT (Umsatzsteuer)**, **withholding tax (Quellensteuer)**, and others.
+
+---
 
 - Led the implementation of the company's first ERP system, transitioning from Excel-based management.
 - Trained employees in ERP usage, ensuring sustainability through ongoing maintenance and support.
 
-### Restaurant Owner
-Entrepreneurship | Bogotá DC, Colombia | Feb 2021 - Jul 2022
+### Founder – Finance & Operations Lead
+Restaurant Business | Bogotá DC, Colombia | Feb 2021 - Jul 2022
 
-- Boosted sales by 150% through attractive social media campaigns (+4,000 followers in 3 months), modern refurbishment, improved customer care, and high-quality menu.
-- Decreased costs by implementing stock control, FIFO strategies, and standardization of recipes.
-- Overcame COVID-19 crisis by creating a delivery channel, partnering with local companies, and achieving a 4.5 Google rating.
-- Sold the restaurant with a 120% gain.
+- Handled complete **financial management**, including **bookkeeping**, **inventory costing**, and **cash flow control**.
+- Set up **cost control systems** (e.g. FIFO), resulting in 25%+ expense reduction.
+- Developed pricing models based on **break-even analysis** and demand forecasting.
+- Managed **payroll** and **tax payments**, and coordinated with **local tax advisors** for proper filings.
 
-### **Head of Branch**  
+### **CFO - Colombia Branch**  
 8Bit Group | Bogotá DC, Colombia | Sep 2017 – Dec 2019
 
-- Established an e-commerce subsidiary from scratch, generating USD 30k daily sales.
-- Managed fulfillment, logistics, and stock control, delivering +1,500 packages daily.
-- Led negotiations with last-mile transport companies for nationwide delivery.
-- Implemented KPIs for all areas, boosting efficiency by 50%.
-- Managed high employee retention through performance and well-being programs.
-- Established and led an organized e-commerce operation with +250 employees, billing over USD 1M yearly.
+- Established the local subsidiary’s **finance, accounting (Buchhaltung)**, and **HR infrastructure**.
+- Directed **daily financial operations**, including payroll, supplier payments, and tax filings.
+- Led **weekly financial analysis** for HQ, focusing on cash flow, profitability, and **sales KPIs**.
+- Ensured regulatory compliance with **Colombian and international tax obligations**.
+- Supported **ERP usage and reporting structures**, scaling operations to over 250 employees and $1M+ annual sales.
 
-### **Odoo Expert**
+### **Accounting & Payroll Consultant (ERP - Odoo)**
 XOE CORP. SAS | Bogotá DC, Colombia | Aug 2017 - Mar 2020
 
-- Expert in accounting and payroll implementation in Odoo.
-- Provided ERP training and technical support.
-- Led the recruitment process and maintained the BPO division.
+- Acted as **Odoo accounting and payroll specialist**, implementing customized setups for various clients.
+- Managed **outsourced bookkeeping (BPO)**, including **tax declarations (Steuererklärungen)** and **payroll processing**.
+- Provided **training** in ERP usage and accounting best practices, aligning systems with **IFRS and local GAAP**.
+- Oversaw financial reporting and budgeting for internal operations.
 
-### **Executive & Business Manager**  
+### **Finance & Operations Manager**  
 El Aleman SAS | Bogotá DC, Colombia | Jan 2016 - Aug 2017
 
-- Managed key areas such as Accounting, Sales, HR, Inventories, Manufacturing, and Quality.
-- Responsible for HR management, payroll, and training.
-- Handled supplier negotiations and procurement orders.
-- Opened and managed the first company store.
+- Led accounting, HR, sales, and inventory areas with a strong focus on **financial analysis and reporting**.
+- Managed **payroll**, **employee records**, and statutory submissions.
+- Created and presented **monthly financial reports** for stakeholders.
+- Supervised inventory controls, procurement planning, and manufacturing costs for import-export operations.
 
-### **Logistics & Finance Executive**  
+### **Finance & Accounting Executive**  
 Aurobindo Pharma | Bogotá DC, Colombia | Jun 2014 - Dec 2015
 
-- Managed financial reporting and compliance.
-- Controlled invoicing, tender announcements, and international trade operations.
-- Led cost-reduction initiatives, contributing to the company's break-even in the first year.
+- Managed all daily **accounting operations**, preparing financial statements for **monthly, quarterly, and annual close**.
+- Handled **invoicing**, **debit/credit notes**, **loan reconciliations**, and **payroll**.
+- Oversaw tax obligations including **VAT (Umsatzsteuer)**, **withholding tax**, and statutory reports.
+- Coordinated **international trade finance**, import/export compliance, and warehouse controls.
+- Played a key role in the **first-stage implementation of IFRS standards** and documented internal controls.
 
 ---
 
 ## **Education**
-
-### **International Relations BA**  
-Universidad Militar Nueva Granada | Bogotá DC, Colombia | Jun 2006 - Jun 2012 
-
-- Developed strong analytical and strategic thinking skills, focusing on international business, economic policies, and global market dynamics. Acquired expertise in cross-border trade regulations, financial diplomacy, and economic development strategies, which provided a solid foundation for financial and business management roles.
 
 ### **Technical Degree in Financial Management & Accounting**  
 SENA - Centro de Servicios Financieros | Bogotá DC, Colombia | Jan 2005 - Jun 2007
 
 - Gained a comprehensive understanding of financial reporting, tax regulations, and accounting principles. Specialized in cost management, payroll administration, and financial analysis, enabling a strong ability to optimize financial structures and ensure compliance with accounting standards.
 
+### **International Relations BA**  
+Universidad Militar Nueva Granada | Bogotá DC, Colombia | Jun 2006 - Jun 2012 
+
+- Developed strong analytical and strategic thinking skills, focusing on international business, economic policies, and global market dynamics. Acquired expertise in cross-border trade regulations, financial diplomacy, and economic development strategies, which provided a solid foundation for financial and business management roles.
+
 ## **Data Science Course**
 Platzi | Online | May 2022 - Jun 2023
 
 - Gained a solid foundation in data analysis, statistical modeling, and business intelligence. Developed skills in handling large datasets, extracting meaningful insights, and applying data-driven decision-making to financial and operational processes. Learned to use Python for data manipulation, visualization, and automation, enhancing efficiency in accounting, financial forecasting, and ERP analytics.
+
+## **Projects**
+
+### Real Estate Accounting Software Implementation (2024-2025)
+
+Implemented and customized an **open-source accounting software** to manage the **accounting and reporting** needs of a real estate company in Germany. Leveraging my knowledge of **Python** and evolving capabilities with **AI tools**, I tailored the system to comply with **German accounting standards (HGB)** and enable **property-level bookkeeping (Immobilienbuchhaltung)**.
+
+- Developed logic to manage and track **accounting per property**, allowing for **individual financial reports** and **performance analysis** at the unit level.
+- Enabled **consolidated reporting** with a single command, automating the aggregation of financial data across all entities.
+- Customized reporting templates and automated queries to deliver insightful dashboards and **on-demand financial statements** (Jahresabschluss, Gewinn- und Verlustrechnung).
+- Built and refined **data transformation pipelines**, expanding my expertise in **SQL-style queries**, **Python scripting**, and **structured data modeling**.
+- Supported **Betriebskostenabrechnung** processes through clean data structure and cost allocation mechanisms.
+
+This project not only sharpened my technical and analytical skills but also proved how impactful tailored financial systems can be in improving visibility, compliance, and operational efficiency in real estate accounting.
+
+
 
