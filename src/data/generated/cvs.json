@@ -987,6 +987,20 @@
           "period": "2012 - 2014",
           "description": [
             {
+              "value": "General Management"
+            },
+            {
+              "value": "Economic Philosophy"
+            }
+          ]
+        },
+        {
+          "degree": "Bachelor of Arts, Exchange Semester",
+          "institution": "University NOVA of Lisbon",
+          "location": "Lisbon, PT",
+          "period": "2009",
+          "description": [
+            {
               "value": "Economics"
             },
             {
@@ -1318,6 +1332,41 @@
           "angles": [
             "tech",
             "innovation"
+          ]
+        },
+        {
+          "title": "Driving Operational Excellence through Automation & Digitalization",
+          "period": "2024",
+          "description": "Spearheaded the automation and digital transformation of core operating and sales processes, leveraging a unified technology stack to streamline workflows and boost organizational efficiency.",
+          "details": [
+            {
+              "value": "Automated end-to-end sales and operational processes, significantly reducing manual intervention and error rates"
+            },
+            {
+              "value": "Enhanced sales cycle efficiency, increasing throughput and improving sales-per-person ratios"
+            },
+            {
+              "value": "Elevated customer satisfaction by delivering faster, more consistent service"
+            },
+            {
+              "value": "Strengthened operational excellence through standardized processes, real-time analytics, and cross-functional integration"
+            },
+            {
+              "value": "Enabled data-driven decision-making and continuous process improvement across business units"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Frappe"
+            },
+            {
+              "value": "ERPNext"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation",
+            "strategy"
           ]
         },
         {
@@ -1799,6 +1848,815 @@
           "proficiency": "Basic"
         }
       ]
+    },
+    "de": {
+      "personalInfo": {
+        "name": "David Arnold",
+        "title": "Chief Technology Officer",
+        "email": "dgx.arnold@gmail.com",
+        "phone": "+49 1567 9000 012",
+        "location": "München, BY",
+        "github": "https://github.com/blaggacao",
+        "linkedin": "https://www.linkedin.com/in/dgxarnold",
+        "bio": "Innovativer Technologieführer mit umfassender Erfahrung in der ERP-Implementierung, DevOps und im Skalieren von Startups. Spezialisiert darauf, die Brücke zwischen Business und Technologie zu schlagen, mit nachweislicher Erfolgsbilanz in der digitalen Transformation und operativer Exzellenz in verschiedensten Branchen. Mehrsprachiger Profi mit globaler Perspektive, der technisches Know-how mit strategischem Geschäftssinn verbindet.",
+        "defaultAngle": "tech"
+      },
+      "experience": [
+        {
+          "title": "Chief Technology Officer, Scale Up",
+          "company": "Pristina Company SAS",
+          "location": "Bogotá, CO",
+          "period": "2024 - 2025",
+          "description": [
+            {
+              "value": "Führte die Implementierung und Migration zu ERPNext an und optimierte sämtliche Unternehmensprozesse."
+            },
+            {
+              "value": "Entwickelte KI-gestützte, kanalübergreifende Marketing-Automatisierungen mit dem Frappe-Framework, was zu einer 30%igen Steigerung der Reaktionszeiten führte."
+            },
+            {
+              "value": "Integrierte und passte CRM, internen Chat, Workspaces und Business-Analytics-Plattformen an, wodurch die Teamzusammenarbeit und datenbasierte Entscheidungsfindung verbessert wurden."
+            },
+            {
+              "value": "Konzipierte, entwickelte und implementierte ein Modul zur Fahrzeugroutenoptimierung (ERPNext) für die interne Logistik, wodurch Lieferwege optimiert und Kosten gesenkt wurden."
+            },
+            {
+              "value": "Entwickelte und implementierte ein E-Rechnungsmodul (ERPNext) zur Einhaltung lokaler Vorschriften."
+            },
+            {
+              "value": "Etablierte End-to-End-Integrationen mit Zahlungsdiensten und Fulfillment-Partnern für nahtlose Transaktionen und Auftragsabwicklung."
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Vorstandsmitglied, Investor, Scale Up",
+          "company": "Pristina Company SAS",
+          "location": "Bogotá, CO",
+          "period": "2023 - heute",
+          "description": [
+            {
+              "value": "Etablierte Best Practices für Vorstand und Governance, um Transparenz und Verantwortlichkeit sicherzustellen."
+            },
+            {
+              "value": "Fördert Initiativen zur Digitalisierung und operativen Exzellenz, was zu einer 40%igen Steigerung der Betriebseffizienz führte."
+            },
+            {
+              "value": "Leitete die Einführung von Echtzeit-Finanzkennzahlen und KPIs, die strategische Entscheidungen unterstützen."
+            },
+            {
+              "value": "Trug zur Entwicklung einer neuen Markteintrittsstrategie bei, wodurch Reichweite und Marktanteil des Unternehmens ausgebaut wurden."
+            },
+            {
+              "value": "Initiierte und steuerte Kostensenkungsmaßnahmen sowie Lean-Production-Prinzipien zur Optimierung der Ressourcennutzung."
+            }
+          ],
+          "angles": [
+            "strategy"
+          ]
+        },
+        {
+          "title": "Senior Site Reliability Engineer",
+          "company": "IOHK Ltd.",
+          "location": "Remote, Hongkong",
+          "period": "2021 - 2024",
+          "description": [
+            {
+              "value": "Überarbeitete und verbesserte die Plattformtechnologie der SRE-Abteilung, steigerte Systemleistung und Zuverlässigkeit."
+            },
+            {
+              "value": "Entwickelte ein Nix-basiertes DevOps-Plattform-Framework für den unternehmensweiten Einsatz und verkürzte die SDLC-Einrichtungszeit um 90%."
+            },
+            {
+              "value": "Übernahm interimistisch die Leitung der SRE-Funktion, stellte Team-Readiness, Best-Practice-Sharing und Plattformstabilität in allen Produktteams sicher."
+            },
+            {
+              "value": "Führte die unternehmensweite Einführung des Grafana-Observability-Stacks an, um konsistentes Monitoring und Incident-Response sicherzustellen."
+            },
+            {
+              "value": "Etablierte und leitete die SRE-Funktion für das Lace-Wallet-Projektteam."
+            }
+          ],
+          "angles": [
+            "tech"
+          ]
+        },
+        {
+          "title": "Chief Technology Officer, Start Up",
+          "company": "PharmaOne",
+          "location": "Bogotá, CO",
+          "period": "2020 - 2021",
+          "description": [
+            {
+              "value": "Legte die technologische Basis für das Unternehmen und ermöglichte schnelles Wachstum und Innovation."
+            },
+            {
+              "value": "Integrierte ERPNext, eine Asterisk-basierte Call-Center-Lösung und LDAP-Services zur Zentralisierung der Geschäftsprozesse."
+            },
+            {
+              "value": "Baute Expertise in Kubernetes und DevOps auf und ermöglichte effiziente Containerisierung und Bereitstellung von Anwendungen."
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Gründer, CEO",
+          "company": "XOE Corp. SAS",
+          "location": "Bogotá, CO",
+          "period": "2016 - 2020",
+          "description": [
+            {
+              "value": "Entwickelte eine kolumbianische Lokalisierung für Odoo ERP, zugeschnitten auf lokale Geschäftsanforderungen."
+            },
+            {
+              "value": "Implementierte Odoo bei zahlreichen KMU und optimierte deren Geschäftsprozesse."
+            },
+            {
+              "value": "Skalierte das Unternehmen organisch, baute ein Consulting-Team von 6 Personen auf und expandierte in den BPO-Markt."
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Vorstandsmitglied",
+          "company": "El Alemán SAS",
+          "location": "Bogotá, CO",
+          "period": "2016 - 2018",
+          "description": [
+            {
+              "value": "Beriet zur strategischen Ausrichtung und stellte wertvolle Branchenkontakte her."
+            },
+            {
+              "value": "Setzte sich für Automatisierung und Digitalisierung der Geschäftsprozesse ein und senkte so Kosten und steigerte Effizienz."
+            }
+          ],
+          "angles": [
+            "strategy"
+          ]
+        },
+        {
+          "title": "Gründer, CEO",
+          "company": "El Alemán SAS",
+          "location": "Bogotá, CO",
+          "period": "2013 - 2016",
+          "description": [
+            {
+              "value": "Entwickelte Prototyping und Aufbau einer industriellen Brezelproduktion auf 2600 m ü. NN und meisterte einzigartige Herausforderungen."
+            },
+            {
+              "value": "Errichtete eine moderne Brezelfabrik im Ausland, verantwortete alle Aspekte des Aufbaus."
+            },
+            {
+              "value": "Entwickelte die Marke Bretzelman im Großraum Bogotá und schuf eine starke Markenidentität."
+            },
+            {
+              "value": "Erschloss den Markt durch strategische Partnerschaften und erweiterte die Vertriebskanäle."
+            },
+            {
+              "value": "Skalierte die Produktion auf eine halbautomatische Tagesleistung von mehreren Zentnern Rohmaterial."
+            }
+          ],
+          "angles": [
+            "innovation"
+          ]
+        },
+        {
+          "title": "Projektmitarbeiter (PMO)",
+          "company": "Lienhardt & Parner Privatbank Zürich",
+          "location": "Zürich, CH",
+          "period": "Mai 2011 - Mai 2012",
+          "description": [
+            {
+              "value": "Koordinierte die Migration des Kernbankensystems (FINNOVA) als Teil eines schweizweiten Rollouts."
+            },
+            {
+              "value": "Leitete mehrere Teilprojekte in verschiedenen Abteilungen und sorgte für reibungslose Integration und Abstimmung."
+            },
+            {
+              "value": "Validierte Parametrisierung, Migration und Prozesse zur Sicherstellung von Datenintegrität und Systemstabilität."
+            },
+            {
+              "value": "Entwickelte Prozesse, Reporting-Mechanismen und Tools auf Basis des neuen Systems zur Steigerung von Effizienz und Transparenz."
+            }
+          ]
+        },
+        {
+          "title": "Praktikum",
+          "company": "BASF Admixture Systems",
+          "location": "Zürich, CH",
+          "period": "Aug 2010 - Nov 2010",
+          "description": [
+            {
+              "value": "Sammelte Praxiserfahrung in einem stationären Unternehmen im Schweizer Bau- und Baustoffmarkt."
+            },
+            {
+              "value": "Gewann Einblicke in F&E-Prozesse und B2B-Vertriebsorganisation eines führenden Herstellers von Zusatzmitteln."
+            },
+            {
+              "value": "Beobachtete die Dynamik der Schweizer Bauindustrie, einschließlich Markttrends und Kundenbedürfnissen."
+            }
+          ]
+        },
+        {
+          "title": "Gefreiter",
+          "company": "Bundeswehr",
+          "location": "Berchtesgaden, BY",
+          "period": "2006 - 2007",
+          "description": [
+            {
+              "value": "Absolvierte den Grundwehrdienst in der Gebirgsjägertruppe in Berchtesgaden/Strub und bewies Anpassungsfähigkeit und Disziplin in alpinen Umgebungen."
+            },
+            {
+              "value": "Wurde für den Hochgebirgs-Spezialzug ausgewählt und zeigte außergewöhnliche körperliche und mentale Belastbarkeit."
+            },
+            {
+              "value": "Führte anspruchsvolle Outdoor-Ausbildungen in den Hochalpen durch und entwickelte fortgeschrittene Bergsteiger- und Überlebensfähigkeiten."
+            }
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Selbststudium, Informatik",
+          "institution": "Open Source Ökosystem",
+          "location": "Weltweit",
+          "period": "2016-2025",
+          "description": [
+            {
+              "value": "Phase 1: Python, Javascript, SQL, Git, ..."
+            },
+            {
+              "value": "Phase 2: Go, DevOps, Kubernetes, NixOS, ..."
+            },
+            {
+              "value": "Phase 3: Rust, Nix, Haskell, Funktionale Programmierung, ..."
+            }
+          ]
+        },
+        {
+          "degree": "Master of Arts, Austauschsemester",
+          "institution": "Universidad de los Andes",
+          "location": "Bogotá, CO",
+          "period": "2013",
+          "description": [
+            {
+              "value": "Spanisch"
+            },
+            {
+              "value": "Unternehmertum"
+            }
+          ]
+        },
+        {
+          "degree": "Master of Arts, General Management",
+          "institution": "Universität St. Gallen",
+          "location": "St. Gallen, CH",
+          "period": "2012 - 2014",
+          "description": [
+            {
+              "value": "General Management"
+            },
+            {
+              "value": "Wirtschaftsphilosophie"
+            }
+          ]
+        },
+        {
+          "degree": "Bachelor of Arts, Austauschsemester",
+          "institution": "Universidade NOVA de Lisboa",
+          "location": "Lissabon, PT",
+          "period": "2009",
+          "description": [
+            {
+              "value": "Volkswirtschaftslehre"
+            },
+            {
+              "value": "Portugiesisch"
+            },
+            {
+              "value": "Kulturaustausch & Sport"
+            }
+          ]
+        },
+        {
+          "degree": "Bachelor of Arts, Betriebswirtschaftslehre",
+          "institution": "Universität St. Gallen",
+          "location": "St. Gallen, CH",
+          "period": "2007 - 2010",
+          "description": [
+            {
+              "value": "Nebenfach Recht"
+            },
+            {
+              "value": "Nebenfach Volkswirtschaftslehre"
+            },
+            {
+              "value": "Nebenfach Ethik & Philosophie"
+            },
+            {
+              "value": "Mitglied des Studierendenrats: HR & Marketing"
+            },
+            {
+              "value": "Clubvorstand & Gründungsmitglied: Ski- & Alpinclub"
+            },
+            {
+              "value": "Weitere Aktivitäten:Regatta-Crew, St. Galler SegelclubJazz@Uni HauptorganisatorStudentische Big Band (Schlagzeug)StudentenchorSt. Gallen Symposium"
+            }
+          ]
+        },
+        {
+          "degree": "Abitur, Sprachen & Physik",
+          "institution": "Karlsgymnasium Pasing",
+          "location": "München, BY",
+          "period": "1997 - 2006",
+          "description": [
+            {
+              "value": "Leistungskurse: Französisch & Physik (2 von 2)"
+            },
+            {
+              "value": "Wahlfächer: Italienisch (statt Altgriechisch)"
+            },
+            {
+              "value": "Schule mit humanistischem Leitbild"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Technische Führung",
+          "skills": [
+            {
+              "name": "Technologie-Strategie & Roadmapping",
+              "level": 5,
+              "angles": [
+                "tech",
+                "strategy"
+              ]
+            },
+            {
+              "name": "ERP-Systemimplementierung (ERPNext/Odoo)",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Cloud Native Architektur (Kubernetes/NixOS)",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "DevOps & SRE-Praktiken",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Observability & Monitoring (Grafana/Prometheus)",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Produktentwicklung über den gesamten Lebenszyklus",
+              "level": 5,
+              "angles": [
+                "tech",
+                "strategy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Softwareentwicklung",
+          "skills": [
+            {
+              "name": "Python/Javascript-Ökosystem",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Systemprogrammierung (Go/Rust)",
+              "level": 4,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "Funktionale Programmierung (Haskell/Nix)",
+              "level": 3,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "CI/CD-Pipeline-Design",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            },
+            {
+              "name": "API-Design & Integration",
+              "level": 5,
+              "angles": [
+                "tech"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Geschäftsprozesse",
+          "skills": [
+            {
+              "name": "Führung bei der digitalen Transformation",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Prozessautomatisierung & -optimierung",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Digitalisierung der Lieferkette",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Einführung Lean Manufacturing",
+              "level": 4,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Skalierung von BPO-Operationen",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Finanz-Engineering",
+          "skills": [
+            {
+              "name": "Konfiguration von ERP-Finanzmodulen",
+              "level": 5,
+              "angles": [
+                "strategy",
+                "tech"
+              ]
+            },
+            {
+              "name": "Systeme zur Einhaltung regulatorischer Vorgaben",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Kostenoptimierungsstrategien",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Fintech-Integrationen (Zahlungssysteme)",
+              "level": 4,
+              "angles": [
+                "strategy",
+                "tech"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Führung & Strategie",
+          "skills": [
+            {
+              "name": "Governance auf Vorstandsebene",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Aufbau technischer Teams",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Markteintrittsumsetzung",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "Entwicklung strategischer Partnerschaften",
+              "level": 5,
+              "angles": [
+                "strategy"
+              ]
+            },
+            {
+              "name": "M&A Technologie-Due-Diligence",
+              "level": 4,
+              "angles": [
+                "strategy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Spezialisierte Bereiche",
+          "skills": [
+            {
+              "name": "Industrielle Automatisierungssysteme",
+              "level": 4,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "Lebensmittelproduktionstechnologie",
+              "level": 4,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "Materialwissenschaftliche Anwendungen",
+              "level": 3,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "CAD/CNC-Prototyping",
+              "level": 2,
+              "angles": [
+                "innovation"
+              ]
+            },
+            {
+              "name": "Bautechnologie (BIM)",
+              "level": 2,
+              "angles": [
+                "tech"
+              ]
+            }
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Bedeutende Frappe-Beiträge",
+          "period": "2024-2025",
+          "description": "Wesentliche Verbesserungen am Frappe-Framework beigesteuert und dessen Möglichkeiten für ERPNext und kundenspezifische Anwendungen erweitert.",
+          "details": [
+            {
+              "value": "Implementierung KI-gestützter, kanalübergreifender Marketing-Automatisierungen"
+            },
+            {
+              "value": "Entwicklung eines Moduls zur Fahrzeugroutenoptimierung für die interne Logistik"
+            },
+            {
+              "value": "Erstellung eines E-Rechnungsmoduls gemäß lokalen Vorgaben"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Python"
+            },
+            {
+              "value": "JavaScript"
+            },
+            {
+              "value": "Frappe Framework"
+            }
+          ],
+          "link": "https://github.com/pulls?q=is%3Apr+author%3Ablaggacao+archived%3Afalse+org%3Afrappe+is%3Amerged",
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Operative Exzellenz durch Automatisierung & Digitalisierung",
+          "period": "2024",
+          "description": "Leitung der Automatisierung und digitalen Transformation zentraler Betriebs- und Vertriebsprozesse durch eine einheitliche Technologiebasis zur Steigerung der organisatorischen Effizienz.",
+          "details": [
+            {
+              "value": "Vollständige Automatisierung von Vertriebs- und Betriebsprozessen, deutliche Reduktion manueller Eingriffe und Fehlerquoten"
+            },
+            {
+              "value": "Beschleunigung der Vertriebszyklen, Steigerung der Durchsatzleistung und Verbesserung der Sales-per-Person-Kennzahlen"
+            },
+            {
+              "value": "Erhöhung der Kundenzufriedenheit durch schnelleren und konsistenteren Service"
+            },
+            {
+              "value": "Stärkung der operativen Exzellenz durch standardisierte Prozesse, Echtzeit-Analysen und funktionsübergreifende Integration"
+            },
+            {
+              "value": "Ermöglichung datenbasierter Entscheidungen und kontinuierlicher Prozessverbesserung in allen Geschäftsbereichen"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Frappe"
+            },
+            {
+              "value": "ERPNext"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation",
+            "strategy"
+          ]
+        },
+        {
+          "title": "Standardisiertes DevOps-Nix-Framework",
+          "period": "2023-2024",
+          "description": "Entwicklung eines Nix-basierten DevOps-Plattform-Frameworks für den unternehmensweiten Einsatz und Optimierung von Entwicklungs- und Deployment-Prozessen.",
+          "details": [
+            {
+              "value": "Verbesserte Systemleistung und Zuverlässigkeit im gesamten Unternehmen"
+            },
+            {
+              "value": "Standardisierte Entwicklungsumgebungen und Deployment-Pipelines"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Nix"
+            },
+            {
+              "value": "DevOps"
+            },
+            {
+              "value": "CI/CD"
+            }
+          ],
+          "link": "https://github.com/divnix/std",
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "Digga NixOS Framework",
+          "period": "2022-2023",
+          "description": "Entwicklung eines fortschrittlichen NixOS-Frameworks zur Vereinfachung von Systemkonfiguration und -management.",
+          "details": [
+            {
+              "value": "1k Sterne auf GitHub"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "NixOS"
+            },
+            {
+              "value": "Nix"
+            },
+            {
+              "value": "Systemkonfiguration"
+            }
+          ],
+          "link": "https://github.com/divnix/digga",
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "AEDIR-LDAP in Kubernetes verpackt",
+          "period": "2021",
+          "description": "Containerisierung und Bereitstellung der AEDIR-LDAP-Lösung in einer Kubernetes-Umgebung zur Verbesserung von Skalierbarkeit und Verwaltung.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Kubernetes"
+            },
+            {
+              "value": "Docker"
+            },
+            {
+              "value": "LDAP"
+            }
+          ],
+          "angles": [
+            "tech",
+            "innovation"
+          ]
+        },
+        {
+          "title": "XOE Kundenprojekt: Call Center Operations",
+          "period": "Bogotá - 2019-2020",
+          "description": "Implementierung und Integration einer Asterisk-basierten Call-Center-Lösung für den Kundenservice.",
+          "details": [],
+          "technologies": [
+            {
+              "value": "Asterisk"
+            },
+            {
+              "value": "VoIP"
+            },
+            {
+              "value": "ERPNext"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        },
+        {
+          "title": "XOE Kundenprojekt: Infrastruktur",
+          "period": "Bogotá - 2019",
+          "description": "Entwicklung umfassender Infrastrukturlösungen für Großprojekte wie Straßen, Gebäude, Internet-Backbones und Dämme.",
+          "details": [
+            {
+              "value": "Implementierung von ERPNext-Modulen zur Optimierung des Projektmanagements und der Ressourcenzuteilung"
+            },
+            {
+              "value": "Koordination mit verschiedenen Stakeholdern zur Sicherstellung..."
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Bauingenieurwesen"
+            },
+            {
+              "value": "Projektmanagement"
+            },
+            {
+              "value": "Infrastrukturplanung"
+            }
+          ],
+          "angles": [
+            "tech",
+            "strategy"
+          ]
+        }
+      ],
+      "languages": [
+        {
+          "name": "Deutsch",
+          "proficiency": "Muttersprache"
+        },
+        {
+          "name": "Englisch",
+          "proficiency": "Fließend"
+        },
+        {
+          "name": "Spanisch",
+          "proficiency": "Fließend"
+        },
+        {
+          "name": "Französisch",
+          "proficiency": "Konversationssicher"
+        },
+        {
+          "name": "Italienisch",
+          "proficiency": "Konversationssicher"
+        },
+        {
+          "name": "Portugiesisch",
+          "proficiency": "Grundkenntnisse"
+        }
+      ]
     }
   },
   "jamie-chen": {
@@ -2080,7 +2938,7 @@
         "location": "Graefelfing, BY, Deutschland",
         "github": "https://github.com/lina2358",
         "linkedin": "https://www.linkedin.com/in/linaavendano/",
-        "bio": "Results-oriented finance and business operations professional with 10+ years of experience in **accounting (Buchhaltung)**, **financial reporting**, and **ERP implementations** in several industries. Skilled in **HGB**, US-GAAP, COL-GAAP and **IFRS-compliant reporting**, **payroll accounting (Lohnbuchhaltung)**, and **tax compliance** including **VAT (Umsatzsteuer)** and **corporate tax (Körperschaftsteuer)**. Proven track record leading **software transitions** from manual/Excel and basic accounting softwares to ERP-based environments, improving transparency, compliance, and operational efficiency. Strong background in **financial analysis**, budget planning, and international business structuring.",
+        "bio": "Results-oriented finance and business operations professional with 10+ years of experience in accounting (Buchhaltung), financial reporting, and ERP implementations in several industries. Skilled in HGB, US-GAAP, COL-GAAP and IFRS-compliant reporting, payroll accounting (Lohnbuchhaltung), and tax compliance including VAT (Umsatzsteuer) and corporate tax (Körperschaftsteuer). Proven track record leading software transitions from manual/Excel and basic accounting softwares to ERP-based environments, improving transparency, compliance, and operational efficiency. Strong background in financial analysis, budget planning, and international business structuring.",
         "defaultAngle": "finance"
       },
       "experience": [
@@ -2507,248 +3365,6 @@
       ]
     }
   },
-  "taylor-wright": {
-    "en": {
-      "personalInfo": {
-        "name": "Taylor Wright",
-        "title": "Product Manager",
-        "email": "taylor.wright@example.com",
-        "phone": "+1 (555) 234-5678",
-        "location": "Seattle, WA",
-        "website": "https://www.taylorwright.pm",
-        "github": "https://github.com/taylorwright",
-        "linkedin": "https://linkedin.com/in/taylorwright",
-        "bio": "Strategic Product Manager with 7+ years of experience leading cross-functional teams to deliver customer-centric SaaS solutions. Expert in agile methodologies and data-driven decision making."
-      },
-      "experience": [
-        {
-          "title": "Senior Product Manager",
-          "company": "CloudScale Technologies",
-          "location": "Seattle, WA",
-          "period": "Mar 2020 - Present",
-          "description": [
-            {
-              "value": "Led product strategy for AI-powered analytics platform serving 1,500+ enterprise clients, driving 42% YoY revenue growth"
-            },
-            {
-              "value": "Spearheaded cross-functional team of 15 to launch ML features that increased user retention by 28%"
-            },
-            {
-              "value": "Implemented customer feedback loop reducing feature development cycle time by 35%"
-            },
-            {
-              "value": "Optimized pricing strategy through market analysis, increasing average deal size by 19%"
-            }
-          ]
-        },
-        {
-          "title": "Product Manager",
-          "company": "HealthFlow Systems",
-          "location": "Austin, TX",
-          "period": "Jan 2017 - Feb 2020",
-          "description": [
-            {
-              "value": "Managed full product lifecycle for patient portal used by 2M+ users, improving NPS score from 32 to 58"
-            },
-            {
-              "value": "Conducted 50+ user interviews to identify workflow pain points, informing roadmap prioritization"
-            },
-            {
-              "value": "Collaborated with UX team to redesign onboarding flow, reducing drop-off rate by 41%"
-            },
-            {
-              "value": "Introduced agile ceremonies that improved team velocity by 25%"
-            }
-          ]
-        },
-        {
-          "title": "Associate Product Manager",
-          "company": "StartUpHub Inc.",
-          "location": "Boston, MA",
-          "period": "Jun 2015 - Dec 2016",
-          "description": [
-            {
-              "value": "Owned development of marketplace features that increased monthly transactions by 300%"
-            },
-            {
-              "value": "Created product requirements documentation for core platform capabilities"
-            },
-            {
-              "value": "Analyzed user behavior data to inform feature prioritization and backlog grooming"
-            },
-            {
-              "value": "Coordinated beta testing program with 500+ early adopters"
-            }
-          ]
-        }
-      ],
-      "education": [
-        {
-          "degree": "MBA, Product Management",
-          "institution": "University of Washington",
-          "location": "Seattle, WA",
-          "period": "2013 - 2015",
-          "description": [
-            {
-              "value": "Focus: Technology Product Management"
-            },
-            {
-              "value": "VP of Product Management Club"
-            },
-            {
-              "value": "Capstone project: Developed go-to-market strategy for IoT startup"
-            }
-          ]
-        },
-        {
-          "degree": "Bachelor of Science, Business Administration",
-          "institution": "University of Texas at Austin",
-          "location": "Austin, TX",
-          "period": "2009 - 2013",
-          "description": [
-            {
-              "value": "Concentration: Management Information Systems"
-            },
-            {
-              "value": "Dean's List, 6 semesters"
-            },
-            {
-              "value": "Founder of Entrepreneurial Society"
-            }
-          ]
-        }
-      ],
-      "skills": [
-        {
-          "name": "Product Strategy",
-          "level": 5
-        },
-        {
-          "name": "Agile/Scrum",
-          "level": 5
-        },
-        {
-          "name": "Roadmapping",
-          "level": 5
-        },
-        {
-          "name": "Market Research",
-          "level": 4
-        },
-        {
-          "name": "SQL/Data Analysis",
-          "level": 4
-        },
-        {
-          "name": "A/B Testing",
-          "level": 4
-        },
-        {
-          "name": "Jira/Confluence",
-          "level": 5
-        },
-        {
-          "name": "User Story Mapping",
-          "level": 4
-        },
-        {
-          "name": "Customer Development",
-          "level": 5
-        },
-        {
-          "name": "Go-to-Market Strategy",
-          "level": 4
-        },
-        {
-          "name": "KPI Optimization",
-          "level": 5
-        },
-        {
-          "name": "Stakeholder Management",
-          "level": 5
-        }
-      ],
-      "projects": [
-        {
-          "title": "AI Pricing Optimizer",
-          "period": "2023",
-          "description": "Machine learning-driven dynamic pricing system for e-commerce platforms",
-          "details": [
-            {
-              "value": "Case Study: https://www.taylorwright.pm/pricing-ai"
-            }
-          ],
-          "technologies": [
-            {
-              "value": "Python"
-            },
-            {
-              "value": "Tableau"
-            },
-            {
-              "value": "A/B Testing"
-            }
-          ]
-        },
-        {
-          "title": "Patient Engagement Portal",
-          "period": "2019",
-          "description": "Unified healthcare communication platform",
-          "details": [
-            {
-              "value": "Impact: 58% reduction in support tickets"
-            }
-          ],
-          "technologies": [
-            {
-              "value": "User Interviews"
-            },
-            {
-              "value": "Journey Mapping"
-            },
-            {
-              "value": "Jira"
-            }
-          ]
-        },
-        {
-          "title": "Marketplace Growth Initiative",
-          "period": "2016",
-          "description": "Seller acquisition and retention program",
-          "details": [
-            {
-              "value": "Results: 3X seller growth in 6 months"
-            }
-          ],
-          "technologies": [
-            {
-              "value": "Mixpanel"
-            },
-            {
-              "value": "Amplitude"
-            },
-            {
-              "value": "HubSpot"
-            }
-          ]
-        }
-      ],
-      "languages": [
-        {
-          "name": "English",
-          "proficiency": "Native"
-        },
-        {
-          "name": "Spanish",
-          "proficiency": "Professional working proficiency"
-        },
-        {
-          "name": "French",
-          "proficiency": "Elementary proficiency"
-        }
-      ]
-    }
-  },
   "sam-rivera": {
     "en": {
       "personalInfo": {
@@ -2984,6 +3600,248 @@
         {
           "name": "Spanish",
           "proficiency": "Professional proficiency"
+        },
+        {
+          "name": "French",
+          "proficiency": "Elementary proficiency"
+        }
+      ]
+    }
+  },
+  "taylor-wright": {
+    "en": {
+      "personalInfo": {
+        "name": "Taylor Wright",
+        "title": "Product Manager",
+        "email": "taylor.wright@example.com",
+        "phone": "+1 (555) 234-5678",
+        "location": "Seattle, WA",
+        "website": "https://www.taylorwright.pm",
+        "github": "https://github.com/taylorwright",
+        "linkedin": "https://linkedin.com/in/taylorwright",
+        "bio": "Strategic Product Manager with 7+ years of experience leading cross-functional teams to deliver customer-centric SaaS solutions. Expert in agile methodologies and data-driven decision making."
+      },
+      "experience": [
+        {
+          "title": "Senior Product Manager",
+          "company": "CloudScale Technologies",
+          "location": "Seattle, WA",
+          "period": "Mar 2020 - Present",
+          "description": [
+            {
+              "value": "Led product strategy for AI-powered analytics platform serving 1,500+ enterprise clients, driving 42% YoY revenue growth"
+            },
+            {
+              "value": "Spearheaded cross-functional team of 15 to launch ML features that increased user retention by 28%"
+            },
+            {
+              "value": "Implemented customer feedback loop reducing feature development cycle time by 35%"
+            },
+            {
+              "value": "Optimized pricing strategy through market analysis, increasing average deal size by 19%"
+            }
+          ]
+        },
+        {
+          "title": "Product Manager",
+          "company": "HealthFlow Systems",
+          "location": "Austin, TX",
+          "period": "Jan 2017 - Feb 2020",
+          "description": [
+            {
+              "value": "Managed full product lifecycle for patient portal used by 2M+ users, improving NPS score from 32 to 58"
+            },
+            {
+              "value": "Conducted 50+ user interviews to identify workflow pain points, informing roadmap prioritization"
+            },
+            {
+              "value": "Collaborated with UX team to redesign onboarding flow, reducing drop-off rate by 41%"
+            },
+            {
+              "value": "Introduced agile ceremonies that improved team velocity by 25%"
+            }
+          ]
+        },
+        {
+          "title": "Associate Product Manager",
+          "company": "StartUpHub Inc.",
+          "location": "Boston, MA",
+          "period": "Jun 2015 - Dec 2016",
+          "description": [
+            {
+              "value": "Owned development of marketplace features that increased monthly transactions by 300%"
+            },
+            {
+              "value": "Created product requirements documentation for core platform capabilities"
+            },
+            {
+              "value": "Analyzed user behavior data to inform feature prioritization and backlog grooming"
+            },
+            {
+              "value": "Coordinated beta testing program with 500+ early adopters"
+            }
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "MBA, Product Management",
+          "institution": "University of Washington",
+          "location": "Seattle, WA",
+          "period": "2013 - 2015",
+          "description": [
+            {
+              "value": "Focus: Technology Product Management"
+            },
+            {
+              "value": "VP of Product Management Club"
+            },
+            {
+              "value": "Capstone project: Developed go-to-market strategy for IoT startup"
+            }
+          ]
+        },
+        {
+          "degree": "Bachelor of Science, Business Administration",
+          "institution": "University of Texas at Austin",
+          "location": "Austin, TX",
+          "period": "2009 - 2013",
+          "description": [
+            {
+              "value": "Concentration: Management Information Systems"
+            },
+            {
+              "value": "Dean's List, 6 semesters"
+            },
+            {
+              "value": "Founder of Entrepreneurial Society"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Product Strategy",
+          "level": 5
+        },
+        {
+          "name": "Agile/Scrum",
+          "level": 5
+        },
+        {
+          "name": "Roadmapping",
+          "level": 5
+        },
+        {
+          "name": "Market Research",
+          "level": 4
+        },
+        {
+          "name": "SQL/Data Analysis",
+          "level": 4
+        },
+        {
+          "name": "A/B Testing",
+          "level": 4
+        },
+        {
+          "name": "Jira/Confluence",
+          "level": 5
+        },
+        {
+          "name": "User Story Mapping",
+          "level": 4
+        },
+        {
+          "name": "Customer Development",
+          "level": 5
+        },
+        {
+          "name": "Go-to-Market Strategy",
+          "level": 4
+        },
+        {
+          "name": "KPI Optimization",
+          "level": 5
+        },
+        {
+          "name": "Stakeholder Management",
+          "level": 5
+        }
+      ],
+      "projects": [
+        {
+          "title": "AI Pricing Optimizer",
+          "period": "2023",
+          "description": "Machine learning-driven dynamic pricing system for e-commerce platforms",
+          "details": [
+            {
+              "value": "Case Study: https://www.taylorwright.pm/pricing-ai"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Python"
+            },
+            {
+              "value": "Tableau"
+            },
+            {
+              "value": "A/B Testing"
+            }
+          ]
+        },
+        {
+          "title": "Patient Engagement Portal",
+          "period": "2019",
+          "description": "Unified healthcare communication platform",
+          "details": [
+            {
+              "value": "Impact: 58% reduction in support tickets"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "User Interviews"
+            },
+            {
+              "value": "Journey Mapping"
+            },
+            {
+              "value": "Jira"
+            }
+          ]
+        },
+        {
+          "title": "Marketplace Growth Initiative",
+          "period": "2016",
+          "description": "Seller acquisition and retention program",
+          "details": [
+            {
+              "value": "Results: 3X seller growth in 6 months"
+            }
+          ],
+          "technologies": [
+            {
+              "value": "Mixpanel"
+            },
+            {
+              "value": "Amplitude"
+            },
+            {
+              "value": "HubSpot"
+            }
+          ]
+        }
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "proficiency": "Native"
+        },
+        {
+          "name": "Spanish",
+          "proficiency": "Professional working proficiency"
         },
         {
           "name": "French",

@@ -9,13 +9,15 @@ import { Language } from '@/types/lang';
 interface PersonalInfoCardProps {
   personalInfo: PersonalInfo;
   availableLanguages: Language[];
+  currentLanguage: string;
   cvData: CVData;
   availableAngles: string[];
 }
 
 const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({ 
   personalInfo, 
-  availableLanguages, 
+  availableLanguages,
+  currentLanguage, 
   cvData, 
   availableAngles 
 }) => {
@@ -97,6 +99,7 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
           availableAngles={availableAngles}
           cvData={cvData}
           cvName={window.location.pathname.split('/').pop() || 'cv'}
+          currentLanguage={currentLanguage}
         />
       )}
     </Card>

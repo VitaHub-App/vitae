@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Language } from "@/types/lang";
-import { Copy, FileWarning, Check, X, Share2, Mail, FileText, Download } from "lucide-react";
+import { Copy, FileWarning, Check, X, Share2, Mail, FileText, Download, Globe } from "lucide-react";
 import { PersonalInfo, CVData } from "@/types/cv";
 import { z } from "zod";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
@@ -23,6 +23,7 @@ interface SecretTitleDialogProps {
   availableAngles: string[];
   cvData: CVData;
   cvName: string;
+  currentLanguage: string;
 }
 
 const formSchema = z.object({
@@ -54,7 +55,8 @@ export default function SecretTitleDialog({
   languages, 
   availableAngles,
   cvData,
-  cvName
+  cvName,
+  currentLanguage
 }: SecretTitleDialogProps) {
   const { toast } = useToast();
   const [jsonValidationStatus, setJsonValidationStatus] = useState<'idle' | 'valid' | 'invalid'>('idle');
@@ -84,6 +86,9 @@ export default function SecretTitleDialog({
 
   // Watch the includeCoverLetter field to toggle additional fields
   const includeCoverLetter = form.watch("includeCoverLetter");
+
+  // Get current language display name
+  const currentLanguageName = languages.find(lang => lang.code === currentLanguage)?.name || currentLanguage;
 
   const validateJsonResponse = (jsonString: string) => {
     try {
@@ -236,6 +241,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     const url = new URL(window.location.href);
     url.searchParams.set('mod', modValue);
     url.searchParams.set('compact', isCompact ? "true" : "false");
+    url.searchParams.set('lang', currentLanguage); // Include current language
 
     // Add the 'angle' parameter if selectedAngle is set
     if (selectedAngle) {
@@ -248,9 +254,9 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
   const createModifiedPersonalInfo = () => {
     if (!parsedGptData) return null;
     
-    const defaultLanguage = languages.length > 0 ? languages[0].code : 'en';
-    const titleData = parsedGptData[defaultLanguage]?.title || personalInfo.title;
-    const bioData = parsedGptData[defaultLanguage]?.bio || personalInfo.bio;
+    // Use current language for personal info modification
+    const titleData = parsedGptData[currentLanguage]?.title || personalInfo.title;
+    const bioData = parsedGptData[currentLanguage]?.bio || personalInfo.bio;
     
     return {
       ...personalInfo,
@@ -316,14 +322,13 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     const url = generateModifiedUrl();
     setModifiedUrl(url);
     
-    // Create a modified personal info object with the overlayed data
+    // Create a modified personal info object with the overlayed data for current language
     const updatedPersonalInfo = createModifiedPersonalInfo();
     setModifiedPersonalInfo(updatedPersonalInfo);
     
-    // Set the cover letter if available
+    // Set the cover letter for current language if available
     if (parsedGptData && includeCoverLetter) {
-      const defaultLanguage = languages.length > 0 ? languages[0].code : 'en';
-      setSelectedCoverLetter(parsedGptData[defaultLanguage]?.coverLetter);
+      setSelectedCoverLetter(parsedGptData[currentLanguage]?.coverLetter);
     } else {
       setSelectedCoverLetter(undefined);
     }
@@ -333,14 +338,13 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
   };
 
   const handlePdfClick = () => {
-    // Create a modified personal info object with the overlayed data
+    // Create a modified personal info object with the overlayed data for current language
     const updatedPersonalInfo = createModifiedPersonalInfo();
     setModifiedPersonalInfo(updatedPersonalInfo);
     
-    // Set the cover letter if available
+    // Set the cover letter for current language if available
     if (parsedGptData && includeCoverLetter) {
-      const defaultLanguage = languages.length > 0 ? languages[0].code : 'en';
-      setSelectedCoverLetter(parsedGptData[defaultLanguage]?.coverLetter);
+      setSelectedCoverLetter(parsedGptData[currentLanguage]?.coverLetter);
     } else {
       setSelectedCoverLetter(undefined);
     }
@@ -371,6 +375,17 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
           </AlertDialogHeader>
           
           <div className="overflow-y-auto pr-4 pl-2 pt-2 pb-6 max-h-[calc(90vh-120px)] custom-scrollbar">
+            {/* Current Language Display */}
+            <div className="mb-4 p-3 border rounded-md bg-accent/20">
+              <div className="flex items-center gap-2 text-sm font-medium">
+                <Globe className="h-4 w-4" />
+                Current Language: {currentLanguageName}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                The modifications will be applied to this language version of the CV
+              </div>
+            </div>
+
             <Form {...form}>
               <form className="space-y-6 mt-4">
                 <FormField

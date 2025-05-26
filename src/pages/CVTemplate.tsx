@@ -159,6 +159,7 @@ const CVTemplate = () => {
             availableLanguages={availableLangs}
             cvData={modifiedCVData}
             availableAngles={availableAngles}
+            currentLanguage={language}
           />
           <CVActions 
             cvName={personName} 
