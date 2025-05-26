@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Language } from "@/types/lang";
-import { Copy, Link, FileWarning, Check, X, Share2, Mail, FileText } from "lucide-react";
+import { Copy, Link, FileWarning, Check, X, Share2, Mail, FileText, FileDown } from "lucide-react";
 import { PersonalInfo, CVData } from "@/types/cv";
 import { z } from "zod";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
@@ -14,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 import EmailDialog from "./email/EmailDialog";
 import { Checkbox } from "@/components/ui/checkbox";
+import { PDFGenerator } from './pdf/PDFGenerator';
 
 interface SecretTitleDialogProps {
   isOpen: boolean;
@@ -62,6 +62,7 @@ export default function SecretTitleDialog({
   const [modifiedUrl, setModifiedUrl] = useState<string | null>(null);
   const [modifiedPersonalInfo, setModifiedPersonalInfo] = useState<PersonalInfo | null>(null);
   const [selectedCoverLetter, setSelectedCoverLetter] = useState<string | undefined>(undefined);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -323,6 +324,18 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     setShowEmailDialog(true);
   };
 
+  const handleDownloadClick = () => {
+
+    if (parsedGptData && includeCoverLetter) {
+      const defaultLanguage = languages.length > 0 ? languages[0].code : 'en';
+      setSelectedCoverLetter(parsedGptData[defaultLanguage]?.coverLetter);
+    } else {
+      setSelectedCoverLetter(undefined);
+    }
+    
+    setShowDownloadModal(true);
+  }
+
   return (
     <>
       <AlertDialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -535,6 +548,16 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                       <Mail className="mr-2 h-4 w-4" />
                       Email Modified CV
                     </Button>
+                    
+                    <Button 
+                      type="button"
+                      variant="outline"
+                      onClick={handleDownloadClick}
+                      disabled={jsonValidationStatus !== 'valid'}
+                    >
+                      <FileDown className="mr-2 h-4 w-4" />
+                      Download PDFs
+                    </Button>
                   </div>
                 </div>
               </form>
@@ -551,6 +574,16 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
           cvName={cvName}
           customUrl={modifiedUrl || undefined}
           coverLetter={selectedCoverLetter}
+        />
+      )}
+      
+      {showDownloadModal && (
+        <PDFGenerator 
+          cvName={cvName}
+          cvData={cvData}
+          personalInfo={modifiedPersonalInfo || personalInfo}
+          isCompact={isCompact}
+          currentAngle=form.getValues().selectedAngle
         />
       )}
     </>

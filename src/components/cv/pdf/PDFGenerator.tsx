@@ -1,7 +1,9 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import html2pdf from 'html2pdf.js';
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Download } from 'lucide-react';
 import {
   Dialog,
@@ -13,6 +15,7 @@ import {
 } from "@/components/ui/dialog"
 import { CVData, PersonalInfo } from '@/types/cv';
 import CVPdfTemplate from '../CVPdfTemplate';
+import CLPdfTemplate from '../CLPdfTemplate';
 
 interface PDFGeneratorProps {
   cvData: CVData;
@@ -20,11 +23,15 @@ interface PDFGeneratorProps {
   personalInfo: PersonalInfo;
   isCompact: boolean;
   currentAngle?: string | null;
+  coverLetter?: string | null;
 }
 
-export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, personalInfo, isCompact, currentAngle }) => {
-  const componentRef = useRef<HTMLDivElement>(null);
+export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, personalInfo, isCompact, currentAngle, coverLetter }) => {
+  const cvComponentRef = useRef<HTMLDivElement>(null);
+  const clComponentRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = React.useState(false);
+  const [jobDescription, setJobDescription] = useState("");
+  const [companyName, setCompanyName] = useState("");
 
   const options = {
     margin: 15,
@@ -35,17 +42,44 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
   };
 
+  const sanitizeFileName = (text: string): string => {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, '')
+      .replace(/\s+/g, '-')
+      .trim();
+  };
+
+  const getFileStem = () => {
+    if (companyName != "" && jobDescription != "") {
+      return `${cvName}-${sanitizeFileName(jobDescription)}-${sanitizeFileName(companyName)}`
+    } else if (companyName != "") {
+      return `${cvName}-${sanitizeFileName(companyName)}`
+    } else if (jobDescription != "") {
+      return `${cvName}-${sanitizeFileName(jobDescription)}`
+    }
+    return cvName
+  }
+
   const handleGeneratePDF = async () => {
     setIsOpen(false);
-    const domElement = componentRef.current;
-    if (!domElement) {
-      console.error('Could not find the component to generate PDF from.');
+    const cvDomElement = cvComponentRef.current;
+    const clDomElement = clComponentRef.current;
+    if (!cvDomElement) {
+      console.error('Could not find the component to generate CV PDF from.');
       return;
+    }
+    if (coverLetter) {
+      if (!clDomElement) {
+        console.error('Could not find the component to generate Cover Letter PDF from.');
+        return;
+      }
+      
     }
     
     try {
-      const blob = await html2pdf()
-        .from(domElement)
+      const cvBlob = await html2pdf()
+        .from(cvDomElement)
         .set(options)
         .outputPdf('blob');
 
@@ -61,7 +95,21 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
         URL.revokeObjectURL(url);
       };
 
-      saveBlob(blob, `${cvName}.pdf`);
+      const baseFileName = getFileStem();
+
+      // Generate CV PDF
+      const cvFileName = `${baseFileName}-cv.pdf`;
+      const clFileName = `${baseFileName}-cover-letter.pdf`;
+      
+
+      saveBlob(cvBlob, cvFileName);
+      if (coverLetter) {
+        const clBlob = await html2pdf()
+          .from(clDomElement)
+          .set(options)
+          .outputPdf('blob');
+        saveBlob(clBlob, clFileName);
+      }
     } catch (error) {
       console.error('PDF generation failed:', error);
     }
@@ -84,18 +132,53 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
               Do you want to proceed?
             </DialogDescription>
           </DialogHeader>
+          <div>
+            <Label htmlFor="jobDescription">Job Description/Title</Label>
+            <Input
+              id="jobDescription"
+              placeholder="e.g. Senior Frontend Developer"
+              value={jobDescription}
+              onChange={(e) => setJobDescription(e.target.value)}
+            />
+          </div>
+          
+          <div>
+            <Label htmlFor="companyName">Company Name</Label>
+            <Input
+              id="companyName"
+              placeholder="e.g. Tech Company Inc"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+            />
+          </div>
+          
+          <div className="text-sm text-muted-foreground">
+            Files will be named: {getFileStem()}-cv.pdf
+            {coverLetter && (
+              <div>
+                and {getFileStem()}-cover-letter.pdf
+              </div>
+            )}
+          </div>
           <div className="grid grid-cols-2 gap-4">
             <Button variant="ghost" onClick={() => setIsOpen(false)}>Cancel</Button>
             <Button type="submit" onClick={handleGeneratePDF}>Download</Button>
           </div>
           <div style={{ display: 'none' }}>
-            <div ref={componentRef} >
+            <div ref={cvComponentRef} >
               <CVPdfTemplate
                 cvData={cvData}
                 personalInfo={personalInfo}
                 cvName={cvName}
                 isCompact={isCompact}
                 currentAngle={currentAngle}
+              />
+            </div>
+            <div ref={clComponentRef} >
+              <CLPdfTemplate
+                cvData={cvData}
+                personalInfo={personalInfo}
+                cvName={cvName}
               />
             </div>
           </div>
