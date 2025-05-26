@@ -230,7 +230,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     };
     
     // Encode the modifications using btoa (base64)
-    const modValue = btoa(JSON.stringify(modifications));
+    const modValue = btoa(encodeURIComponent(JSON.stringify(modifications)));
     
     // Get the current URL and add or replace the 'mod' parameter
     const url = new URL(window.location.href);

@@ -57,7 +57,7 @@ const CVTemplate = () => {
     if (modParam) {
       try {
         // Parse the encoded modification data
-        const decodedData: ModificationData = JSON.parse(atob(modParam));
+        const decodedData: ModificationData = JSON.parse(decodeURIComponent(atob(modParam)));
         if (!decodedData) {
           console.error('Failed to decode mod parameter');
           setModifiedCVData(cvData);
