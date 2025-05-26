@@ -543,35 +543,28 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                           />
                         </FormControl>
                         <FormMessage />
-                        {jsonValidationStatus === 'valid' && parsedGptData && (
+                        {jsonValidationStatus === 'valid' && parsedGptData && parsedGptData[currentLanguage] && (
                           <div className="mt-4 space-y-4">
-                            <h4 className="font-medium text-sm">Preview:</h4>
-                            {Object.entries(parsedGptData)
-                              .filter(([langCode]) => languages.some(l => l.code === langCode))
-                              .map(([langCode, data]) => {
-                              const langName = languages.find(l => l.code === langCode)?.name || langCode;
-                              return (
-                                <div key={langCode} className="p-3 border rounded-md bg-accent/20">
-                                  <div className="font-medium text-sm">{langName}:</div>
-                                  <div className="font-medium mt-1">"{data.title}"</div>
-                                  <div className="text-sm text-muted-foreground mt-1">
-                                    "{data.bio}" ({data.bio.split(/\s+/).length} words)
+                            <h4 className="font-medium text-sm">Preview for {currentLanguageName}:</h4>
+                            <div className="p-3 border rounded-md bg-accent/20">
+                              <div className="font-medium text-sm">{currentLanguageName}:</div>
+                              <div className="font-medium mt-1">"{parsedGptData[currentLanguage].title}"</div>
+                              <div className="text-sm text-muted-foreground mt-1">
+                                "{parsedGptData[currentLanguage].bio}" ({parsedGptData[currentLanguage].bio.split(/\s+/).length} words)
+                              </div>
+                              {includeCoverLetter && parsedGptData[currentLanguage].coverLetter && (
+                                <div className="mt-2 pt-2 border-t">
+                                  <div className="font-medium text-sm flex items-center gap-1">
+                                    <FileText className="h-3 w-3" /> Cover Letter:
                                   </div>
-                                  {includeCoverLetter && data.coverLetter && (
-                                    <div className="mt-2 pt-2 border-t">
-                                      <div className="font-medium text-sm flex items-center gap-1">
-                                        <FileText className="h-3 w-3" /> Cover Letter:
-                                      </div>
-                                      <div className="text-xs text-muted-foreground mt-1 max-h-40 overflow-y-auto bg-background/50 p-2 rounded">
-                                        {data.coverLetter.split('\n').map((paragraph, i) => (
-                                          <p key={i} className="mb-1">{paragraph}</p>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  )}
+                                  <div className="text-xs text-muted-foreground mt-1 max-h-40 overflow-y-auto bg-background/50 p-2 rounded">
+                                    {parsedGptData[currentLanguage].coverLetter.split('\n').map((paragraph, i) => (
+                                      <p key={i} className="mb-1">{paragraph}</p>
+                                    ))}
+                                  </div>
                                 </div>
-                              );
-                            })}
+                              )}
+                            </div>
                           </div>
                         )}
                       </FormItem>

@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -52,7 +53,7 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-20 rounded-md blur-md -z-10"/>
       <div className="p-6 flex items-center space-x-4">
         <Avatar className="h-40 w-40">
-          <AvatarImage src={personalInfo.image} alt={personalInfo.name} />
+          <AvatarImage src={personalInfo.image || ''} alt={personalInfo.name} />
           <AvatarFallback>{personalInfo.name?.substring(0, 2)}</AvatarFallback>
         </Avatar>
         <div>

@@ -1,4 +1,3 @@
-
 import { z } from 'zod';
 
 // Define the angle tag schema
@@ -23,6 +22,7 @@ export const personalInfoSchema = z.object({
   github: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   bio: z.string().min(1),
+  image: z.string().optional(), // Add image property
   defaultAngle: z.string().optional(), // Default angle to display
 });
 
