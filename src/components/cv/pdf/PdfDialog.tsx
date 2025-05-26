@@ -66,23 +66,21 @@ export const PdfDialog: React.FC<PdfDialogProps> = ({open, onOpenChange, cvData,
     onOpenChange(false);
     const cvDomElement = cvComponentRef.current;
     const clDomElement = clComponentRef.current;
+    
     if (!cvDomElement) {
       console.error('Could not find the component to generate CV PDF from.');
       return;
     }
-    if (coverLetter) {
-      if (!clDomElement) {
-        console.error('Could not find the component to generate Cover Letter PDF from.');
-        return;
-      }
-      
+    
+    if (coverLetter && !clDomElement) {
+      console.error('Could not find the component to generate Cover Letter PDF from.');
+      return;
     }
     
     try {
-      const cvBlob = await html2pdf()
-        .from(cvDomElement)
-        .set(options)
-        .outputPdf('blob');
+      const baseFileName = getFileStem();
+      const cvFileName = `${baseFileName}-cv.pdf`;
+      const clFileName = `${baseFileName}-cover-letter.pdf`;
 
       // Function to save the PDF blob
       const saveBlob = (blob: Blob, fileName: string) => {
@@ -96,20 +94,30 @@ export const PdfDialog: React.FC<PdfDialogProps> = ({open, onOpenChange, cvData,
         URL.revokeObjectURL(url);
       };
 
-      const baseFileName = getFileStem();
-
-      // Generate CV PDF
-      const cvFileName = `${baseFileName}-cv.pdf`;
-      const clFileName = `${baseFileName}-cover-letter.pdf`;
-      
-
-      saveBlob(cvBlob, cvFileName);
       if (coverLetter) {
-        const clBlob = await html2pdf()
-          .from(clDomElement)
+        // Generate both PDFs concurrently
+        const [cvBlob, clBlob] = await Promise.all([
+          html2pdf()
+            .from(cvDomElement)
+            .set(options)
+            .outputPdf('blob'),
+          html2pdf()
+            .from(clDomElement)
+            .set(options)
+            .outputPdf('blob')
+        ]);
+
+        // Download both files simultaneously
+        saveBlob(cvBlob, cvFileName);
+        saveBlob(clBlob, clFileName);
+      } else {
+        // Only generate CV PDF
+        const cvBlob = await html2pdf()
+          .from(cvDomElement)
           .set(options)
           .outputPdf('blob');
-        saveBlob(clBlob, clFileName);
+        
+        saveBlob(cvBlob, cvFileName);
       }
     } catch (error) {
       console.error('PDF generation failed:', error);
