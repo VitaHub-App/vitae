@@ -17,7 +17,9 @@ import { CVData, PersonalInfo } from '@/types/cv';
 import CVPdfTemplate from '../CVPdfTemplate';
 import CLPdfTemplate from '../CLPdfTemplate';
 
-interface PDFGeneratorProps {
+interface PdfDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
   cvData: CVData;
   cvName: string;
   personalInfo: PersonalInfo;
@@ -26,10 +28,9 @@ interface PDFGeneratorProps {
   coverLetter?: string | null;
 }
 
-export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, personalInfo, isCompact, currentAngle, coverLetter }) => {
+export const PdfDialog: React.FC<PdfDialogProps> = ({open, onOpenChange, cvData, cvName, personalInfo, isCompact, currentAngle, coverLetter }) => {
   const cvComponentRef = useRef<HTMLDivElement>(null);
   const clComponentRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = React.useState(false);
   const [jobDescription, setJobDescription] = useState("");
   const [companyName, setCompanyName] = useState("");
 
@@ -62,7 +63,7 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
   }
 
   const handleGeneratePDF = async () => {
-    setIsOpen(false);
+    onOpenChange(false);
     const cvDomElement = cvComponentRef.current;
     const clDomElement = clComponentRef.current;
     if (!cvDomElement) {
@@ -117,7 +118,7 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
 
   return (
     <div className="flex flex-col">
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogTrigger asChild>
           <Button variant="outline" size="sm" className="flex items-center gap-2">
             <Download className="h-4 w-4" />
@@ -161,7 +162,7 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
             )}
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Button variant="ghost" onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button variant="ghost" onClick={() => onOpenChange(false)}>Cancel</Button>
             <Button type="submit" onClick={handleGeneratePDF}>Download</Button>
           </div>
           <div style={{ display: 'none' }}>
@@ -178,7 +179,7 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ cvData, cvName, pers
               <CLPdfTemplate
                 cvData={cvData}
                 personalInfo={personalInfo}
-                cvName={cvName}
+                coverLetter={coverLetter}
               />
             </div>
           </div>

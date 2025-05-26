@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Language } from "@/types/lang";
-import { Copy, Link, FileWarning, Check, X, Share2, Mail, FileText, FileDown } from "lucide-react";
+import { Copy, FileWarning, Check, X, Share2, Mail, FileText, Download } from "lucide-react";
 import { PersonalInfo, CVData } from "@/types/cv";
 import { z } from "zod";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
@@ -13,7 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 import EmailDialog from "./email/EmailDialog";
 import { Checkbox } from "@/components/ui/checkbox";
-import { PDFGenerator } from './pdf/PDFGenerator';
+import { PdfDialog } from './pdf/PdfDialog';
 
 interface SecretTitleDialogProps {
   isOpen: boolean;
@@ -60,6 +60,7 @@ export default function SecretTitleDialog({
   const [jsonValidationStatus, setJsonValidationStatus] = useState<'idle' | 'valid' | 'invalid'>('idle');
   const [parsedGptData, setParsedGptData] = useState<Record<string, { title: string, bio: string, coverLetter?: string }> | null>(null);
   const [showEmailDialog, setShowEmailDialog] = useState(false);
+  const [showPdfDialog, setShowPdfDialog] = useState(false);
   const [modifiedUrl, setModifiedUrl] = useState<string | null>(null);
   const [modifiedPersonalInfo, setModifiedPersonalInfo] = useState<PersonalInfo | null>(null);
   const [selectedCoverLetter, setSelectedCoverLetter] = useState<string | undefined>(undefined);
@@ -331,6 +332,23 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     setShowEmailDialog(true);
   };
 
+  const handlePdfClick = () => {
+    // Create a modified personal info object with the overlayed data
+    const updatedPersonalInfo = createModifiedPersonalInfo();
+    setModifiedPersonalInfo(updatedPersonalInfo);
+    
+    // Set the cover letter if available
+    if (parsedGptData && includeCoverLetter) {
+      const defaultLanguage = languages.length > 0 ? languages[0].code : 'en';
+      setSelectedCoverLetter(parsedGptData[defaultLanguage]?.coverLetter);
+    } else {
+      setSelectedCoverLetter(undefined);
+    }
+
+    // Open the PDF dialog
+    setShowPdfDialog(true);
+  }
+
   return (
     <>
       <AlertDialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -565,17 +583,17 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                       <Mail className="mr-2 h-4 w-4" />
                       Email Modified CV
                     </Button>
+
+                    <Button 
+                      type="button"
+                      variant="outline"
+                      onClick={handlePdfClick}
+                      disabled={jsonValidationStatus !== 'valid'}
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      Download PDFs
+                    </Button>
                     
-                    {jsonValidationStatus === 'valid' && parsedGptData && (
-                      <PDFGenerator 
-                        cvName={cvName}
-                        cvData={cvData}
-                        personalInfo={createModifiedPersonalInfo() || personalInfo}
-                        isCompact={form.getValues().isCompact}
-                        currentAngle={form.getValues().selectedAngle || null}
-                        coverLetter={includeCoverLetter ? parsedGptData[languages.length > 0 ? languages[0].code : 'en']?.coverLetter : undefined}
-                      />
-                    )}
                   </div>
                 </div>
               </form>
@@ -591,6 +609,19 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
           personalInfo={modifiedPersonalInfo || personalInfo}
           cvName={cvName}
           customUrl={modifiedUrl || undefined}
+          coverLetter={selectedCoverLetter}
+        />
+      )}
+
+      {showPdfDialog && (
+        <PdfDialog 
+          open={showPdfDialog}
+          onOpenChange={setShowPdfDialog}
+          cvName={cvName}
+          cvData={cvData}
+          personalInfo={createModifiedPersonalInfo() || personalInfo}
+          isCompact={form.getValues().isCompact}
+          currentAngle={form.getValues().selectedAngle || null}
           coverLetter={selectedCoverLetter}
         />
       )}

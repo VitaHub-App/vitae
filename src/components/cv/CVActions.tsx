@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Toggle } from '@/components/ui/toggle';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { PDFGenerator } from './pdf/PDFGenerator';
+import { PdfDialog } from './pdf/PdfDialog';
 import EmailDialog from './email/EmailDialog';
 import { CVData, PersonalInfo } from '@/types/cv';
 import { Mail, ListIcon, ListChecksIcon, PrinterIcon, Share2Icon } from 'lucide-react';
@@ -29,6 +29,7 @@ const CVActions: React.FC<CVActionsProps> = ({
   onAngleChange
 }) => {
   const [emailDialogOpen, setEmailDialogOpen] = useState(false);
+  const [pdfDialogOpen, setPdfDialogOpen] = useState(false);
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo>({
     name: '',
     title: '',
@@ -128,7 +129,9 @@ const CVActions: React.FC<CVActionsProps> = ({
             Email CV
           </Button>
           
-          <PDFGenerator 
+          <PdfDialog 
+            open={pdfDialogOpen}
+            onOpenChange={setPdfDialogOpen}
             cvName={cvName}
             cvData={cvData}
             personalInfo={personalInfo}
