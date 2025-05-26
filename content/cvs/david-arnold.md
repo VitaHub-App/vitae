@@ -270,6 +270,9 @@ University of the Andes | Bogotá, CO | 2013
 ### Master of Arts, General Management
 University of St. Gallen | St.Gallen, CH | 2012 - 2014
 
+- General Management
+- Economic Philosophy
+
 ### Bachelor of Arts, Exchange Semester
 University NOVA of Lisbon | Lisbon, PT | 2009
 
@@ -311,6 +314,17 @@ Contributed significant improvements to the Frappe framework, enhancing its capa
 - Implemented AI-enabled cross-channel marketing automations
 - Developed vehicle routing solver module for internal delivery logistics
 - Created e-invoice module compliant with local regulations
+
+### {angle=tech,innovation,strategy} Driving Operational Excellence through Automation & Digitalization (2024)
+
+Spearheaded the automation and digital transformation of core operating and sales processes, leveraging a unified technology stack to streamline workflows and boost organizational efficiency.
+
+- Technologies: Frappe, ERPNext  
+- Automated end-to-end sales and operational processes, significantly reducing manual intervention and error rates  
+- Enhanced sales cycle efficiency, increasing throughput and improving sales-per-person ratios  
+- Elevated customer satisfaction by delivering faster, more consistent service  
+- Strengthened operational excellence through standardized processes, real-time analytics, and cross-functional integration  
+- Enabled data-driven decision-making and continuous process improvement across business units
 
 ### {angle=tech,innovation} Standard DevOps Nix framework (2023-2024)
 Developed a Nix-based DevOps platform framework for company-wide use, streamlining development and deployment processes.
