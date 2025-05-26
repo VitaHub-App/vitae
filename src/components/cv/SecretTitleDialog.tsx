@@ -42,6 +42,7 @@ const formSchema = z.object({
       { message: "Invalid JSON format" }
     ),
   selectedAngle: z.string().optional(),
+  isCompact: z.boolean().default(true),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -64,6 +65,11 @@ export default function SecretTitleDialog({
   const [selectedCoverLetter, setSelectedCoverLetter] = useState<string | undefined>(undefined);
   const [showDownloadModal, setShowDownloadModal] = useState(false);
   
+  // Get current compactness from URL params
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentCompactness = urlParams.get('compact') !== 'false';
+  const currentAngle = urlParams.get('angle') || undefined;
+  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -71,7 +77,8 @@ export default function SecretTitleDialog({
       includeCoverLetter: false,
       coverLetterInstructions: "",
       gptResponse: "",
-      selectedAngle: availableAngles.length > 0 ? availableAngles[0] : undefined,
+      selectedAngle: currentAngle,
+      isCompact: currentCompactness,
     },
   });
 
@@ -210,7 +217,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
   const generateModifiedUrl = () => {
     if (!parsedGptData) return null;
     
-    const { selectedAngle } = form.getValues();
+    const { selectedAngle, isCompact } = form.getValues();
     
     // Create a modifications object with the titles and bios for each language
     const modifications = {
@@ -228,6 +235,7 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     // Get the current URL and add or replace the 'mod' parameter
     const url = new URL(window.location.href);
     url.searchParams.set('mod', modValue);
+    url.searchParams.set('compact', isCompact ? "true" : "false");
 
     // Add the 'angle' parameter if selectedAngle is set
     if (selectedAngle) {
@@ -430,28 +438,50 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                 </Button>
                 
                 <div className="border-t pt-6">
-                  {availableAngles.length > 0 && (
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    {availableAngles.length > 0 && (
+                      <FormField
+                        control={form.control}
+                        name="selectedAngle"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Select Angle</FormLabel>
+                            <FormControl>
+                              <select 
+                                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                {...field}
+                              >
+                                <option value="">No filter</option>
+                                {availableAngles.map(angle => (
+                                  <option key={angle} value={angle}>{angle}</option>
+                                ))}
+                              </select>
+                            </FormControl>
+                          </FormItem>
+                        )}
+                      />
+                    )}
+                    
                     <FormField
                       control={form.control}
-                      name="selectedAngle"
+                      name="isCompact"
                       render={({ field }) => (
-                        <FormItem className="mb-6">
-                          <FormLabel>Select Angle</FormLabel>
+                        <FormItem>
+                          <FormLabel>CV Layout</FormLabel>
                           <FormControl>
                             <select 
                               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                              {...field}
+                              value={field.value ? "true" : "false"}
+                              onChange={(e) => field.onChange(e.target.value === "true")}
                             >
-                              <option value="">No filter</option>
-                              {availableAngles.map(angle => (
-                                <option key={angle} value={angle}>{angle}</option>
-                              ))}
+                              <option value="true">Compact</option>
+                              <option value="false">Detailed</option>
                             </select>
                           </FormControl>
                         </FormItem>
                       )}
                     />
-                  )}
+                  </div>
                 
                   <FormField
                     control={form.control}
@@ -582,8 +612,9 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
           cvName={cvName}
           cvData={cvData}
           personalInfo={modifiedPersonalInfo || personalInfo}
-          isCompact={isCompact}
-          currentAngle=form.getValues().selectedAngle
+          isCompact={form.getValues().isCompact}
+          currentAngle={form.getValues().selectedAngle || null}
+          coverLetter={selectedCoverLetter}
         />
       )}
     </>
