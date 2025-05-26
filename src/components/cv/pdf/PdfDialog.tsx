@@ -180,6 +180,8 @@ export const PdfDialog: React.FC<PdfDialogProps> = ({open, onOpenChange, cvData,
                 cvData={cvData}
                 personalInfo={personalInfo}
                 coverLetter={coverLetter}
+                jobDescription={jobDescription}
+                companyName={companyName}
               />
             </div>
           </div>

@@ -38,11 +38,15 @@ interface CLPdfTemplateProps {
   cvData: CVData;
   personalInfo: PersonalInfo;
   coverLetter?: string;
+  jobDescription?: string;
+  companyName?: string;
 }
 
 const CLPdfTemplate: React.FC<CLPdfTemplateProps> = ({ 
   personalInfo,
-  coverLetter
+  coverLetter,
+  jobDescription,
+  companyName
 }) => {
   // Color scheme - same as CV template
   const colors = {
@@ -63,6 +67,20 @@ const CLPdfTemplate: React.FC<CLPdfTemplateProps> = ({
 
   // Split cover letter into paragraphs for better formatting
   const coverLetterParagraphs = coverLetter ? coverLetter.split('\n').filter(p => p.trim()) : [];
+
+  // Generate reference line
+  const getReferenceLine = () => {
+    if (jobDescription && companyName) {
+      return `Re: Application for ${jobDescription} at ${companyName}`;
+    } else if (jobDescription) {
+      return `Re: Application for ${jobDescription}`;
+    } else if (companyName) {
+      return `Re: Application at ${companyName}`;
+    }
+    return null;
+  };
+
+  const referenceLine = getReferenceLine();
 
   return (
     <div className="cl-pdf-container" style={{ 
@@ -138,6 +156,22 @@ const CLPdfTemplate: React.FC<CLPdfTemplateProps> = ({
         zIndex: 1,
         maxWidth: '100%'
       }}>
+        {/* Reference Line */}
+        {referenceLine && (
+          <div style={{
+            marginBottom: '2rem'
+          }}>
+            <p style={{
+              fontSize: '1rem',
+              fontWeight: 700,
+              color: colors.primary,
+              margin: 0
+            }}>
+              {referenceLine}
+            </p>
+          </div>
+        )}
+
         {/* Greeting */}
         <div style={{
           marginBottom: '2rem'
