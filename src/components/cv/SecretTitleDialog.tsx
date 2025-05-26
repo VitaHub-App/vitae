@@ -63,7 +63,6 @@ export default function SecretTitleDialog({
   const [modifiedUrl, setModifiedUrl] = useState<string | null>(null);
   const [modifiedPersonalInfo, setModifiedPersonalInfo] = useState<PersonalInfo | null>(null);
   const [selectedCoverLetter, setSelectedCoverLetter] = useState<string | undefined>(undefined);
-  const [showDownloadModal, setShowDownloadModal] = useState(false);
   
   // Get current compactness from URL params
   const urlParams = new URLSearchParams(window.location.search);
@@ -332,18 +331,6 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
     setShowEmailDialog(true);
   };
 
-  const handleDownloadClick = () => {
-
-    if (parsedGptData && includeCoverLetter) {
-      const defaultLanguage = languages.length > 0 ? languages[0].code : 'en';
-      setSelectedCoverLetter(parsedGptData[defaultLanguage]?.coverLetter);
-    } else {
-      setSelectedCoverLetter(undefined);
-    }
-    
-    setShowDownloadModal(true);
-  }
-
   return (
     <>
       <AlertDialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -579,15 +566,16 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
                       Email Modified CV
                     </Button>
                     
-                    <Button 
-                      type="button"
-                      variant="outline"
-                      onClick={handleDownloadClick}
-                      disabled={jsonValidationStatus !== 'valid'}
-                    >
-                      <FileDown className="mr-2 h-4 w-4" />
-                      Download PDFs
-                    </Button>
+                    {jsonValidationStatus === 'valid' && parsedGptData && (
+                      <PDFGenerator 
+                        cvName={cvName}
+                        cvData={cvData}
+                        personalInfo={createModifiedPersonalInfo() || personalInfo}
+                        isCompact={form.getValues().isCompact}
+                        currentAngle={form.getValues().selectedAngle || null}
+                        coverLetter={includeCoverLetter ? parsedGptData[languages.length > 0 ? languages[0].code : 'en']?.coverLetter : undefined}
+                      />
+                    )}
                   </div>
                 </div>
               </form>
@@ -603,17 +591,6 @@ The entire response must be valid JSON that can be parsed with JSON.parse().`;
           personalInfo={modifiedPersonalInfo || personalInfo}
           cvName={cvName}
           customUrl={modifiedUrl || undefined}
-          coverLetter={selectedCoverLetter}
-        />
-      )}
-      
-      {showDownloadModal && (
-        <PDFGenerator 
-          cvName={cvName}
-          cvData={cvData}
-          personalInfo={modifiedPersonalInfo || personalInfo}
-          isCompact={form.getValues().isCompact}
-          currentAngle={form.getValues().selectedAngle || null}
           coverLetter={selectedCoverLetter}
         />
       )}
